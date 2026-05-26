@@ -1,0 +1,134 @@
+2026-03-15 23:50:07,304 [INFO] [is_batch] 开始批量任务，共 1 个
+2026-03-15 23:50:07,304 [INFO] [worker-0] 处理任务 0: set_online
+2026-03-15 23:50:07,306 [INFO] 删除残留的 session 文件: /www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b10fe00169d/13608385893/tdata/temp_8242265110.session
+2026-03-15 23:50:07,459 [INFO] Connecting to 149.154.175.50:443/TcpObfuscated...
+2026-03-15 23:50:08,503 [INFO] Connection to 149.154.175.50:443/TcpObfuscated complete!
+2026-03-15 23:50:16,351 [INFO] process_single_session 执行完成，耗时: 9044.74 毫秒，task_id: 0
+2026-03-15 23:50:16,351 [INFO] [get_account_handler] [PID:3970789|Port:5001] 【/www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b10fe00169d/13608385893/tdata/temp_8242265110.session】新建 handler: key=32fb8ab76e3a06f04391dd302d4c0214, api_id=2040, proxy=socks5://user-splmqynpf0-country-jp:9u6virjzTwd1PRZp4=@isp.decodo.com:10093
+2026-03-15 23:50:16,360 [INFO] MySQL数据库连接池初始化成功
+2026-03-15 23:50:16,364 [INFO] Redis连接初始化成功
+2026-03-15 23:50:16,364 [INFO] 数据库和缓存初始化完成（仅执行一次）: temp_8242265110.session
+2026-03-15 23:50:16,364 [INFO] [get_account_handler] session_cache 状态: client=None, is_connected=False
+2026-03-15 23:50:16,365 [INFO] execute_action (action: set_online) 执行完成，耗时: 0.16 毫秒，task_id: 0
+2026-03-15 23:50:16,365 [INFO] 监听器已启动: temp_8242265110.session
+2026-03-15 23:50:16,366 [INFO] 存储目录初始化完成: temp_8242265110.session
+2026-03-15 23:50:16,366 [INFO] 监听器启动成功: temp_8242265110.session
+2026-03-15 23:50:16,366 [INFO] 监听器已启动: temp_8242265110.session
+2026-03-15 23:50:22,251 [INFO] 监听器新消息处理
+2026-03-15 23:50:22,252 [INFO] 监听器新消息Message(id=3333, peer_id=PeerUser(user_id=6285639416), date=datetime.datetime(2026, 3, 15, 15, 50, 22, tzinfo=datetime.timezone.utc), message='aaa', out=False, mentioned=False, media_unread=False, silent=False, post=None, from_scheduled=None, legacy=None, edit_hide=None, pinned=None, noforwards=None, invert_media=None, offline=None, video_processing_pending=None, paid_suggested_post_stars=None, paid_suggested_post_ton=None, from_id=PeerUser(user_id=6285639416), from_boosts_applied=None, saved_peer_id=None, fwd_from=None, via_bot_id=None, via_business_bot_id=None, reply_to=None, media=None, reply_markup=None, entities=[], views=None, forwards=None, replies=None, edit_date=None, post_author=None, grouped_id=None, reactions=None, restriction_reason=[], ttl_period=None, quick_reply_shortcut_id=None, effect=None, factcheck=None, report_delivery_until_date=None, paid_message_stars=None, suggested_post=None)
+2026-03-15 23:50:22,261 [INFO] 新消息处理完成: chat_info={'newchat_id': '6285639416', 'oldchat_id': 6285639416, 'chat_type': 'private', 'peer': <telethon.tl.types.PeerUser object at 0x7f0855bdd010>, 'is_outgoing': False}
+2026-03-15 23:50:23,628 [INFO] 保存消息: chat=6285639416, msg=3333, sender=User_6285639416
+2026-03-15 23:50:24,126 [INFO] [新消息] 聊天: 6285639416, 发送者: 6285639416
+2026-03-15 23:50:24,126 [INFO] 新消息处理完成: msg=3333, chat=6285639416, type=private
+2026-03-15 23:50:50,393 [INFO] 心跳成功:ping_id=17735898492070,response=Pong(msg_id=7617510401804618136, ping_id=17735898492070), account=temp_8242265110.session
+2026-03-15 23:51:01,031 [INFO] [get_account_handler] [PID:3970789|Port:5001] 【/www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b10fe00169d/13608385893/tdata/temp_8242265110.session】 复用已有 handler: key=32fb8ab76e3a06f04391dd302d4c0214
+2026-03-15 23:51:01,031 [INFO] [get_account_handler] session_cache 状态: client=<opentele2.tl.telethon.TelegramClient object at 0x7f0855bdf3d0>, is_connected=True
+2026-03-15 23:51:04,933 [INFO] [get_account_handler] [PID:3970789|Port:5001] 【/www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b10fe00169d/13608385893/tdata/temp_8242265110.session】 复用已有 handler: key=32fb8ab76e3a06f04391dd302d4c0214
+2026-03-15 23:51:04,949 [INFO] [get_account_handler] session_cache 状态: client=<opentele2.tl.telethon.TelegramClient object at 0x7f0855bdf3d0>, is_connected=True
+2026-03-15 23:51:04,971 [INFO] 监听器新消息处理
+2026-03-15 23:51:04,971 [INFO] 监听器新消息Message(id=3334, peer_id=PeerUser(user_id=6285639416), date=datetime.datetime(2026, 3, 15, 15, 51, 4, tzinfo=datetime.timezone.utc), message='bw', out=False, mentioned=False, media_unread=False, silent=False, post=None, from_scheduled=None, legacy=None, edit_hide=None, pinned=None, noforwards=None, invert_media=None, offline=None, video_processing_pending=None, paid_suggested_post_stars=None, paid_suggested_post_ton=None, from_id=PeerUser(user_id=6285639416), from_boosts_applied=None, saved_peer_id=None, fwd_from=None, via_bot_id=None, via_business_bot_id=None, reply_to=None, media=None, reply_markup=None, entities=[], views=None, forwards=None, replies=None, edit_date=None, post_author=None, grouped_id=None, reactions=None, restriction_reason=[], ttl_period=None, quick_reply_shortcut_id=None, effect=None, factcheck=None, report_delivery_until_date=None, paid_message_stars=None, suggested_post=None)
+2026-03-15 23:51:04,972 [INFO] 新消息处理完成: chat_info={'newchat_id': '6285639416', 'oldchat_id': 6285639416, 'chat_type': 'private', 'peer': <telethon.tl.types.PeerUser object at 0x7f0855a2c710>, 'is_outgoing': False}
+2026-03-15 23:51:06,776 [INFO] 保存消息: chat=6285639416, msg=3334, sender=User_6285639416
+2026-03-15 23:51:07,272 [INFO] [新消息] 聊天: 6285639416, 发送者: 6285639416
+2026-03-15 23:51:07,273 [INFO] 新消息处理完成: msg=3334, chat=6285639416, type=private
+2026-03-15 23:51:11,426 [INFO] [get_account_handler] [PID:3970789|Port:5001] 【/www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b10fe00169d/13608385893/tdata/temp_8242265110.session】 复用已有 handler: key=32fb8ab76e3a06f04391dd302d4c0214
+2026-03-15 23:51:11,426 [INFO] [get_account_handler] session_cache 状态: client=<opentele2.tl.telethon.TelegramClient object at 0x7f0855bdf3d0>, is_connected=True
+2026-03-15 23:51:21,337 [INFO] 心跳成功:ping_id=17735898809249,response=Pong(msg_id=7617510534719834056, ping_id=17735898809249), account=temp_8242265110.session
+2026-03-15 23:52:00,138 [INFO] 心跳成功:ping_id=17735899195667,response=Pong(msg_id=7617510701427525692, ping_id=17735899195667), account=temp_8242265110.session
+2026-03-15 23:52:10,599 [INFO] 监听器新消息处理
+2026-03-15 23:52:10,599 [INFO] 监听器新消息Message(id=3335, peer_id=PeerChat(chat_id=5288642383), date=datetime.datetime(2026, 3, 15, 15, 52, 10, tzinfo=datetime.timezone.utc), message='23', out=False, mentioned=True, media_unread=True, silent=False, post=None, from_scheduled=None, legacy=None, edit_hide=None, pinned=None, noforwards=None, invert_media=None, offline=None, video_processing_pending=None, paid_suggested_post_stars=None, paid_suggested_post_ton=None, from_id=PeerUser(user_id=6285639416), from_boosts_applied=None, saved_peer_id=None, fwd_from=None, via_bot_id=None, via_business_bot_id=None, reply_to=MessageReplyHeader(reply_to_scheduled=False, forum_topic=False, quote=False, reply_to_msg_id=3328, reply_to_peer_id=None, reply_from=None, reply_media=None, reply_to_top_id=None, quote_text=None, quote_entities=[], quote_offset=None, todo_item_id=None), media=None, reply_markup=None, entities=[], views=None, forwards=None, replies=None, edit_date=None, post_author=None, grouped_id=None, reactions=None, restriction_reason=[], ttl_period=None, quick_reply_shortcut_id=None, effect=None, factcheck=None, report_delivery_until_date=None, paid_message_stars=None, suggested_post=None)
+2026-03-15 23:52:10,600 [INFO] 新消息处理完成: chat_info={'newchat_id': '-5288642383', 'oldchat_id': 5288642383, 'chat_type': 'group', 'peer': <telethon.tl.types.PeerChat object at 0x7f0855a38750>, 'is_outgoing': False}
+2026-03-15 23:52:11,931 [INFO] 保存消息: chat=-5288642383, msg=3335, sender=User_6285639416
+2026-03-15 23:52:12,417 [INFO] [新消息] 聊天: -5288642383, 发送者: 6285639416
+2026-03-15 23:52:12,417 [INFO] 新消息处理完成: msg=3335, chat=-5288642383, type=group
+2026-03-15 23:52:33,016 [INFO] 心跳成功:ping_id=17735899526096,response=Pong(msg_id=7617510842671478160, ping_id=17735899526096), account=temp_8242265110.session
+2026-03-15 23:53:07,566 [INFO] 心跳成功:ping_id=17735899875570,response=Pong(msg_id=7617510991191761820, ping_id=17735899875570), account=temp_8242265110.session
+2026-03-15 23:53:43,630 [INFO] 心跳成功:ping_id=17735900235554,response=Pong(msg_id=7617511146074828556, ping_id=17735900235554), account=temp_8242265110.session
+2026-03-15 23:54:19,663 [INFO] 心跳成功:ping_id=17735900593640,response=Pong(msg_id=7617511300825337424, ping_id=17735900593640), account=temp_8242265110.session
+2026-03-15 23:54:53,553 [INFO] 心跳成功:ping_id=17735900931365,response=Pong(msg_id=7617511446407162040, ping_id=17735900931365), account=temp_8242265110.session
+2026-03-15 23:55:34,715 [INFO] 心跳成功:ping_id=17735901343545,response=Pong(msg_id=7617511623161041324, ping_id=17735901343545), account=temp_8242265110.session
+2026-03-15 23:56:15,744 [INFO] 心跳成功:ping_id=17735901757841,response=Pong(msg_id=7617511799372980868, ping_id=17735901757841), account=temp_8242265110.session
+2026-03-15 23:56:49,996 [INFO] 心跳成功:ping_id=17735902094984,response=Pong(msg_id=7617511946407921904, ping_id=17735902094984), account=temp_8242265110.session
+2026-03-15 23:57:35,010 [INFO] 心跳成功:ping_id=17735902546394,response=Pong(msg_id=7617512139721360540, ping_id=17735902546394), account=temp_8242265110.session
+2026-03-15 23:58:15,471 [INFO] 心跳成功:ping_id=17735902957975,response=Pong(msg_id=7617512313674233508, ping_id=17735902957975), account=temp_8242265110.session
+2026-03-15 23:58:55,731 [INFO] 心跳成功:ping_id=17735903356963,response=Pong(msg_id=7617512486511646432, ping_id=17735903356963), account=temp_8242265110.session
+2026-03-15 23:59:33,527 [INFO] 心跳成功:ping_id=17735903735723,response=Pong(msg_id=7617512648885231024, ping_id=17735903735723), account=temp_8242265110.session
+2026-03-16 00:00:04,091 [INFO] 心跳成功:ping_id=17735904034644,response=Pong(msg_id=7617512780009961920, ping_id=17735904034644), account=temp_8242265110.session
+2026-03-16 00:00:42,901 [INFO] 心跳成功:ping_id=17735904424349,response=Pong(msg_id=7617512946694401068, ping_id=17735904424349), account=temp_8242265110.session
+2026-03-16 00:01:23,113 [INFO] 心跳成功:ping_id=17735904826992,response=Pong(msg_id=7617513119395334616, ping_id=17735904826992), account=temp_8242265110.session
+2026-03-16 00:01:59,903 [INFO] 心跳成功:ping_id=17735905191990,response=Pong(msg_id=7617513277476093868, ping_id=17735905191990), account=temp_8242265110.session
+2026-03-16 00:02:40,667 [INFO] 心跳成功:ping_id=17735905608209,response=Pong(msg_id=7617513452622304272, ping_id=17735905608209), account=temp_8242265110.session
+2026-03-16 00:03:19,060 [INFO] 心跳成功:ping_id=17735905981616,response=Pong(msg_id=7617513617396829764, ping_id=17735905981616), account=temp_8242265110.session
+2026-03-16 00:04:00,251 [INFO] 心跳成功:ping_id=17735906390735,response=Pong(msg_id=7617513794260857476, ping_id=17735906390735), account=temp_8242265110.session
+2026-03-16 00:04:33,842 [INFO] 心跳成功:ping_id=17735906732502,response=Pong(msg_id=7617513938646224232, ping_id=17735906732502), account=temp_8242265110.session
+2026-03-16 00:05:05,488 [INFO] 心跳成功:ping_id=17735907059162,response=Pong(msg_id=7617514074650499624, ping_id=17735907059162), account=temp_8242265110.session
+2026-03-16 00:05:47,481 [INFO] 心跳成功:ping_id=17735907479806,response=Pong(msg_id=7617514255013392108, ping_id=17735907479806), account=temp_8242265110.session
+2026-03-16 00:06:28,679 [INFO] 心跳成功:ping_id=17735907880410,response=Pong(msg_id=7617514431837698332, ping_id=17735907880410), account=temp_8242265110.session
+2026-03-16 00:07:09,680 [INFO] 心跳成功:ping_id=17735908294193,response=Pong(msg_id=7617514607995220268, ping_id=17735908294193), account=temp_8242265110.session
+2026-03-16 00:07:47,261 [INFO] 心跳成功:ping_id=17735908665658,response=Pong(msg_id=7617514769231125164, ping_id=17735908665658), account=temp_8242265110.session
+2026-03-16 00:08:23,441 [INFO] 心跳成功:ping_id=17735909024062,response=Pong(msg_id=7617514924569561852, ping_id=17735909024062), account=temp_8242265110.session
+2026-03-16 00:08:54,074 [INFO] 心跳成功:ping_id=17735909331094,response=Pong(msg_id=7617515056252318700, ping_id=17735909331094), account=temp_8242265110.session
+2026-03-16 00:09:35,815 [INFO] 心跳成功:ping_id=17735909757543,response=Pong(msg_id=7617515235597767528, ping_id=17735909757543), account=temp_8242265110.session
+2026-03-16 00:10:18,903 [INFO] 心跳成功:ping_id=17735910180215,response=Pong(msg_id=7617515420666340504, ping_id=17735910180215), account=temp_8242265110.session
+2026-03-16 00:10:50,601 [INFO] 心跳成功:ping_id=17735910508677,response=Pong(msg_id=7617515556892492996, ping_id=17735910508677), account=temp_8242265110.session
+2026-03-16 00:11:28,587 [INFO] 心跳成功:ping_id=17735910884818,response=Pong(msg_id=7617515720045425964, ping_id=17735910884818), account=temp_8242265110.session
+2026-03-16 00:11:58,075 [INFO] 监听器新消息处理
+2026-03-16 00:11:58,075 [INFO] 监听器新消息Message(id=3336, peer_id=PeerChat(chat_id=5288642383), date=datetime.datetime(2026, 3, 15, 16, 11, 57, tzinfo=datetime.timezone.utc), message='da', out=False, mentioned=False, media_unread=False, silent=False, post=None, from_scheduled=None, legacy=None, edit_hide=None, pinned=None, noforwards=None, invert_media=None, offline=None, video_processing_pending=None, paid_suggested_post_stars=None, paid_suggested_post_ton=None, from_id=PeerUser(user_id=6285639416), from_boosts_applied=None, saved_peer_id=None, fwd_from=None, via_bot_id=None, via_business_bot_id=None, reply_to=None, media=None, reply_markup=None, entities=[], views=None, forwards=None, replies=None, edit_date=None, post_author=None, grouped_id=None, reactions=None, restriction_reason=[], ttl_period=None, quick_reply_shortcut_id=None, effect=None, factcheck=None, report_delivery_until_date=None, paid_message_stars=None, suggested_post=None)
+2026-03-16 00:11:58,075 [INFO] 新消息处理完成: chat_info={'newchat_id': '-5288642383', 'oldchat_id': 5288642383, 'chat_type': 'group', 'peer': <telethon.tl.types.PeerChat object at 0x7f0855a3a290>, 'is_outgoing': False}
+2026-03-16 00:11:59,416 [INFO] 保存消息: chat=-5288642383, msg=3336, sender=User_6285639416
+2026-03-16 00:11:59,903 [INFO] [新消息] 聊天: -5288642383, 发送者: 6285639416
+2026-03-16 00:11:59,903 [INFO] 新消息处理完成: msg=3336, chat=-5288642383, type=group
+2026-03-16 00:12:11,097 [INFO] 心跳成功:ping_id=17735911305412,response=Pong(msg_id=7617515902475105216, ping_id=17735911305412), account=temp_8242265110.session
+2026-03-16 00:12:54,521 [INFO] 心跳成功:ping_id=17735911744551,response=Pong(msg_id=7617516089147622616, ping_id=17735911744551), account=temp_8242265110.session
+2026-03-16 00:13:33,334 [INFO] 心跳成功:ping_id=17735912121925,response=Pong(msg_id=7617516255610159276, ping_id=17735912121925), account=temp_8242265110.session
+2026-03-16 00:14:00,646 [INFO] 监听器新消息处理
+2026-03-16 00:14:00,646 [INFO] 监听器新消息Message(id=3337, peer_id=PeerChat(chat_id=5288642383), date=datetime.datetime(2026, 3, 15, 16, 14, tzinfo=datetime.timezone.utc), message='b', out=False, mentioned=False, media_unread=False, silent=False, post=None, from_scheduled=None, legacy=None, edit_hide=None, pinned=None, noforwards=None, invert_media=None, offline=None, video_processing_pending=None, paid_suggested_post_stars=None, paid_suggested_post_ton=None, from_id=PeerUser(user_id=6285639416), from_boosts_applied=None, saved_peer_id=None, fwd_from=None, via_bot_id=None, via_business_bot_id=None, reply_to=None, media=None, reply_markup=None, entities=[], views=None, forwards=None, replies=None, edit_date=None, post_author=None, grouped_id=None, reactions=None, restriction_reason=[], ttl_period=None, quick_reply_shortcut_id=None, effect=None, factcheck=None, report_delivery_until_date=None, paid_message_stars=None, suggested_post=None)
+2026-03-16 00:14:00,651 [INFO] 新消息处理完成: chat_info={'newchat_id': '-5288642383', 'oldchat_id': 5288642383, 'chat_type': 'group', 'peer': <telethon.tl.types.PeerChat object at 0x7f0855b5bb10>, 'is_outgoing': False}
+2026-03-16 00:14:01,986 [INFO] 保存消息: chat=-5288642383, msg=3337, sender=User_6285639416
+2026-03-16 00:14:02,486 [INFO] [新消息] 聊天: -5288642383, 发送者: 6285639416
+2026-03-16 00:14:02,486 [INFO] 新消息处理完成: msg=3337, chat=-5288642383, type=group
+2026-03-16 00:14:15,397 [INFO] [get_account_handler] [PID:3970789|Port:5001] 【/www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b10fe00169d/13608385893/tdata/temp_8242265110.session】 复用已有 handler: key=32fb8ab76e3a06f04391dd302d4c0214
+2026-03-16 00:14:15,397 [INFO] [get_account_handler] session_cache 状态: client=<opentele2.tl.telethon.TelegramClient object at 0x7f0855bdf3d0>, is_connected=True
+2026-03-16 00:14:17,636 [INFO] 心跳成功:ping_id=17735912557336,response=Pong(msg_id=7617516446090368848, ping_id=17735912557336), account=temp_8242265110.session
+2026-03-16 00:14:50,710 [INFO] 心跳成功:ping_id=17735912908624,response=Pong(msg_id=7617516588123608880, ping_id=17735912908624), account=temp_8242265110.session
+2026-03-16 00:15:23,276 [INFO] [get_account_handler] [PID:3970789|Port:5001] 【/www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b10fe00169d/13608385893/tdata/temp_8242265110.session】 复用已有 handler: key=32fb8ab76e3a06f04391dd302d4c0214
+2026-03-16 00:15:23,276 [INFO] [get_account_handler] session_cache 状态: client=<opentele2.tl.telethon.TelegramClient object at 0x7f0855bdf3d0>, is_connected=True
+2026-03-16 00:15:28,041 [INFO] 监听器新消息处理
+2026-03-16 00:15:28,042 [INFO] 监听器新消息Message(id=3338, peer_id=PeerChat(chat_id=5288642383), date=datetime.datetime(2026, 3, 15, 16, 15, 27, tzinfo=datetime.timezone.utc), message='f', out=False, mentioned=False, media_unread=False, silent=False, post=None, from_scheduled=None, legacy=None, edit_hide=None, pinned=None, noforwards=None, invert_media=None, offline=None, video_processing_pending=None, paid_suggested_post_stars=None, paid_suggested_post_ton=None, from_id=PeerUser(user_id=6285639416), from_boosts_applied=None, saved_peer_id=None, fwd_from=None, via_bot_id=None, via_business_bot_id=None, reply_to=None, media=None, reply_markup=None, entities=[], views=None, forwards=None, replies=None, edit_date=None, post_author=None, grouped_id=None, reactions=None, restriction_reason=[], ttl_period=None, quick_reply_shortcut_id=None, effect=None, factcheck=None, report_delivery_until_date=None, paid_message_stars=None, suggested_post=None)
+2026-03-16 00:15:28,042 [INFO] 新消息处理完成: chat_info={'newchat_id': '-5288642383', 'oldchat_id': 5288642383, 'chat_type': 'group', 'peer': <telethon.tl.types.PeerChat object at 0x7f0855a39250>, 'is_outgoing': False}
+2026-03-16 00:15:28,491 [INFO] 保存消息: chat=-5288642383, msg=3338, sender=123
+2026-03-16 00:15:28,535 [INFO] [新消息] 聊天: -5288642383, 发送者: 6285639416
+2026-03-16 00:15:28,536 [INFO] 新消息处理完成: msg=3338, chat=-5288642383, type=group
+2026-03-16 00:15:28,922 [INFO] 心跳成功:ping_id=17735913281906,response=Pong(msg_id=7617516752178441188, ping_id=17735913281906), account=temp_8242265110.session
+2026-03-16 00:15:31,447 [INFO] 监听器新消息处理
+2026-03-16 00:15:31,448 [INFO] 监听器新消息Message(id=3339, peer_id=PeerUser(user_id=6285639416), date=datetime.datetime(2026, 3, 15, 16, 15, 31, tzinfo=datetime.timezone.utc), message='werwr', out=False, mentioned=False, media_unread=False, silent=False, post=None, from_scheduled=None, legacy=None, edit_hide=None, pinned=None, noforwards=None, invert_media=None, offline=None, video_processing_pending=None, paid_suggested_post_stars=None, paid_suggested_post_ton=None, from_id=PeerUser(user_id=6285639416), from_boosts_applied=None, saved_peer_id=None, fwd_from=None, via_bot_id=None, via_business_bot_id=None, reply_to=None, media=None, reply_markup=None, entities=[], views=None, forwards=None, replies=None, edit_date=None, post_author=None, grouped_id=None, reactions=None, restriction_reason=[], ttl_period=None, quick_reply_shortcut_id=None, effect=None, factcheck=None, report_delivery_until_date=None, paid_message_stars=None, suggested_post=None)
+2026-03-16 00:15:31,448 [INFO] 新消息处理完成: chat_info={'newchat_id': '6285639416', 'oldchat_id': 6285639416, 'chat_type': 'private', 'peer': <telethon.tl.types.PeerUser object at 0x7f0855bda0d0>, 'is_outgoing': False}
+2026-03-16 00:15:31,484 [INFO] 保存消息: chat=6285639416, msg=3339, sender=123
+2026-03-16 00:15:31,533 [INFO] [新消息] 聊天: 6285639416, 发送者: 6285639416
+2026-03-16 00:15:31,533 [INFO] 新消息处理完成: msg=3339, chat=6285639416, type=private
+2026-03-16 00:16:03,606 [INFO] 心跳成功:ping_id=17735913634844,response=Pong(msg_id=7617516901203268152, ping_id=17735913634844), account=temp_8242265110.session
+2026-03-16 00:16:47,991 [INFO] 心跳成功:ping_id=17735914078248,response=Pong(msg_id=7617517091754526816, ping_id=17735914078248), account=temp_8242265110.session
+2026-03-16 00:17:26,398 [INFO] 心跳成功:ping_id=17735914450742,response=Pong(msg_id=7617517256597810316, ping_id=17735914450742), account=temp_8242265110.session
+2026-03-16 00:17:58,060 [INFO] 心跳成功:ping_id=17735914778666,response=Pong(msg_id=7617517392683487536, ping_id=17735914778666), account=temp_8242265110.session
+2026-03-16 00:18:36,902 [INFO] 心跳成功:ping_id=17735915165221,response=Pong(msg_id=7617517559548450556, ping_id=17735915165221), account=temp_8242265110.session
+2026-03-16 00:19:10,932 [INFO] 心跳成功:ping_id=17735915502433,response=Pong(msg_id=7617517705702274724, ping_id=17735915502433), account=temp_8242265110.session
+2026-03-16 00:19:42,411 [INFO] 心跳成功:ping_id=17735915811758,response=Pong(msg_id=7617517840756028052, ping_id=17735915811758), account=temp_8242265110.session
+2026-03-16 00:20:16,445 [INFO] 心跳成功:ping_id=17735916169261,response=Pong(msg_id=7617517987205870464, ping_id=17735916169261), account=temp_8242265110.session
+2026-03-16 00:20:21,008 [INFO] 使用数据库参与者数量: ChatModel(chat_id='-5288642383', account_id='temp_8242265110.session', chat_type='group', title='Chat_5288642383', unread_count=1, is_bot=0, chat_data=None, id=30947, username=None, last_message_id=3338, last_message_time=datetime.datetime(2026, 3, 15, 16, 15, 27), avatar_path=None, participants_count=1, created_at=datetime.datetime(2026, 3, 15, 23, 21, 34), updated_at=datetime.datetime(2026, 3, 16, 0, 15, 29))  -5288642383 temp_8242265110.session= 1
+2026-03-16 00:20:21,008 [INFO] 基于变化计算新数量: 1 + -1 = 0
+2026-03-16 00:20:21,035 [INFO] 聊天参与者数量更新: chat=-5288642383, old=1, new=0, change=-1
+2026-03-16 00:20:54,462 [INFO] 心跳成功:ping_id=17735916543310,response=Pong(msg_id=7617518150487903280, ping_id=17735916543310), account=temp_8242265110.session
+2026-03-16 00:21:26,000 [INFO] 心跳成功:ping_id=17735916858552,response=Pong(msg_id=7617518285778461568, ping_id=17735916858552), account=temp_8242265110.session
+2026-03-16 00:21:58,243 [INFO] 心跳成功:ping_id=17735917175822,response=Pong(msg_id=7617518424190811340, ping_id=17735917175822), account=temp_8242265110.session
+2026-03-16 00:22:43,448 [INFO] 心跳成功:ping_id=17735917637425,response=Pong(msg_id=7617518618580026676, ping_id=17735917637425), account=temp_8242265110.session
+2026-03-16 00:23:21,303 [INFO] 心跳成功:ping_id=17735918005539,response=Pong(msg_id=7617518780914398448, ping_id=17735918005539), account=temp_8242265110.session
+2026-03-16 00:23:54,695 [INFO] 心跳成功:ping_id=17735918344051,response=Pong(msg_id=7617518924508027644, ping_id=17735918344051), account=temp_8242265110.session
+2026-03-16 00:24:33,483 [INFO] 心跳成功:ping_id=17735918732659,response=Pong(msg_id=7617519091126017632, ping_id=17735918732659), account=temp_8242265110.session
+2026-03-16 00:25:16,331 [INFO] 心跳成功:ping_id=17735919152931,response=Pong(msg_id=7617519274947328008, ping_id=17735919152931), account=temp_8242265110.session
+2026-03-16 00:26:51,051 [INFO] 心跳成功:ping_id=17735919525123,response=Pong(msg_id=7617519431943419100, ping_id=17735919525123), account=temp_8242265110.session
+2026-03-16 00:27:27,129 [INFO] 心跳成功:ping_id=17735920461885,response=Pong(msg_id=7617519836765661812, ping_id=17735920461885), account=temp_8242265110.session
+2026-03-16 00:27:58,202 [INFO] 心跳成功:ping_id=17735920778782,response=Pong(msg_id=7617519969997442292, ping_id=17735920778782), account=temp_8242265110.session
+2026-03-16 00:29:05,451 [INFO] 心跳成功:ping_id=17735921173179,response=Pong(msg_id=7617520141483747616, ping_id=17735921173179), account=temp_8242265110.session
+2026-03-16 00:29:48,130 [INFO] 心跳成功:ping_id=17735921874962,response=Pong(msg_id=7617520442371991212, ping_id=17735921874962), account=temp_8242265110.session
+2026-03-16 00:30:22,357 [INFO] 
+正在关闭所有服务进程...

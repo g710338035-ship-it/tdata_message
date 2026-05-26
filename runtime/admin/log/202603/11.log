@@ -1,0 +1,20 @@
+[2026-03-11T14:36:14+08:00][info] https://tdata.tgbota.top
+[2026-03-11T14:36:14+08:00][info] /uploads
+[2026-03-11T14:36:19+08:00][info] /www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b10d5eeaa56.txt
+[2026-03-11T14:36:56+08:00][info] https://tdata.tgbota.top
+[2026-03-11T14:36:56+08:00][info] /uploads
+[2026-03-11T14:36:59+08:00][info] /www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b10d88c78c4.txt
+[2026-03-11T14:46:56+08:00][info] https://tdata.tgbota.top
+[2026-03-11T14:46:56+08:00][info] /uploads
+[2026-03-11T14:46:58+08:00][info] 批次batch_69b10fe2697be4.28654309：子批次0（150个账号）投递成功，任务ID：ptwvsCrmSupdhvejtzrXoDDNqkUJLTIF
+[2026-03-11T14:46:58+08:00][info] 批次batch_69b10fe2697be4.28654309：子批次1（48个账号）投递成功，任务ID：yYzMqhNGkltckstYxRXyNELjzSfTeXCl
+[2026-03-11T14:46:58+08:00][info] 批次batch_69b10fe2697be4.28654309处理完成：总账号198，子批次2，成功入队198个
+[2026-03-11T14:46:58+08:00][info] 返回结果: {"total":198,"queued":198,"failed":0,"chunk_count":2,"errors":[],"batch_id":"batch_69b10fe2697be4.28654309"}
+[2026-03-11T16:47:30+08:00][info] 用户归档缓存已强制从数据库更新，共处理 20 个用户
+[2026-03-11T16:47:51+08:00][info] 用户归档缓存已强制从数据库更新，共处理 20 个用户
+[2026-03-11T16:47:57+08:00][info] [telegram队列] 批次:  耗时=0秒
+[2026-03-11T16:50:28+08:00][info] 任务开始: ID=67, 名称=美国20测试
+[2026-03-11T16:51:25+08:00][info] 任务开始: ID=68, 名称=美国测试2
+[2026-03-11T16:53:08+08:00][info] https://tdata.tgbota.top
+[2026-03-11T16:53:08+08:00][info] /uploads
+[2026-03-11T16:53:09+08:00][info] /www/wwwroot/tdata.tgbota.top/public/uploads/admin/202603/69b12d74684f8.txt

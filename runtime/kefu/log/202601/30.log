@@ -1,0 +1,23 @@
+[2026-01-30T08:57:13+08:00][info] []
+[2026-01-30T08:57:35+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T08:58:48+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T08:59:39+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:00:11+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:00:37+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:00:59+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:01:47+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:02:16+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:03:27+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:03:47+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:04:20+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:05:21+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:06:15+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:07:46+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T09:10:59+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T12:18:53+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T23:10:02+08:00][info] []
+[2026-01-30T23:10:18+08:00][info] [{"id":1282,"account_status":"正常","count":152}]
+[2026-01-30T23:11:28+08:00][info] {"action":"send_messages","api_id":"2040","api_hash":"b18441a1ff607e10a989891a5462e627","tdata_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202601\/6971e94ea480a\/16074786998\/tdata\/temp_8377086633.session","proxy":"socks5:\/\/user-splmqynpf0-country-jp:9u6virjzTwd1PRZp4=@isp.decodo.com:10011","session_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202601\/6971e94ea480a\/16074786998\/tdata\/temp_8377086633.session","group_id":"7528181599","message_type":"text","message_text":"你好\n","first_msg_id":0,"feedback_type":"","last_api_address":"http:\/\/127.0.0.1:5075"}
+[2026-01-30T23:11:28+08:00][info] 接口调用成功actionsend_messages,result{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":7528181599,"group_link":null,"type":"user","message":"发送成功","message_id":5}],"failed":[],"debug":["处理标识符: 7528181599, 清理后: 7528181599, 识别为链接: False, 识别为数字ID: True","通过数字ID获取成功: 7528181599 -> 类型: user, ID: 7528181599"],"warning":""}}
+[2026-01-30T23:12:24+08:00][info] {"action":"send_messages","api_id":"2040","api_hash":"b18441a1ff607e10a989891a5462e627","tdata_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202601\/6960a58a3f18c\/13632132995\/tdata\/temp_7528181599.session","proxy":"socks5:\/\/user-splmqynpf0-country-hk:9u6virjzTwd1PRZp4=@isp.decodo.com:10169","session_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202601\/6960a58a3f18c\/13632132995\/tdata\/temp_7528181599.session","group_id":"8377086633","message_type":"text","message_text":"好的","first_msg_id":0,"feedback_type":"","last_api_address":"http:\/\/127.0.0.1:5024"}
+[2026-01-30T23:12:24+08:00][info] 接口调用成功actionsend_messages,result{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":8377086633,"group_link":null,"type":"user","message":"发送成功","message_id":8}],"failed":[],"debug":["处理标识符: 8377086633, 清理后: 8377086633, 识别为链接: False, 识别为数字ID: True","通过数字ID获取成功: 8377086633 -> 类型: user, ID: 8377086633"],"warning":""}}

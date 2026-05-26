@@ -1,0 +1,46 @@
+[2025-12-29T17:37:24+08:00][info] [{"id":609,"account_status":"退出","count":150},{"id":961,"account_status":"正常","count":1}]
+[2025-12-29T20:09:56+08:00][info] []
+[2025-12-29T20:10:10+08:00][info] [{"id":962,"account_status":"退出","count":50}]
+[2025-12-29T20:14:21+08:00][error] [10501]SQLSTATE[HY000] [2002] Connection refused[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2025-12-29T20:14:21+08:00][error] [10501]SQLSTATE[HY000] [2002] Connection refused[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2025-12-29T20:14:21+08:00][error] [10501]SQLSTATE[HY000] [2002] Connection refused[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2025-12-29T20:14:21+08:00][error] [10501]SQLSTATE[HY000] [2002] Connection refused[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2025-12-29T20:14:21+08:00][error] [10501]SQLSTATE[HY000] [2002] Connection refused[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2025-12-29T20:14:21+08:00][error] [10501]SQLSTATE[HY000] [2002] Connection refused[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2025-12-29T20:14:21+08:00][error] [10501]SQLSTATE[HY000] [2002] Connection refused[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2025-12-29T20:14:21+08:00][error] [10501]SQLSTATE[HY000] [2002] Connection refused[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2025-12-29T20:14:21+08:00][error] [1]Uncaught think\db\exception\PDOException: SQLSTATE[HY000] [2002] Connection refused in /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836
+Stack trace:
+#0 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/connector/Mysql.php(68): think\db\PDOConnection->getPDOStatement()
+#1 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(438): think\db\connector\Mysql->getFields()
+#2 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(395): think\db\PDOConnection->getTableFieldsInfo()
+#3 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(360): think\db\PDOConnection->getCachedSchemaInfo()
+#4 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(424): think\db\PDOConnection->getSchemaInfo()
+#5 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(500): think\db\PDOConnection->getTableInfo()
+#6 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(660): think\db\PDOConnection->getTableFields()
+#7 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(801): think\Model->checkAllowFields()
+#8 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(621): think\Model->insertData()
+#9 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(963): think\Model->save()
+#10 /www/wwwroot/tdata.tgbota.top/extend/listen/ExceptionLog.php(32): think\Model::create()
+#11 [internal function]: listen\ExceptionLog->handle()
+#12 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(334): ReflectionMethod->invokeArgs()
+#13 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(367): think\Container->invokeMethod()
+#14 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(289): think\Container->invoke()
+#15 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(250): think\Event->dispatch()
+#16 [internal function]: think\Event->trigger()
+#17 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Facade.php(97): call_user_func_array()
+#18 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/helper.php(230): think\Facade::__callStatic()
+#19 /www/wwwroot/tdata.tgbota.top/app/ExceptionHandle.php(74): event()
+#20 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/initializer/Error.php(59): app\ExceptionHandle->render()
+#21 [internal function]: think\initializer\Error->appException()
+#22 {main}
+  thrown[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2025-12-29T20:55:27+08:00][info] []
+[2025-12-29T21:28:44+08:00][info] [{"id":1012,"account_status":"正常","count":5}]
+[2025-12-29T21:29:44+08:00][info] {"action":"send_messages","api_id":"2040","api_hash":"b18441a1ff607e10a989891a5462e627","tdata_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/695277bebf004\/85247156022\/tdata\/temp_8272834892.session","proxy":"socks5:\/\/user-splmqynpf0-country-hk:9u6virjzTwd1PRZp4=@isp.decodo.com:10005","session_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/695277bebf004\/85247156022\/tdata\/temp_8272834892.session","group_id":"777000","message_type":"text","message_text":"dad","first_msg_id":0,"feedback_type":"","last_api_address":"http:\/\/127.0.0.1:5069"}
+[2025-12-29T21:29:44+08:00][info] 接口调用成功actionsend_messages,result{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":777000,"group_link":null,"type":"user","message":"发送成功","message_id":10}],"failed":[],"debug":["处理标识符: 777000, 清理后: 777000, 识别为链接: False, 识别为数字ID: True","通过数字ID获取成功: 777000 -> 类型: user, ID: 777000"],"warning":""}}
+[2025-12-29T21:30:50+08:00][info] [{"id":1012,"account_status":"退出","count":5}]
+[2025-12-29T21:33:57+08:00][info] [{"id":1012,"account_status":"退出","count":5}]
+[2025-12-29T22:01:26+08:00][info] [{"id":1012,"account_status":"正常","count":150}]
+[2025-12-29T22:03:08+08:00][info] {"action":"send_messages","api_id":"2040","api_hash":"b18441a1ff607e10a989891a5462e627","tdata_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/6952870fadb7f\/85297505654\/tdata\/temp_8513361016.session","proxy":"socks5:\/\/user-splmqynpf0-country-hk:9u6virjzTwd1PRZp4=@isp.decodo.com:10039","session_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/6952870fadb7f\/85297505654\/tdata\/temp_8513361016.session","group_id":"-4996895773","message_type":"text","message_text":"dd","first_msg_id":0,"feedback_type":"","last_api_address":"http:\/\/127.0.0.1:5060"}
+[2025-12-29T22:03:08+08:00][info] 接口调用成功actionsend_messages,result{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":-4996895773,"group_link":null,"type":"chat","message":"发送成功","message_id":7}],"failed":[],"debug":["处理标识符: -4996895773, 清理后: -4996895773, 识别为链接: False, 识别为数字ID: True","通过数字ID获取成功: -4996895773 -> 类型: chat, ID: 4996895773"],"warning":""}}

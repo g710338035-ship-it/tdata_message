@@ -1,0 +1,2219 @@
+<?php /*a:1:{s:60:"/www/wwwroot/tdata.tgbota.top/app/kefu/view/index/index.html";i:1773592375;}*/ ?>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>客服管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+<link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+<link href="/assets/element/index.css" rel="stylesheet">
+<link href="/assets/css/base.css" rel="stylesheet">
+<link href="/css/kfstyle.css" rel="stylesheet">
+<script src="/assets/element/vue.js"></script>
+<script src="/assets/element/index.js"></script>
+<script src="/assets/js/axios.min.js"></script>
+<script src="/assets/libs/vuedragable/Sortable.min.js"></script>
+<script src="/assets/libs/vuedragable/vuedraggable.umd.min.js"></script>
+<script src="/components/base.component.js"></script>
+<script src="/assets/libs/jquery/jquery.min.js"></script>
+<script src="/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="/assets/js/js.cookie.min.js"></script>
+<script src="/assets/js/common.js"></script>
+<script type="text/javascript">
+const base_url = '<?php echo getBaseUrl()?>';
+const base_dir = '';//勿要删除
+</script>
+
+</head>
+
+<body class="full-height-layout" style="height:100%; overflow:hidden" data-sidebar="dark">
+<div id="layout-wrapper" style="height:100%" v-if="mainShow">
+    <!-- 右键菜单 -->
+    <div v-if="showContextMenu" class="context-menu" :style="{left: menuX + 'px', top: menuY + 'px'}" @click.stop>
+        <!-- 聊天列表右键菜单 -->
+        <template v-if="menuType === 'chat' && contextChat">
+            <template v-if="contextChat.chat_type === 'private'">
+                <div class="context-menu-item" @click="blockUser">
+                    <i class="el-icon-warning-outline"></i>
+                    {{ contextChat.is_blocked ? '取消屏蔽' : '屏蔽此用户' }}
+                </div>
+                <div class="context-menu-item" @click="deleteContact">
+                    <i class="el-icon-user"></i>删除联系人
+                </div>
+
+            </template>
+            
+            <template v-else>
+                
+                <div class="context-menu-item" @click="deleteContact">
+                    <i class="el-icon-user"></i>退出群组
+                </div>
+            </template>
+            
+            <div class="context-menu-divider"></div>
+          
+            <div class="context-menu-item" @click="clearChatHistory">
+                <i class="el-icon-document-delete"></i>清空聊天记录
+            </div>
+        </template>
+        
+        <!-- 消息右键菜单 -->
+        <template v-if="menuType === 'message' && contextMessage">
+            <div class="context-menu-item" @click="replyToMessage">
+                <i class="el-icon-s-promotion"></i>回复
+            </div>
+            <div class="context-menu-item" @click="chatToMessage" v-if="activeChat && activeChat.chat_type != 'private'"
+            >
+                <i class="el-icon-s-promotion"></i>私信
+            </div>
+        </template>
+    </div>
+
+    <div class="vertical-menu">
+        <div data-simplebar style="height: 100%!important">
+            <div id="sidebar-menu">
+                <div id="status-stats-container" >
+                    <div class="navbar-brand-box">
+                        <div class="logo logo-light">
+                            <span class="logo-lg" style="font-size:16px;">
+                                客服管理系统
+                            </span>
+                        </div>
+                    </div>
+                    <div class="account-search">
+                        <el-input v-model="searchInput" size="small" prefix-icon="el-icon-search" clearable @blur="onBlur" placeholder="账号/昵称"></el-input>
+                    </div>
+                    
+                    <!-- 状态统计区域 -->
+                    <div  class="status-stats">
+                        <div class="status-header">
+                            <span class="status-title">账户状态统计</span>
+                            <span class="status-total">总计: {{ totalStats }}</span>
+                        </div>
+                        <div class="status-items">
+                            <el-tag 
+                                effect="dark" 
+                                size="small" 
+                                v-for="stat in statusStats" 
+                                :key="stat.account_status"
+                                :type="getStatusType(stat.account_status)"
+                                @click="filterByStatus(stat.account_status)"
+                            >
+                                {{ stat.account_status }}: {{ stat.count }}
+                            </el-tag>
+                            <el-tag 
+                                effect="dark" 
+                                size="small" 
+                                @click="filterByStatus('')"
+                            >
+                                刷新
+                            </el-tag>
+                        </div>
+                    </div>
+				</div>
+                <div id="back-to-top" class="back-to-top" @click="scrollToTop">
+                    <i class="el-icon-arrow-up"></i>
+                </div>
+                
+                <ul class="metismenu list-unstyled" id="side-menu">
+                    <li v-for="one in accounts" :key="one.account">
+                        <div class="waves-effect j_menu account-item" :class="{active: isActiveAccount(one), loading: loadingAccount && loadingAccount.tpid === one.tpid}" @click.prevent="!isActiveAccount(one) && onMenuClick(one)">
+                            <span class="account-left">
+                                <img v-if="one.avatar_url" :src="one.avatar_url" class="avatar">
+                                <span v-else class="avatar avatar-fallback">{{ getAvatarLetter(one) }}</span>
+                                <span class="account-info">
+                                    <span class="account-nick">{{ one.nickName }}</span>
+                                    <span class="account-id">{{ one.account }} <sup v-if="one.account_status=='正常'">{{ one.account_status }}</sup> <sub v-else>{{ one.account_status }}</sub></span>
+                                </span>
+                            </span>
+                            <span class="badge-unread" v-if="getUnread(one) > 0">{{ getUnread(one) }}</span>
+                            <span v-if="loadingAccount && loadingAccount.tpid === one.tpid" class="loading-spinner">
+                                <i class="el-icon-view"></i>
+                            </span>
+                        </div>
+                    </li>
+                    <li v-if="hasMore">
+                        <a href="javascript:void(0);" class="waves-effect" @click="loadMore">
+                            <span>加载更多（已加载{{ accounts.length }}/{{ total }}）</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 主内容区域 -->
+    <div id="content-main" class="main-content">
+        <!-- 顶部导航栏 -->
+        <div id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+                    <div class="navbar-header">
+                        <div class="d-flex" data-toggle="cospan">
+                            <i style="margin-left:15px;" @click="reload" class="el-icon-refresh hidden-sm-and-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="iconbutton">
+                        <el-dropdown trigger="click" placement="bottom" style="cursor: pointer;margin-right:15px;">
+                            <span class="el-dropdown-link">
+                                <?php echo session('kefu.username'); ?><i style="margin-left:0px; font-size:100%" class="icontool el-icon-arrow-down"></i>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item icon="el-icon-lock" @click.native.prevent="passwordDialogStatus = true">修改密码</el-dropdown-item>
+                                <el-dropdown-item icon="el-icon-back" @click.native.prevent="logout">退出</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 聊天室区域 -->
+        <div v-if='iframeSrc' class="chat-room-wrapper" v-loading="iframeLoading" element-loading-text="加载中..." element-loading-background="rgba(0,0,0,0.1)">
+            <!-- 回复提示 -->
+            <div v-if="replyingTo" class="replying-indicator">
+                <i class="el-icon-chat-line-round"></i>
+                正在回复 {{ replyingTo.sender_name }}: {{ replyingTo.content | truncate(30) }}
+                <el-button size="mini" type="text" @click="cancelReply" class="cancel-reply-btn">取消</el-button>
+            </div>
+            
+            <!-- 聊天室组件 -->
+            <div v-if="showChatRoom && activeAccount" class="chat-room-container">
+                <!-- 头部区域 -->
+                <div class="chat-header">
+                    <div class="header-left">
+                        <el-button icon="el-icon-arrow-left" size="small" @click="exitChatRoom" class="back-btn"></el-button>
+                        <div v-if="activeChat" class="chat-info">
+                            <i :class="activeChat.icon" :style="{color: activeChat.color}"></i>
+                            <div class="chat-details">
+                                <div class="chat-title" @click="copyToClipboard(activeChat.title, '聊天昵称')" :title="'点击复制: ' + activeChat.title">{{ activeChat.title }} #{{ activeChat.chat_id }}</div>
+                                <div v-if="activeChat.username" class="chat-username" @click="copyToClipboard(activeChat.username, '用户名')" :title="'点击复制: @' + activeChat.username">@{{ activeChat.username }}</div>
+                            </div>
+                        </div>
+                        <div v-else class="account-display">
+                            Tdata账户：{{activeAccount.nickName}} 【uid:{{activeAccount.uuid}}】
+                        </div>
+                    </div>
+                    <div v-if="activeChat" class="header-right">
+                        <el-button icon="el-icon-check" size="small" @click="markAsRead" v-if="activeChat.unread_count > 0" class="mark-read-btn">标记已读</el-button>
+                        <el-tag size="small" v-if="activeChat.unread_count > 0" type="danger" class="unread-badge">
+                            未读: {{ activeChat.unread_count }}
+                        </el-tag>
+                        <!--el-tag  size="small" v-if="activeChat.participants_count > 0" type="success"> 人数：{{activeChat.participants_count}}</el-tag-->
+                    </div>
+                </div>
+                
+                <div class="chat-main">
+                    <!-- 左侧聊天列表 -->
+                    <div class="chat-list"
+                         @contextmenu.prevent="onChatListContextMenu">
+                        <!-- 聊天列表 -->
+                        <div class="chat-items">
+                            <div 
+                                v-for="chat in filteredChats" 
+                                :key="chat._uniqueId || getChatUniqueKey(chat)"
+                                class="chat-item"
+                                :class="{active: activeChat && activeChat.id === chat.id}"
+                                @click="selectChat(chat)"
+                                @contextmenu.prevent="onChatContextMenu($event, chat)"
+                            >
+                                <div class="chat-avatar">
+                                    <img v-if="chat.avatar_path" :src="chat.avatar_path" class="chat-avatar-img"/>
+                                    <i v-else :class="chat.icon" :style="{color: chat.color}"></i>
+                                    <span 
+                                        v-if="chat.unread_count > 0"
+                                        class="unread-indicator"
+                                    >{{ chat.unread_count > 99 ? '99+' : chat.unread_count }}</span>
+                                </div>
+                                <div class="chat-content">
+                                    <div class="chat-header-row">
+                                        <span class="chat-name">{{ chat.title }}</span>
+                                        <span v-if="chat.last_message_time" class="chat-time">
+                                            {{ formatTime(chat.last_message_time) }}
+                                        </span>
+                                    </div>
+                                    <div class="chat-preview">
+                                        {{ chat.last_message_text || '暂无消息' }}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div v-if="filteredChats.length === 0" class="empty-chat-list">
+                                <i class="el-icon-chat-line-round"></i>
+                                <div>暂无聊天</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 右侧消息区域 -->
+                    <div class="message-area" @contextmenu.prevent="onMessageAreaContextMenu">
+                        <!-- 消息列表 -->
+                        <div ref="messageList" class="message-list" @scroll="onMessageScroll">
+                            <!-- 加载更多提示 -->
+                            <div v-if="loadingMore" class="loading-more">
+                                <i class="el-icon-loading"></i> 加载中...
+                            </div>
+                            
+                            <!-- 消息列表 -->
+                            <div v-for="message in messages" :key="`msg_${message.id}_${message.message_id || ''}`"
+                                 class="message-item" 
+                                 @contextmenu.prevent="onMessageContextMenu($event, message)">
+                                
+                                <!-- 在消息中的回复引用 -->
+                                <div v-if="message.reply_to_msg_id" class="message-reply-container" @click="scrollToRepliedMessage(message)">
+                                    <div class="reply-quote">
+                                        <div class="reply-quote-line" :style="{backgroundColor: getSenderColor(message.reply_to_sender_id, message.reply_to_sender_name)}"></div>
+                                        <div class="reply-quote-content">
+                                            <div class="reply-quote-header">
+                                                <i class="el-icon-chat-line-round reply-icon"></i>
+                                                <span class="reply-quote-user" :style="{color: getSenderColor(message.reply_to_sender_id, message.reply_to_sender_name)}">
+                                                    {{ message.reply_to_sender_name || '用户' }}
+                                                </span>
+                                                <span class="reply-quote-time" v-if="message.reply_to_message_time">
+                                                    {{ formatMessageTime(message.reply_to_message_time) }}
+                                                </span>
+                                            </div>
+                                            <div class="reply-quote-text">
+                                                {{ message.reply_to_content || '消息已被删除' }}
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div 
+                                    class="message-bubble-wrapper"
+                                    :class="{'outgoing': message.is_outgoing, 'incoming': !message.is_outgoing}"
+                                >
+                                    <!-- 发送者头像（仅接收消息显示） -->
+                                    <div v-if="!message.is_outgoing" class="sender-avatar">
+                                        <div class="avatar-circle" :style="{backgroundColor: getSenderColor(message.sender_id, message.sender_name)}">
+                                            {{ getSenderAvatarLetter(message.sender_name) }}
+                                        </div>
+                                    </div>
+                                    <!-- 自己的头像（发送的消息显示） -->
+                                    <div v-if="message.is_outgoing" class="sender-avatar">
+                                        <div class="avatar-circle my-avatar">
+                                            {{ getSenderAvatarLetter(activeAccount?.nickName || '我') }}
+                                        </div>
+                                    </div>
+                                    <!-- 消息内容区域 -->
+                                    <div class="message-content-container">
+                                        <!-- 发送者信息 -->
+                                        <div v-if="!message.is_outgoing" 
+                                             class="message-sender"
+                                             :style="{color: getSenderColor(message.sender_id, message.sender_name)}">
+                                            {{ message.sender_name }}
+                                            <span v-if="message.sender_id" class="sender-id">#{{ message.sender_id }}</span>
+                                        </div>
+                                        
+                                        <div 
+                                            class="message-bubble"
+                                            :style="{
+                                                background: message.is_outgoing ? '#95ec69' : '#fff',
+                                                borderLeft: message.is_outgoing ? 'none' : `3px solid ${getSenderColor(message.sender_id, message.sender_name)}`
+                                            }"
+                                        >
+                                          
+                                            <div v-if="message.message_type==='photo'||message.message_type==='image'||message.message_type==='image_text'" class="message-content">
+                                                <img v-if="message.content"  :src='message.content' class="message-image" @click="viewImage(message)"/>
+                                                <div v-if="message.message_text" class="image-caption">
+                                                    {{ message.message_text }}
+                                                </div>
+                                            </div>
+                                            <div v-else class="message-content">
+                                                {{ message.message_text }}
+                                            </div>
+                                            
+                                            <!-- 消息时间 -->
+                                            <div class="message-time">
+                                                {{ formatMessageTime(message.message_time) }}
+                                                <span v-if="message.is_outgoing" class="message-status">
+                                                    <i v-if="message.status === 'sent'" class="el-icon-check sent-icon"></i>
+                                                    <i v-if="message.status === 'read'" class="el-icon-check read-icon"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                            
+                            <!-- 暂无消息 -->
+                            <div v-if="messages.length === 0 && !loadingMessages" class="empty-messages">
+                                <i class="el-icon-chat-dot-square"></i>
+                                <div>暂无消息</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 发送消息区域 -->
+                        <div class="message-input" v-if="activeChat">
+                            <!-- 在消息输入区域的回复预览 -->
+                            <div v-if="replyingTo" class="reply-preview">
+                                <div class="reply-preview-header">
+                                    <span class="reply-label">回复</span>
+                                    <span class="reply-user" :style="{color: getSenderColor(replyingTo.sender_id, replyingTo.sender_name)}">
+                                        {{ replyingTo.sender_name }}
+                                    </span>
+                                    <el-button 
+                                        type="text" 
+                                        @click="cancelReply" 
+                                        class="cancel-reply-btn"
+                                        title="取消回复"
+                                    >
+                                        <i class="el-icon-close"></i>
+                                    </el-button>
+                                </div>
+                                <div class="reply-preview-content">
+                                    <div class="reply-content-text">
+                                        {{ replyingTo.content | truncate(80) }}
+                                    </div>
+                                    <div class="reply-arrow">
+                                        <i class="el-icon-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+        				     <Upload  size="small"  upload_type="1"  file_type="image" :image.sync="uploadedImages"></Upload>
+                            <div class="input-container">
+                                <el-input
+                                    type="textarea"
+                                    v-model="inputMessage"
+                                    placeholder="输入消息..."
+                                    :rows="3"
+                                    resize="none"
+                                    @keydown.ctrl.enter="sendMessage"
+                                    class="message-textarea"
+                                ></el-input>
+                                <el-button 
+                                    type="primary" 
+                                    @click="sendMessage"
+                                    :disabled="!inputMessage.trim() || sendingMessage"
+                                    :loading="sendingMessage"
+                                    class="send-btn"
+                                >
+                                    {{ sendingMessage ? '发送中...' : '发送' }}
+                                </el-button>
+                            </div>
+                            <div class="send-hint">
+                                按 Ctrl + Enter 发送
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div v-if="!iframeSrc" class="no-account-selected">
+            请选择右侧账户
+        </div>
+    </div>
+    
+    <!-- 修改密码弹窗 -->
+    <el-dialog title="重置密码" class="password-dialog" width="450px" :visible="passwordDialogStatus" :before-close="closeForm" append-to-body>
+        <el-form :size="size" ref="form" :model="form" :rules="rules" label-width="80px">
+            <el-row>
+                <el-col :span="24">
+                    <el-form-item label="新密码" prop="password">
+                        <el-input show-password autoComplete="off" v-model="form.password" clearable placeholder="请输入密码"></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+            <el-row>
+                <el-col :span="24">
+                    <el-form-item label="确认密码" prop="repassword">
+                        <el-input show-password autoComplete="off" v-model="form.repassword" clearable placeholder="请输入确认密码"></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+            <el-button :size="size" :loading="loading" type="primary" @click="submit">
+                <span v-if="!loading">确 定</span>
+                <span v-else>提 交 中...</span>
+            </el-button>
+            <el-button :size="size" @click="closeForm">取 消</el-button>
+        </div>
+    </el-dialog>
+    
+    <!-- 群组信息弹窗 -->
+    <el-dialog title="群组信息" :visible.sync="showGroupInfoDialog" width="500px" class="group-info-dialog">
+        <div v-if="selectedGroupInfo">
+            <!-- 群组基本信息 -->
+            <div class="group-basic-info">
+                <img :src="selectedGroupInfo.avatar_path" class="group-avatar" v-if="selectedGroupInfo.avatar_path">
+                <i :class="selectedGroupInfo.icon" :style="{color: selectedGroupInfo.color}" v-else></i>
+                <h3 class="group-title">{{ selectedGroupInfo.title }}</h3>
+                <p class="group-members">{{ selectedGroupInfo.member_count || 0 }} 位成员</p>
+            </div>
+            
+            <!-- 共同群组 -->
+            <div v-if="selectedGroupInfo.common_groups && selectedGroupInfo.common_groups.length > 0">
+                <h4 class="common-groups-title">共同群组 ({{ selectedGroupInfo.common_groups.length }})</h4>
+                <div class="common-groups">
+                    <div 
+                        v-for="group in selectedGroupInfo.common_groups" 
+                        :key="group.chat_id"
+                        class="common-group-item"
+                        @click="switchToGroup(group)"
+                    >
+                        <div class="common-group-content">
+                            <img :src="group.avatar_path" class="common-group-avatar" v-if="group.avatar_path">
+                            <i :class="group.icon" :style="{color: group.color}" v-else></i>
+                            <div class="common-group-details">
+                                <div class="common-group-name">{{ group.title }}</div>
+                                <div class="common-group-members">{{ group.member_count || 0 }} 位成员</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-else class="no-common-groups">
+                <p>暂无共同群组</p>
+            </div>
+        </div>
+        <div slot="footer" class="dialog-footer">
+            <el-button @click="showGroupInfoDialog = false">关闭</el-button>
+        </div>
+    </el-dialog>
+    
+    <!-- 确认弹窗 -->
+    <el-dialog :title="confirmDialog.title" :visible.sync="confirmDialog.visible" width="400px" class="confirm-dialog">
+        <span>{{ confirmDialog.message }}</span>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="confirmDialog.visible = false">取消</el-button>
+            <el-button type="primary" @click="confirmDialog.onConfirm">{{ confirmDialog.confirmText || '确定' }}</el-button>
+        </span>
+    </el-dialog>
+</div>
+
+<div class="menubar-overlay"></div>
+
+
+<script src="/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="/assets/js/app.js"></script>
+
+<script>
+// 注册全局过滤器
+Vue.filter('truncate', function(value, length) {
+    if (!value) return '';
+    if (value.length <= length) return value;
+    return value.substring(0, length) + '...';
+});
+
+new Vue({
+    el: '#layout-wrapper',
+    components:{
+		'draggable':window.vuedraggable,
+	},
+    data(){
+        var validatePass2 = (rule, value, callback) => {
+            if(value === '') {
+                callback(new Error('请再次输入密码'))
+            }else if (value !== this.form.password) {
+                callback(new Error('两次输入密码不一致!'))
+            }else {
+                callback()
+            }
+        }
+
+        return {
+            base_url: '<?php echo getBaseUrl()?>',
+            searchInput: '',
+            accounts: [],
+            iframeSrc: '',
+            refreshInterval: 10000,
+            refreshTimer: null,
+            sessionCheckInterval: 5000,
+            sessionCheckTimer: null,
+            page: 1,
+            pageSize: 200,
+            total: 0,
+            isLoading: false,
+            hasMore: false,
+            form: {
+                password:'',
+                repassword:'',
+            },
+            url:{},
+            levelList:[],
+            notice:[],
+            passwordDialogStatus:false,
+            loading:false,
+            size:'small',
+            urlobj:{},
+            clickSeq: 0,
+            lastClickAt: 0,
+            clickDelayMs: 300,
+            loadingAccount: null,
+            activeAccountKey: null,
+            iframeLoading: false,
+            iframeLoadTimer: null,
+            iframeLoadTimeoutMs: 15000,
+            rules: {
+                password: [{ required: true, message: '密码不能为空', trigger: 'blur' }],
+                repassword:[
+                    {required: true, validator: validatePass2, trigger: 'blur'},
+                ],
+            },
+            totalStats:<?php echo $totalCount; ?>,
+            statusStats:<?php echo $statusCounts; ?>,
+            showChatRoom: false,
+            activeAccount: null,
+            activeChat: null,
+            chats: [],
+            filteredChats: [],
+            messages: [],
+            chatSearch: '',
+            inputMessage: '',
+            loadingChats: false,
+            loadingMessages: false,
+            loadingMore: false,
+            sendingMessage: false,
+            messageOffset: 0,
+            hasMoreMessages: true,
+            messageRefreshTimer: null,
+            chatRefreshTimer: null,
+            
+            // 右键菜单相关
+            showContextMenu: false,
+            menuX: 0,
+            menuY: 0,
+            menuType: '', 
+            contextChat: null,
+            contextMessage: null,
+            
+            // 回复相关
+            replyingTo: null,
+            
+            // 弹窗相关
+            showGroupInfoDialog: false,
+            selectedGroupInfo: null,
+            
+            // 确认弹窗
+            confirmDialog: {
+                visible: false,
+                title: '',
+                message: '',
+                confirmText: '确定',
+                onConfirm: () => {}
+            },
+            senderColors: [
+                '#409EFF', // 蓝色
+                '#67C23A', // 绿色
+                '#E6A23C', // 橙色
+                '#F56C6C', // 红色
+                '#909399', // 灰色
+                '#8A2BE2', // 紫色
+                '#FF69B4', // 粉色
+                '#1E90FF', // 道奇蓝
+                '#32CD32', // 酸橙绿
+                '#FF4500', // 橙红色
+            ],
+            // 发送者颜色缓存
+            senderColorMap: {},
+            isRefreshingMessages: false,
+            lastMessageCount: 0,
+            uploadedImages:'',
+            chatCounter: 0,
+            searchStatus: '',
+            mainShow: false,
+        }
+    },
+    mounted(){
+        Cookies.set(this.base_url+'menu','')
+        this.loadAccounts(true)
+        this.startAutoRefresh()
+        
+        // 点击其他地方关闭右键菜单
+        document.addEventListener('click', this.closeContextMenu);
+        document.addEventListener('keydown', this.onKeydown);
+        
+        // 监听mainShow的变化，当它变为true时再查找滚动元素
+        this.$watch('mainShow', (newVal) => {
+            if (newVal) {
+                console.log('mainShow变为true，开始查找滚动元素...');
+                this.initScrollListener();
+            }
+        });
+        
+        // 如果mainShow已经是true，直接初始化滚动监听器
+        if (this.mainShow) {
+            this.$nextTick(() => {
+                this.initScrollListener();
+            });
+        }
+    },
+    beforeDestroy() {
+        // 清理事件监听
+        document.removeEventListener('click', this.closeContextMenu);
+        document.removeEventListener('keydown', this.onKeydown);
+        // 清理滚动事件监听
+        if (this.scrollElement) {
+            this.scrollElement.removeEventListener('scroll', this.handleSidebarScroll);
+        }
+    },
+    methods: {
+        initScrollListener() {
+            this.$nextTick(() => {
+                // 首先查找vertical-menu
+                const verticalMenu = document.querySelector('.vertical-menu');
+                // 查找带有data-simplebar属性的div
+                const simplebarContainer = verticalMenu ? verticalMenu.querySelector('[data-simplebar]') : null;
+          
+                
+                if (simplebarContainer) {
+                    // 尝试获取simplebar的滚动元素
+                    const scrollElement = simplebarContainer.querySelector('.simplebar-content-wrapper') || 
+                                         simplebarContainer.querySelector('.simplebar-scroll-content') || 
+                                         simplebarContainer;
+                 
+                    
+                    if (scrollElement) {
+                        scrollElement.addEventListener('scroll', this.handleSidebarScroll);
+                        this.scrollElement = scrollElement; // 保存滚动元素引用
+           
+                        
+                        // 立即执行一次滚动处理，确保初始状态正确
+                        this.handleSidebarScroll();
+                    }
+                }
+                
+                // 备用方案：直接为vertical-menu添加滚动事件监听
+                if (!this.scrollElement && verticalMenu) {
+                    verticalMenu.addEventListener('scroll', this.handleSidebarScroll);
+                    this.scrollElement = verticalMenu;
+                }
+            });
+        },
+        // 处理侧边栏滚动事件
+        handleSidebarScroll() {
+            // 使用保存的滚动元素引用
+            const scrollElement = this.scrollElement ||  document.querySelector('.vertical-menu [data-simplebar]');
+            const statusStats = document.getElementById('status-stats-container');
+            const backToTop = document.getElementById('back-to-top');
+            
+            if (scrollElement && statusStats && backToTop) {
+                const scrollTop = scrollElement.scrollTop;
+                const statsOffsetTop = statusStats.offsetTop;
+                
+                // 当滚动超过状态统计区域的位置时，设置为浮动
+                if (scrollTop > statsOffsetTop) {
+                    statusStats.style.position = 'fixed';
+                    statusStats.style.top = '0';
+                    statusStats.style.left = '0';
+                    statusStats.style.right = '0';
+                    statusStats.style.zIndex = '100';
+                    statusStats.style.background = '#121e2d';
+                    statusStats.style.width="240px";
+              
+                } else {
+                    statusStats.style.position = 'static';
+                    statusStats.style.background = '';
+                    statusStats.style.padding = '';
+                    statusStats.style.boxShadow = '';
+                }
+                
+                // 当滚动超过一定距离时，显示返回到顶部按钮
+                if (scrollTop > 300) {
+                    backToTop.style.display = 'block';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            }
+        },
+        
+        // 返回到顶部
+        scrollToTop() {
+            // 使用保存的滚动元素引用
+            const scrollElement = this.scrollElement || document.querySelector('.vertical-menu [data-simplebar]');
+            if (scrollElement) {
+                scrollElement.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        },
+        getImageUrl(message) {
+            if (!message || !message.content) {
+                return ''; // 返回空字符串或占位图
+            }
+            
+            // 检查是否为有效URL
+            const content = String(message.content).trim();
+            
+            // 如果是base64图片
+            if (content.startsWith('data:image/')) {
+                return content;
+            }
+            
+            // 如果是相对路径，添加基础URL
+            if (content.startsWith('./') || content.startsWith('../') || !content.includes('://')) {
+                return this.base_url + (content.startsWith('/') ? '' : '/') + content;
+            }
+            
+            // 完整的URL
+            return content;
+        },
+         // 查看图片大图
+    
+        viewImage(message) {
+    if (!message || !message.content) {
+        this.$message.warning('图片地址无效');
+        return;
+    }
+    
+    const imageUrl = this.getImageUrl(message);
+    
+    // 创建预览模态框
+    const modal = document.createElement('div');
+    modal.className = 'image-preview-modal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    // 创建图片容器
+    const imgContainer = document.createElement('div');
+    imgContainer.style.cssText = `
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    `;
+    
+    // 创建图片
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.style.cssText = `
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 4px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+        cursor: default;
+    `;
+    
+    // 创建关闭按钮
+    const closeBtn = document.createElement('div');
+    closeBtn.innerHTML = '×';
+    closeBtn.className = 'image-preview-close';
+    closeBtn.style.cssText = `
+        position: absolute;
+        top: -40px;
+        right: -10px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        user-select: none;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+        z-index: 10000;
+    `;
+    
+    // 鼠标悬停效果
+    closeBtn.onmouseenter = () => {
+        closeBtn.style.opacity = '1';
+    };
+    closeBtn.onmouseleave = () => {
+        closeBtn.style.opacity = '0.8';
+    };
+    
+    // 添加事件监听器
+    const closePreview = () => {
+        document.body.removeChild(modal);
+        document.removeEventListener('keydown', handleEscKey);
+    };
+    
+    // 点击关闭按钮
+    closeBtn.onclick = (e) => {
+        e.stopPropagation(); // 阻止事件冒泡
+        closePreview();
+    };
+    
+    // 点击背景关闭
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            closePreview();
+        }
+    };
+    
+    // ESC键关闭
+    const handleEscKey = (e) => {
+        if (e.key === 'Escape') {
+            closePreview();
+        }
+    };
+    
+    // 组装元素
+    imgContainer.appendChild(img);
+    imgContainer.appendChild(closeBtn);
+    modal.appendChild(imgContainer);
+    document.body.appendChild(modal);
+    
+    // 添加ESC键监听
+    document.addEventListener('keydown', handleEscKey);
+    
+    // 触发淡入动画
+    setTimeout(() => {
+        modal.style.opacity = '1';
+    }, 10);
+    
+    // 图片加载失败处理
+    img.onerror = () => {
+        img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMyMjIiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSI4MCIgcj0iMjAiIGZpbGw9IiM2NjYiLz48cGF0aCBkPSJNMTQwIDE0MEg2MEM2NiA5MCAxMzQgOTAgMTQwIDE0MFoiIGZpbGw9IiM2NjYiLz48dGV4dCB4PSIxMDAiIHk9IjE3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzk5OSIgZm9udC1zaXplPSIxMiI+5Zu+54mH5Y2V5L2N</dGV4dD48L3N2Zz4=';
+        img.style.maxWidth = '200px';
+        img.style.maxHeight = '200px';
+        img.style.opacity = '0.7';
+        this.$message.error('图片加载失败');
+    };
+},
+        // 获取发送者颜色
+        getSenderColor(senderId, senderName) {
+            if (!senderId && !senderName) return '#909399';
+            
+            // 如果已经有缓存的颜色，直接返回
+            const key = senderId || senderName;
+            if (this.senderColorMap[key]) {
+                return this.senderColorMap[key];
+            }
+            
+            // 根据用户ID或名称生成确定性的颜色
+            let hash = 0;
+            const str = String(senderId || senderName);
+            
+            for (let i = 0; i < str.length; i++) {
+                hash = str.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            
+            // 生成颜色索引
+            const colorIndex = Math.abs(hash) % this.senderColors.length;
+            const color = this.senderColors[colorIndex];
+            
+            // 缓存颜色
+            this.senderColorMap[key] = color;
+            
+            return color;
+        },
+        
+        // 获取发送者头像字母
+        getSenderAvatarLetter(senderName) {
+            if (!senderName) return '?';
+            return senderName.charAt(0).toUpperCase();
+        },
+        // 键盘事件处理
+        onKeydown(e) {
+            if (e.key === 'Escape') {
+                this.closeContextMenu();
+                this.cancelReply();
+            }
+        },
+        
+        // 关闭右键菜单
+        closeContextMenu() {
+            this.showContextMenu = false;
+            this.contextChat = null;
+            this.contextMessage = null;
+        },
+        
+        // 聊天列表右键菜单
+        onChatListContextMenu(e) {
+            this.closeContextMenu();
+            this.menuType = 'chat';
+            this.contextChat = null; // 空白处点击
+            this.menuX = e.clientX;
+            this.menuY = e.clientY;
+            this.showContextMenu = true;
+        },
+        
+        // 聊天项右键菜单
+        onChatContextMenu(e, chat) {
+            this.closeContextMenu();
+            this.menuType = 'chat';
+            this.contextChat = chat;
+            this.menuX = e.clientX;
+            this.menuY = e.clientY;
+            this.showContextMenu = true;
+            e.stopPropagation();
+        },
+        
+        // 消息区域右键菜单
+        onMessageAreaContextMenu(e) {
+            this.closeContextMenu();
+            this.menuType = 'message';
+            this.contextMessage = null; // 空白处点击
+            this.menuX = e.clientX;
+            this.menuY = e.clientY;
+            this.showContextMenu = true;
+        },
+        
+        // 消息右键菜单
+        onMessageContextMenu(e, message) {
+            this.closeContextMenu();
+            this.menuType = 'message';
+            this.contextMessage = message;
+            this.menuX = e.clientX;
+            this.menuY = e.clientY;
+            this.showContextMenu = true;
+            e.stopPropagation();
+        },
+        
+       
+        
+        // 切换群组
+        async switchToGroup(group) {
+            // 查找对应的聊天
+            const targetChat = this.chats.find(c => c.chat_id === group.chat_id);
+            if (targetChat) {
+                await this.selectChat(targetChat);
+                this.showGroupInfoDialog = false;
+            }
+        },
+        
+     
+        
+        // 屏蔽用户
+        async blockUser() {
+            if (!this.contextChat) return;
+             // 保存当前值到局部变量
+            const contextChat = this.contextChat;
+            const activeAccountId = this.activeAccount?.id;
+            const activeChat = this.activeChat;
+            
+            if (!activeAccountId) {
+                this.$message.error('请先选择一个账号');
+                this.closeContextMenu();
+                return;
+            }
+            this.closeContextMenu();
+            
+            this.showConfirmDialog({
+                title: contextChat.is_blocked ? '取消屏蔽' : '屏蔽用户',
+                message: contextChat.is_blocked ? 
+                    `确定要取消屏蔽 ${contextChat.title} 吗？` :
+                    `确定要屏蔽 ${contextChat.title} 吗？屏蔽后将不再接收该用户的消息。`,
+                onConfirm: async () => {
+                    try {
+                        const payload = new URLSearchParams();
+                        payload.append('chat_id', contextChat.chat_id);
+                        payload.append('tdid', activeAccountId);
+                        payload.append('action', contextChat.is_blocked ? 'unblock' : 'block');
+                        
+                        const res = await axios.post(this.base_url + '/Teletdata/blockUser', payload);
+                        if (res.data.code === 200) {
+                            contextChat.is_blocked = !contextChat.is_blocked;
+                            // 更新聊天列表
+                            const chatIndex = this.chats.findIndex(c => c.id === contextChat.id);
+                            if (chatIndex > -1) {
+                                this.chats[chatIndex].is_blocked = contextChat.is_blocked;
+                                this.filteredChats = [...this.chats];
+                            }
+                            // 如果当前正在与该联系人聊天，清除当前聊天窗口
+                            if (activeChat && activeChat.id === contextChat.id) {
+                                this.exitChatRoom();
+                            }
+                            this.$message.success(contextChat.is_blocked ? '已屏蔽用户' : '已取消屏蔽');
+                        }
+                    } catch (error) {
+                        console.error('操作失败:', error);
+                        this.$message.error('操作失败');
+                    }
+                    this.closeContextMenu();
+                }
+            });
+        },
+        
+        // 删除联系人
+        async deleteContact() {
+            if (!this.contextChat) return;
+             // 保存当前值到局部变量
+            const contextChat = this.contextChat;
+            const activeAccountId = this.activeAccount?.id;
+            const activeChat = this.activeChat;
+            
+            if (!activeAccountId) {
+                this.$message.error('请先选择一个账号');
+                this.closeContextMenu();
+                return;
+            }
+            this.closeContextMenu();
+            this.showConfirmDialog({
+                title: '删除联系人',
+                message: `确定要删除联系人 ${contextChat.title} 吗？删除后将无法恢复。`,
+                confirmText: '删除',
+                onConfirm: async () => {
+                    try {
+                        const payload = new URLSearchParams();
+                        payload.append('chat_id', contextChat.chat_id);
+                        payload.append('tdid', activeAccountId);
+                        
+                        const res = await axios.post(this.base_url + '/Teletdata/deleteUser', payload);
+                        if (res.data.code === 200) {
+                            // 从聊天列表中移除
+                            const chatIndex = this.chats.findIndex(c => c.id === contextChat.id);
+                            if (chatIndex > -1) {
+                                this.chats.splice(chatIndex, 1);
+                                this.filteredChats = [...this.chats];
+                            }
+                            // 如果当前正在与该联系人聊天，清除当前聊天窗口
+                            if (activeChat && activeChat.id === contextChat.id) {
+                                this.exitChatRoom();
+                            }
+                            this.$message.success('联系人已删除');
+                        }
+                    } catch (error) {
+                        console.error('删除失败:', error);
+                        this.$message.error('删除失败');
+                    }
+                   
+                }
+            });
+        },
+        
+        
+        // 清空聊天记录
+        async clearChatHistory() {
+            if (!this.contextChat) return;
+            
+            // 保存当前值到局部变量
+            const contextChat = this.contextChat;
+            const activeAccountId = this.activeAccount?.id;
+            const activeChat = this.activeChat;
+            
+            if (!activeAccountId) {
+                this.$message.error('请先选择一个账号');
+                this.closeContextMenu();
+                return;
+            }
+            this.closeContextMenu();
+            this.showConfirmDialog({
+                title: '清空聊天记录',
+                message: `确定要清空与 ${contextChat.title} 的聊天记录吗？此操作不可恢复。`,
+                confirmText: '清空',
+                onConfirm: async () => {
+                    try {
+        
+                        
+                        const payload = new URLSearchParams();
+                        payload.append('chat_id', contextChat.chat_id);
+                        payload.append('tdid', activeAccountId);
+                        
+                        const res = await axios.post(this.base_url + '/Teletdata/deleteHistory', payload);
+                        
+                        if (res.data.code === 200) {
+                            // 清空消息列表 - 使用保存的变量
+                            if (activeChat && activeChat.id === contextChat.id) {
+                                this.messages = [];
+                            }
+                            
+                            // 更新聊天最后消息 - 使用保存的变量
+                            const chatIndex = this.chats.findIndex(c => c.id === contextChat.id);
+                            if (chatIndex > -1) {
+                                this.chats[chatIndex].last_message_text = '';
+                                this.chats[chatIndex].last_message_time = '';
+                                this.filteredChats = [...this.chats];
+                            }
+                            
+                            this.$message.success('聊天记录已清空');
+                        } else {
+                            this.$message.error(res.data.msg || '清空失败');
+                        }
+                    } catch (error) {
+                        console.error('清空失败:', error);
+                        this.$message.error('清空失败: ' + (error.message || '未知错误'));
+                    }
+                    
+                }
+            });
+        },
+        
+        // 回复消息
+        replyToMessage() {
+            if (!this.contextMessage) return;
+            
+            this.replyingTo = {
+                message_id: this.contextMessage.message_id || this.contextMessage.id,
+                sender_name: this.contextMessage.sender_name,
+                content: this.contextMessage.content
+            };
+            
+            // 滚动到输入框
+            this.$nextTick(() => {
+                const input = document.querySelector('.message-input textarea');
+                if (input) input.focus();
+            });
+            
+            this.closeContextMenu();
+        },
+        
+        // 取消回复
+        cancelReply() {
+            this.replyingTo = null;
+        },
+        
+        
+        // 显示确认对话框
+        showConfirmDialog(options) {
+            this.confirmDialog = {
+                visible: true,
+                title: options.title,
+                message: options.message,
+                confirmText: options.confirmText || '确定',
+                cancelText: options.cancelText || '取消',
+                // 包装 onConfirm 支持异步
+                onConfirm: async () => {
+                    try {
+                        // 如果有用户回调，执行它
+                        if (options.onConfirm) {
+                            await options.onConfirm();
+                        }
+                    } catch (error) {
+                        console.error('确认操作失败:', error);
+                        // 可以选择是否抛出错误
+                        throw error;
+                    } finally {
+                        // 无论成功失败，都关闭对话框
+                        this.confirmDialog.visible = false;
+                    }
+                },
+                onCancel: () => {
+                    if (options.onCancel) {
+                        options.onCancel();
+                    }
+                    this.confirmDialog.visible = false;
+                }
+            };
+        },
+        
+        // 修改发送消息方法以支持回复
+        async sendMessage() {
+            const hasText = this.inputMessage.trim();
+            const hasImages = this.uploadedImages;
+            if ((!hasText && !hasImages) || !this.activeChat || this.sendingMessage) return;
+            
+            this.sendingMessage = true;
+            try {
+                let media_type = 'text';
+                const payload = new URLSearchParams();
+                payload.append('chat_id', this.activeChat.chat_id);
+                payload.append('account_id', this.activeAccount.account);
+                // 处理文本内容
+                if (hasText) {
+                    payload.append('message', this.inputMessage);
+                }
+                
+                // 如果有回复的消息，添加回复ID
+                if (this.replyingTo) {
+                    payload.append('reply_to_msg_id', this.replyingTo.message_id);
+                }
+                
+                // 处理图片
+                if (hasImages) {
+                    media_type = hasText && hasImages ? 'image_text' : 'image';
+                    // 将图片URL数组转换为JSON字符串
+                    const media_urls = this.uploadedImages;
+                    payload.append('images', media_urls);
+                    
+                }
+                
+                payload.append('message_type', media_type);
+                
+                const res = await axios.post(this.base_url + '/Teletdata/sendMessage', payload);
+                if (res.data.code === 200) {
+                    // 添加到消息列表
+                    if (res.data.data && res.data.data.message_id) {
+                        
+                        const newMessage = {
+                            message_id: res.data.data.message_id,
+                            account_id: this.activeAccount.account,
+                            chat_id: this.activeChat.chat_id,
+                            sender_id: this.activeAccount.id,
+                            sender_name: this.activeAccount.nickName,
+                            message_type: media_type,           // text | image | video | file
+                            message_text: media_type === 'text'? this.inputMessage: '',
+                            content: media_type !== 'text'? (hasImages ? this.uploadedImages : ''): '',
+                            images: hasImages ? this.uploadedImages : [],
+                            message_time: new Date().toISOString(),
+                            is_outgoing: 1,
+                        };
+                        // 如果有回复，添加回复信息
+                        if (this.replyingTo) {
+                            newMessage.reply_to_msg_id = this.replyingTo.message_id;
+                            newMessage.reply_to_sender_name = this.replyingTo.sender_name;
+                            newMessage.reply_to_content = this.replyingTo.content;
+                        }
+                        
+                        this.messages.push(newMessage);
+                        
+                        this.inputMessage = '';
+                        this.uploadedImages = '';
+                        this.cancelReply(); // 清空回复
+                        
+                        // 滚动到底部
+                        this.$nextTick(() => {
+                            this.scrollToBottom();
+                        });
+                        
+                        // 更新聊天列表中的最后消息
+                        this.updateChatLastMessage();
+                    }    
+                } else {
+                    this.$message.error(res.data.msg);
+                }
+            } catch (error) {
+                console.error('发送消息失败:', error);
+                this.$message.error('发送失败');
+            } finally {
+                this.sendingMessage = false;
+            }
+        },
+        
+        // 原有的其他方法保持不变...
+        getStatusType(status) {
+            const typeMap = {
+                '正常': 'success',
+                '退出': 'warning',
+                '异常': 'danger',
+                '封号': 'info',
+                '注销': 'warning',
+                '未授权': 'info'
+            };
+            return typeMap[status] || 'info';
+        },
+        onBlur() {
+            console.log(this.searchInput)
+            this.loadAccounts(true)
+        },
+        filterByStatus(status){
+            this.searchStatus = status
+            this.loadAccounts(true)
+        },
+        loadAccounts(reset=false){
+                if(this.isLoading) return
+                if(reset){
+                    this.page = 1
+                    this.accounts = []
+                }
+                this.isLoading = true
+                const payload = new URLSearchParams();
+                payload.append('page', this.page)
+                payload.append('pageSize', this.pageSize)
+                payload.append('keyword', this.searchInput)
+                payload.append('status', this.searchStatus)
+
+                axios.post(this.base_url + '/Index/accountList', payload).then(res => {
+                    this.isLoading = false
+                    if(res.data && res.data.code == 200){
+                        this.mainShow = true;
+                        const list = Array.isArray(res.data.data && res.data.data.data) ? res.data.data.data : []
+                        
+                        // 对账户列表进行排序：未读消息多的在前，然后按账户状态
+                        list.sort((a, b) => {
+                            // 获取未读消息数
+                            const unreadA = this.getUnread(a);
+                            const unreadB = this.getUnread(b);
+                            
+                            // 优先按未读消息数排序（从多到少）
+                            if (unreadB !== unreadA) {
+                                return unreadB - unreadA;
+                            }
+                            
+                            // 如果未读消息数相同，按账户状态排序
+                            // 正常状态的账户优先显示
+                            const statusOrder = {
+                                '正常': 1,
+                                '未授权': 2,
+                                '异常': 3,
+                                '退出': 4,
+                                '封号': 5,
+                                '注销': 6
+                            };
+                            
+                            const orderA = statusOrder[a.account_status] || 99;
+                            const orderB = statusOrder[b.account_status] || 99;
+                            
+                            return orderA - orderB;
+                        });
+                        
+                        this.total = Number(res.data.data && res.data.data.total || list.length)
+                        const existingKeys = new Set(this.accounts.map(a => a.account || a.tpid || a.id))
+                        list.forEach(one => {
+                            const key = one.account || one.tpid || one.id
+                            if(!existingKeys.has(key)){
+                                this.accounts.push(one)
+                            }
+                        })
+                        this.hasMore = this.accounts.length < this.total
+                        Cookies.set(this.base_url+'breadcrumb','')
+                        sessionStorage.setItem(this.base_url+'breadcrumb', JSON.stringify(this.accounts))
+                        this.$nextTick(() => {
+                            try{ $('#side-menu').metisMenu('dispose') }catch(e){}
+                            $('#side-menu').metisMenu()
+                        })
+                        //if (reset) { this.startMonitorBatch() }
+                    }else if(res.data && res.data.code == 400){
+                        window.location.href = base_url+'/login/index'
+                    }
+                }).catch(() => { this.isLoading = false })
+            },
+            
+  
+            submit(){
+    			this.$refs['form'].validate(valid => {
+    				if(valid) {
+    					this.loading = true
+    					axios.post(base_url+'/Baseinfo/resetPwd',this.form).then(res => {
+    						if(res.data.status == 200){
+    							this.$message({message: '操作成功', type: 'success'})
+    							this.closeForm()
+    						}else{
+    							this.$message.error('修改失败')
+    						}
+    					}).catch(()=>{
+    						this.loading = false
+    					})
+    				}
+    			})
+    		},
+    		closeForm(){
+    			this.passwordDialogStatus = false
+    			this.loading = false
+    			if (this.$refs['form']!==undefined) {
+    				this.$refs['form'].resetFields()
+    			}
+    		},
+    
+    	
+    		logout(){
+    			this.$confirm('确定注销并且退出系统?', '提示', {
+    				confirmButtonText: '确定',
+    				cancelButtonText: '取消',
+    				type: 'warning'
+    			}).then(()=>{
+    				axios.get(base_url+'/Login/logout').then(res => {
+    					if(res.data.status == 200){
+    						sessionStorage.setItem(base_url+'breadcrumb','')
+    						Cookies.set(base_url+'menu','')
+    						window.location.href = base_url+'/login/index'
+    					}
+    				})
+    			})
+    		},
+    		reload(){
+    			location.reload()
+    		},
+            loadMore(){
+                if(this.hasMore && !this.isLoading){
+                    this.page += 1
+                    this.loadAccounts(false)
+                }
+            },
+            startAutoRefresh(){
+                if(this.refreshTimer){
+                    clearInterval(this.refreshTimer)
+                }
+                this.refreshTimer = setInterval(() => {
+                    this.refreshUnread()
+                }, this.refreshInterval)
+            },
+            startSessionCheck(){
+                if(this.sessionCheckTimer){
+                    clearInterval(this.sessionCheckTimer)
+                }
+                this.sessionCheckTimer = setInterval(() => {
+                    this.sessionCheck()
+                }, this.sessionCheckInterval)
+            },
+            
+            sessionCheck(){
+                axios.post(this.base_url + '/Index/checkKf').then(res => {
+                    if(res && res.data && res.data.code === 400 ){
+                        window.top.location.href = this.base_url + '/login/index'
+                    }
+                }).catch(() => {})
+            },
+            
+            refreshUnread(){
+                if(this.accounts.length === 0){
+                    this.loadAccounts(true)
+                    return
+                }
+                const pagesNeeded = Math.max(1, Math.ceil(this.accounts.length / this.pageSize))
+                const reqs = []
+                for(let p = 1; p <= pagesNeeded; p++){
+                    const payload = new URLSearchParams()
+                    payload.append('page', p)
+                    payload.append('pageSize', this.pageSize)
+                    payload.append('keyword', this.searchInput)
+                    reqs.push(axios.post(this.base_url + '/Index/accountList', payload))
+                }
+                Promise.all(reqs).then(responses => {
+                    const map = {}
+                    responses.forEach(res => {
+                        if(res.data && res.data.code == 200){
+                            const list = Array.isArray(res.data.data && res.data.data.data) ? res.data.data.data : []
+                            list.forEach(one => { const key = one.account || one.tpid || one.id; map[key] = one })
+                            this.total = Number(res.data.data && res.data.data.total || this.total)
+                        }
+                    })
+                    this.accounts = this.accounts.map(old => {
+                        const key = old.account || old.tpid || old.id
+                        const newer = map[key]
+                        if(newer){
+                            return Object.assign({}, old, {
+                                unread: newer.unread ??  0,
+                                account_status:newer.account_status 
+                                })
+                        }
+                        return old
+                    })
+                    // 重新排序：未读消息多的在前
+                    this.accounts.sort((a, b) => {
+                        const unreadA = this.getUnread(a);
+                        const unreadB = this.getUnread(b);
+                        
+                        // 优先按未读消息数排序
+                        if (unreadB !== unreadA) {
+                            return unreadB - unreadA;
+                        }
+                        
+                        // 按账户状态排序
+                        const statusOrder = {
+                            '正常': 1,
+                            '未授权': 2,
+                            '异常': 3,
+                            '退出': 4,
+                            '封号': 5,
+                            '注销': 6
+                        };
+                        
+                        const orderA = statusOrder[a.account_status] || 99;
+                        const orderB = statusOrder[b.account_status] || 99;
+                        
+                        return orderA - orderB;
+                    })
+                    
+                    this.hasMore = this.accounts.length < this.total
+                    this.$nextTick(() => {
+                        try{ $('#side-menu').metisMenu('dispose') }catch(e){}
+                        $('#side-menu').metisMenu()
+                    })
+                })
+            },
+            getUnread(one){
+                const a = one.unread
+                const d = one.unread_chats
+                const e = one.unreadChats
+                const b = one.unreadCount
+                const c = one.count
+                const val = Number(a ?? d ?? e ?? b ?? c ?? 0)
+                return isNaN(val) ? 0 : val
+            },
+            getAvatarLetter(one){
+                const s = String((one.nickName || one.account || '').trim())
+                return s ? s.charAt(0).toUpperCase() : '?'
+            },
+            
+            
+            // 进入聊天室
+            enterChatRoom(account) {
+                this.showChatRoom = true;
+                this.activeAccount = account;
+                this.activeChat = null;
+                this.messages = [];
+                this.inputMessage = '';
+                
+                // 加载聊天列表
+                this.loadChats();
+                
+                // 启动自动刷新
+                this.startMessageRefresh();
+                this.startChatRefresh();
+                
+                // 更新路由/历史
+                //history.pushState({ chatRoom: true }, '', `#chat/${account.tpid}`);
+            },
+            
+            // 退出聊天室
+            exitChatRoom() {
+                //this.showChatRoom = false;
+                //this.activeAccount = null;
+                this.activeChat = null;
+                this.loadChats();
+                this.messages=[];
+                this.inputMessage = '';
+                this.replyingTo = null;
+                
+                this.stopMessageRefresh();
+                this.stopChatRefresh();
+                //history.pushState({}, '', '#');
+            },
+            
+            // 加载聊天列表
+            async loadChats() {
+                if (!this.activeAccount || this.loadingChats) return;
+                
+                this.loadingChats = true;
+                try {
+                    const payload = new URLSearchParams();
+                    payload.append('tpid', this.activeAccount.tpid);
+                    payload.append('account_id', this.activeAccount.account);
+                    
+                    const res = await axios.post(this.base_url + '/Index/getChats', payload);
+                    if (res.data.code === 200) {
+                        // 排序逻辑
+                        const sortedChats = res.data.data.sort((a, b) => {
+                            // 未读消息多的在前
+                            const unreadDiff = (b.unread_count || 0) - (a.unread_count || 0);
+                            if (unreadDiff !== 0) return unreadDiff;
+                            
+                            // 按最后消息时间倒序
+                            const timeA = a.last_message_time ? new Date(a.last_message_time).getTime() : 0;
+                            const timeB = b.last_message_time ? new Date(b.last_message_time).getTime() : 0;
+                            return timeB - timeA;
+                        });
+                        
+                        this.chats = sortedChats;
+                        this.filteredChats = sortedChats;
+                    }
+                } catch (error) {
+                    console.error('加载聊天列表失败:', error);
+                } finally {
+                    this.loadingChats = false;
+                }
+            },
+            
+            // 搜索聊天
+            searchChats() {
+                if (!this.chatSearch.trim()) {
+                    this.filteredChats = [...this.chats];
+                    return;
+                }
+                
+                const keyword = this.chatSearch.toLowerCase();
+                this.filteredChats = this.chats.filter(chat => 
+                    chat.title.toLowerCase().includes(keyword) ||
+                    (chat.username && chat.username.toLowerCase().includes(keyword))
+                );
+            },
+            
+            // 选择聊天
+            async selectChat(chat) {
+               
+                this.activeChat = chat;
+                this.messages = [];
+                this.messageOffset = 0;
+                this.hasMoreMessages = true;
+                
+                // 加载消息
+                await this.loadMessages();
+                
+                // 标记为已读
+                await this.markAsRead();
+                
+                // 滚动到底部
+                this.$nextTick(() => {
+                    this.scrollToBottom();
+                });
+            },
+            
+            // 加载消息
+            async loadMessages() {
+                if (!this.activeChat || this.loadingMessages) return;
+                
+                this.loadingMessages = true;
+                try {
+                    const payload = new URLSearchParams();
+                    payload.append('chat_id', this.activeChat.chat_id);
+                    payload.append('account_id', this.activeAccount.account);
+                    payload.append('limit', 50);
+                    payload.append('offset', this.messageOffset);
+                    
+                    const res = await axios.post(this.base_url + '/Index/getMessages', payload);
+                    if (res.data.code === 200) {
+                        const newMessages = res.data.data;
+                        // 去重逻辑
+                        this.addMessages(newMessages);
+                        this.messageOffset += newMessages.length;
+                        this.hasMoreMessages = newMessages.length >= 50;
+                    }
+                } catch (error) {
+                    console.error('加载消息失败:', error);
+                } finally {
+                    this.loadingMessages = false;
+                }
+            },
+            
+            // 加载更多消息（滚动时）
+            onMessageScroll(event) {
+                const element = event.target;
+                if (element.scrollTop === 0 && this.hasMoreMessages && !this.loadingMore) {
+                    this.loadMoreMessages();
+                }
+            },
+            
+            // 加载更多消息
+            async loadMoreMessages() {
+                this.loadingMore = true;
+                await this.loadMessages();
+                this.loadingMore = false;
+            },
+            
+           
+            // 标记为已读
+            async markAsRead() {
+                if (!this.activeChat || this.activeChat.unread_count === 0) return;
+                
+                try {
+                    const payload = new URLSearchParams();
+                    payload.append('chat_id', this.activeChat.chat_id);
+                    payload.append('tdid', this.activeAccount.id);
+                    
+                    await axios.post(this.base_url + '/Teletdata/markAsRead', payload);
+                    
+                    // 更新本地数据
+                    this.activeChat.unread_count = 0;
+                    const chatIndex = this.chats.findIndex(c => c.id === this.activeChat.id);
+                    if (chatIndex > -1) {
+                        this.chats[chatIndex].unread_count = 0;
+                    }
+                } catch (error) {
+                    console.error('标记已读失败:', error);
+                }
+            },
+            
+            // 更新聊天最后消息
+            updateChatLastMessage() {
+                if (!this.activeChat || !this.inputMessage.trim()) return;
+    
+                const chatIndex = this.chats.findIndex(c => c.id === this.activeChat.id);
+                if (chatIndex > -1) {
+                    const now = new Date().toISOString();
+                    this.chats[chatIndex].last_message_text = this.inputMessage;
+                    this.chats[chatIndex].last_message_time = now;
+                    this.filteredChats = [...this.chats];
+                    
+                    // 也更新当前活跃聊天
+                    if (this.activeChat.id === this.chats[chatIndex].id) {
+                        this.activeChat.last_message_text = this.inputMessage;
+                        this.activeChat.last_message_time = now;
+                    }
+                }
+            },
+            
+            // 滚动到底部
+            scrollToBottom() {
+                const messageList = this.$refs.messageList;
+                if (messageList) {
+                    messageList.scrollTop = messageList.scrollHeight;
+                }
+            },
+            
+            // 格式化时间
+            formatTime(time) {
+                const date = new Date(time);
+                const now = new Date();
+                const diff = now - date;
+                
+                if (diff < 24 * 60 * 60 * 1000) {
+                    // 今天
+                    return date.toLocaleTimeString('zh-CN', { 
+                        hour: '2-digit', 
+                        minute: '2-digit' 
+                    });
+                } else if (diff < 7 * 24 * 60 * 60 * 1000) {
+                    // 一周内
+                    return date.toLocaleDateString('zh-CN', { 
+                        weekday: 'short' 
+                    });
+                } else {
+                    // 更早
+                    return date.toLocaleDateString('zh-CN', { 
+                        month: 'short', 
+                        day: 'numeric' 
+                    });
+                }
+            },
+            
+            formatMessageTime(time) {
+                const date = new Date(time);
+                return date.toLocaleTimeString('zh-CN', { 
+                    hour: '2-digit', 
+                    minute: '2-digit' 
+                });
+            },
+            
+            // 启动消息刷新
+            startMessageRefresh() {
+                this.stopMessageRefresh();
+                this.messageRefreshTimer = setInterval(() => {
+                    if (this.activeChat) {
+                        this.refreshMessages();
+                    }
+                }, 50000); // 5秒刷新一次
+            },
+            
+            
+            stopMessageRefresh() {
+                if (this.messageRefreshTimer) {
+                    clearInterval(this.messageRefreshTimer);
+                    this.messageRefreshTimer = null;
+                }
+            },
+            
+            // 启动聊天刷新
+            startChatRefresh() {
+                this.stopChatRefresh();
+                this.chatRefreshTimer = setInterval(() => {
+                    this.refreshChats();
+                }, 10000); // 10秒刷新一次
+            },
+            
+            stopChatRefresh() {
+                if (this.chatRefreshTimer) {
+                    clearInterval(this.chatRefreshTimer);
+                    this.chatRefreshTimer = null;
+                }
+            },
+            
+            // 刷新消息
+            async refreshMessages() {
+                // 如果正在刷新或没有活跃聊天，直接返回
+                if (this.isRefreshingMessages || !this.activeChat || this.loadingMessages) return;
+                
+                this.isRefreshingMessages = true;
+                
+                try {
+                    const payload = new URLSearchParams();
+                    payload.append('chat_id', this.activeChat.chat_id);
+                    payload.append('account_id', this.activeAccount.account);
+                    payload.append('limit', 20);
+                    payload.append('offset', 0);
+                    
+                    const res = await axios.post(this.base_url + '/Index/getMessages', payload);
+                    
+                    if (res.data.code === 200) {
+                        const newMessages = res.data.data;
+                        this.addMessages(newMessages);
+                    }
+                } catch (error) {
+                    console.error('刷新消息失败:', error);
+                } finally {
+                    this.isRefreshingMessages = false;
+                }
+            },
+
+            
+            // 刷新聊天列表
+            async refreshChats() {
+                if (!this.activeAccount || this.loadingChats) return;
+                
+                try {
+                    const payload = new URLSearchParams();
+                    payload.append('tpid', this.activeAccount.tpid);
+                    payload.append('account_id', this.activeAccount.account);
+                    
+                    const res = await axios.post(this.base_url + '/Index/getChats', payload);
+                    if (res.data.code === 200) {
+                        // 排序逻辑
+                        const sortedChats = res.data.data.sort((a, b) => {
+                            const unreadDiff = (b.unread_count || 0) - (a.unread_count || 0);
+                            if (unreadDiff !== 0) return unreadDiff;
+                            
+                            const timeA = a.last_message_time ? new Date(a.last_message_time).getTime() : 0;
+                            const timeB = b.last_message_time ? new Date(b.last_message_time).getTime() : 0;
+                            return timeB - timeA;
+                        });
+                        
+                        this.chats = sortedChats;
+                        this.filteredChats = sortedChats;
+                        
+                        if (this.activeChat) {
+                            const updatedChat = sortedChats.find(c => c.id === this.activeChat.id);
+                            if (updatedChat) {
+                                this.activeChat = { ...this.activeChat, ...updatedChat };
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error('刷新聊天列表失败:', error);
+                }
+            },
+            onMenuClick(one){
+                const now = Date.now()
+                if (now - this.lastClickAt < this.clickDelayMs) return
+                this.lastClickAt = now
+                const seq = ++this.clickSeq
+                this.loading = true
+                this.loadingAccount = one
+                this.iframeSrc =false
+                // 显示账户切换中的提示
+                this.$message({
+                    message: `正在切换到账户 ${one.account}，请稍候...`,
+                    type: 'info',
+                    duration: 3000
+                })
+                // 切换前停止该账户监听
+                //this.stopMonitorOne(one).catch(() => {})
+                
+                axios.post(base_url+'/index/chechAccount',{"id":one.tpid}).then(res => {
+                    if (seq !== this.clickSeq) return
+                    if(res.data.status == 200){
+                    /*
+                        one.main_dc_id=res.data.data.main_dc_id
+                        one.auth_key=res.data.data.encoded_web_params
+                        const title = `${one.account}${one.nickName || ''}`
+                        const url = this.buildTelegramUrl(one)
+                        const path = { title, url, fullurl: url }
+                        this.iframeSrc = url
+                        const key = one.tpid 
+                        this.activeAccountKey = key
+                        */
+                        this.iframeSrc =true
+                        this.enterChatRoom(one);
+                        this.iframeLoading = false
+                        if (this.iframeLoadTimer) { clearTimeout(this.iframeLoadTimer) }
+                        this.iframeLoadTimer = setTimeout(() => { this.iframeLoading = false }, this.iframeLoadTimeoutMs)
+                        
+                        
+                
+                        this.loading = false;
+                        //this.loadingAccount = null;
+                        
+                        
+                    }else{
+                        this.$message.error(res.data.msg)
+                        this.iframeLoading = false
+                        this.loading = false
+                    }
+                }).catch(()=>{
+                    if (seq !== this.clickSeq) return
+                    this.iframeLoading = false
+                    this.loading = false
+                })
+            },
+            buildTelegramUrl(one){
+                const id = one.tpid
+                const dc = one.main_dc_id || ''
+                const authkey = one.auth_key || ''
+                if(dc && authkey){
+                    return this.base_url + '/Index/main'
+                    //return 'https://tdata.tgbotu.top/web/?params=' + encodeURIComponent(authkey)
+                    //return 'https://tdata.tgbotu.top/web/?reset=1&clearOnClose=1&idleClearMinutes=20&account=1&mainDcId=' + encodeURIComponent(dc) + '&hexAuthKey=' + encodeURIComponent(key) + '&userid=' + encodeURIComponent(id)
+                }
+                return this.base_url + '/Index/main'
+            },
+            isActiveAccount(one){
+                const key = one.tpid 
+                return key && key === this.activeAccountKey
+            },
+            onIframeLoad(e){
+                if (this.iframeLoadTimer) { clearTimeout(this.iframeLoadTimer); this.iframeLoadTimer = null }
+                const src = e && e.target && e.target.src ? e.target.src : ''
+                const cur = this.iframeSrc || ''
+                if (!cur || src === cur) { this.iframeLoading = false }
+            },
+            onIframeError(){
+                if (this.iframeLoadTimer) { clearTimeout(this.iframeLoadTimer); this.iframeLoadTimer = null }
+                this.iframeLoading = false
+            },
+            scrollToRepliedMessage(message) {
+                if (!message.reply_to_msg_id) return;
+                
+                // 找到被回复的消息
+                const repliedMessage = this.messages.find(m => 
+                    (m.message_id || m.id) === message.reply_to_msg_id
+                );
+                
+                if (repliedMessage) {
+                    // 高亮显示被回复的消息
+                    const messageElement = document.querySelector(`[data-message-id="${repliedMessage.message_id || repliedMessage.id}"]`);
+                    if (messageElement) {
+                        // 添加点击效果
+                        messageElement.classList.add('highlighted');
+                        
+                        // 滚动到该消息
+                        messageElement.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                        
+                        // 移除高亮效果
+                        setTimeout(() => {
+                            messageElement.classList.remove('highlighted');
+                        }, 2000);
+                    }
+                }
+            },
+            
+            // 优化回复预览，处理不同消息类型
+            formatReplyContent(message) {
+                if (!message) return '消息已被删除';
+                
+                let content = '';
+                
+                switch (message.message_type) {
+                    case 'photo':
+                        content = '📷 [图片]';
+                        if (message.message_text) {
+                            content += ` ${message.message_text}`;
+                        }
+                        break;
+                    case 'video':
+                        content = '🎥 [视频]';
+                        if (message.message_text) {
+                            content += ` ${message.message_text}`;
+                        }
+                        break;
+                    case 'document':
+                        content = '📄 [文件]';
+                        if (message.message_text) {
+                            content += ` ${message.message_text}`;
+                        }
+                        break;
+                    case 'voice':
+                        content = '🎵 [语音]';
+                        break;
+                    case 'sticker':
+                        content = '😀 [贴纸]';
+                        break;
+                    default:
+                        content = message.content || message.message_text || '';
+                        break;
+                }
+                
+                return content;
+            },
+            
+            // 在回复消息时，显示更详细的信息
+            replyToMessage() {
+                if (!this.contextMessage) return;
+                
+                this.replyingTo = {
+                    message_id: this.contextMessage.message_id || this.contextMessage.id,
+                    sender_id: this.contextMessage.sender_id,
+                    sender_name: this.contextMessage.sender_name,
+                    content: this.formatReplyContent(this.contextMessage),
+                    message_time: this.contextMessage.message_time,
+                    message_type: this.contextMessage.message_type
+                };
+                
+                // 滚动到输入框
+                this.$nextTick(() => {
+                    const input = document.querySelector('.message-input textarea');
+                    if (input) input.focus();
+                });
+                
+                this.closeContextMenu();
+            },
+            // 统一的消息添加方法
+            addMessages(newMessages) {
+                if (!newMessages || newMessages.length === 0) return;
+                
+                // 去重
+                const existingIds = new Set(this.messages.map(m => m.message_id || m.id));
+                const uniqueNewMessages = newMessages.filter(m => {
+                    const msgId = m.message_id || m.id;
+                    return msgId && !existingIds.has(msgId);
+                });
+                
+                if (uniqueNewMessages.length === 0) return;
+                
+                // 合并所有消息
+                const allMessages = [...this.messages, ...uniqueNewMessages];
+                
+                // 按 message_id 升序排序（小的在前，大的在后，通常是时间顺序）
+                allMessages.sort((a, b) => {
+                    const idA = a.message_id || a.id;
+                    const idB = b.message_id || b.id;
+                    
+                    // 如果都是数字，直接比较数字
+                    if (typeof idA === 'number' && typeof idB === 'number') {
+                        return idA - idB;
+                    }
+                    
+                    // 如果都是字符串，尝试转换为数字比较
+                    if (typeof idA === 'string' && typeof idB === 'string') {
+                        const numA = parseInt(idA, 10);
+                        const numB = parseInt(idB, 10);
+                        if (!isNaN(numA) && !isNaN(numB)) {
+                            return numA - numB;
+                        }
+                        // 如果不能转为数字，按字符串比较
+                        return idA.localeCompare(idB);
+                    }
+                    
+                    // 其他情况，按字符串处理
+                    return String(idA).localeCompare(String(idB));
+                });
+                
+                // 更新消息列表
+                this.messages = allMessages;
+            },
+            // 私信用户
+            async chatToMessage() {
+                if (!this.contextMessage) {
+                    this.closeContextMenu();
+                    return;
+                }
+            
+                // 检查是否在群组中
+                if (!this.activeChat || (this.activeChat.chat_type !== 'group' && this.activeChat.chat_type !== 'supergroup')) {
+                    this.$message.warning('只有在群组中才能私信用户');
+                    this.closeContextMenu();
+                    return;
+                }
+            
+                // 检查是否有发送者信息
+                if (!this.contextMessage.sender_id) {
+                    this.$message.warning('无法获取用户信息');
+                    this.closeContextMenu();
+                    return;
+                }
+            
+                const senderId = this.contextMessage.sender_id;
+                const senderName = this.contextMessage.sender_name;
+                const senderUsername = this.contextMessage.sender_username;
+                const currentAccountId = this.activeAccount.account;
+                this.closeContextMenu();
+                // 检查是否有发送者信息
+                /*
+                if (!senderUsername) {
+                    this.$message.warning('无法获取用户名');
+                    this.closeContextMenu();
+                    return;
+                }
+                */
+                // 显示确认对话框
+                this.showConfirmDialog({
+                    title: '私信用户',
+                    message: `确定要私信用户 ${senderName} (ID: ${senderId}) 吗？`,
+                    onConfirm: async () => {
+                        try {
+                            // 查找是否已经有与该用户的私聊
+                             
+                            const existingPrivateChat = this.chats.find(chat => 
+                                chat.chat_type === 'private' && 
+                                String(chat.chat_id) === senderId
+                            );
+                            console.log(existingPrivateChat);
+                            if (existingPrivateChat) {
+                                // 如果已有私聊，直接切换到该聊天
+                                await this.selectChat(existingPrivateChat);
+                                this.$message.success(`已切换到与 ${senderName} 的私聊`);
+                            } else {
+                                // 创建新的私聊
+                                const payload = new URLSearchParams();
+                                payload.append('user_id', senderId);
+                                payload.append('senderName', senderName);
+                                payload.append('senderUsername', senderUsername);
+                                payload.append('tdid', this.activeAccount.id);
+                                
+                                const res = await axios.post(this.base_url + '/Teletdata/createPrivateChat', payload);
+                                
+                                if (res.data.code === 200 && res.data.data) {
+                                    const newChat = res.data.data;
+                                    this.chatCounter++;
+                                    newChat._uniqueId = `chat_${Date.now()}_${this.chatCounter}_${Math.random().toString(36).substr(2, 9)}`;
+                                    newChat.account_id = currentAccountId;
+                                    newChat.user_id = senderId;
+                                    // 添加到聊天列表
+                                    this.chats.unshift(newChat);
+                                    this.filteredChats = [...this.chats];
+                                    
+                                    // 切换到新聊天
+                                    await this.selectChat(newChat);
+                                    this.$message.success(`已创建与 ${senderName} 的私聊`);
+                                } else {
+                                    this.$message.error(res.data.msg || '创建私聊失败');
+                                }
+                            }
+                        } catch (error) {
+                            console.error('私信失败:', error);
+                            this.$message.error('私信失败: ' + (error.message || '未知错误'));
+                        }
+                    }
+                });
+            },
+            getChatUniqueKey(chat) {
+                // 使用多个字段组合确保唯一性
+                const baseKey = `${chat.id || 0}_${chat.chat_id || 0}_${chat.account_id || 'no_account'}_${chat.chat_type || 'unknown'}`;
+                
+                // 对于私聊，添加用户ID
+                if (chat.chat_type === 'private' && chat.user_id) {
+                    return `chat_private_${chat.user_id}_${chat.account_id}_${baseKey}`;
+                }
+                
+                return `chat_${baseKey}`;
+            },
+            async copyToClipboard(text, label = '内容') {
+        if (!text) return;
+        
+        try {
+            // 使用现代 Clipboard API
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(text);
+                this.$message.success(`${label}已复制到剪贴板`);
+            } 
+            // 降级方案：使用 document.execCommand
+            else {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                
+                // 确保元素不可见
+                textArea.style.position = 'fixed';
+                textArea.style.top = '0';
+                textArea.style.left = '0';
+                textArea.style.opacity = '0';
+                textArea.style.pointerEvents = 'none';
+                textArea.style.zIndex = '-1';
+                
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                const successful = document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                if (successful) {
+                    this.$message.success(`${label}已复制到剪贴板`);
+                } else {
+                    throw new Error('复制失败');
+                }
+            }
+        } catch (error) {
+            console.error('复制失败:', error);
+            
+            // 备用方案：显示文本让用户手动复制
+            this.showCopyTextDialog(text, label);
+        }
+    },
+    }
+})
+</script>
+
+
+</body>
+</html>

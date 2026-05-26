@@ -1,0 +1,70 @@
+[2026-01-16T00:40:49+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T00:40:49+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T00:46:51+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T00:46:51+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T01:13:47+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T01:13:47+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T01:25:48+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T01:25:48+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T01:25:48+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T02:09:48+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T02:11:57+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T02:11:57+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-16T10:14:49+08:00][error] 错误信息:controller not exists:app\admin\controller\Env
+[2026-01-16T10:15:13+08:00][error] 错误信息:controller not exists:app\admin\controller\Config
+[2026-01-16T14:06:17+08:00][error] 错误信息:controller not exists:app\admin\controller\Env
+[2026-01-16T14:06:33+08:00][error] 错误信息:controller not exists:app\admin\controller\Config
+[2026-01-16T16:16:30+08:00][info] 任务停止: ID=23, 名称=150+测试
+[2026-01-16T16:18:25+08:00][info] 任务停止: ID=25, 名称=测试222
+[2026-01-16T16:18:59+08:00][info] [telegram队列] 批次:  耗时=0.01秒
+[2026-01-16T16:19:35+08:00][info] https://tdata.tgbota.top
+[2026-01-16T16:19:35+08:00][info] /uploads
+[2026-01-16T16:20:18+08:00][info] /www/wwwroot/tdata.tgbota.top/public/uploads/admin/202601/6969f4976ebbf.txt
+[2026-01-16T16:22:52+08:00][info] 用户归档缓存已强制从数据库更新，共处理 10 个用户
+[2026-01-16T16:23:09+08:00][info] https://tdata.tgbota.top
+[2026-01-16T16:23:09+08:00][info] /uploads
+[2026-01-16T16:23:10+08:00][info] /www/wwwroot/tdata.tgbota.top/public/uploads/admin/202601/6969f56d68e6b.txt
+[2026-01-16T16:24:02+08:00][info] https://tdata.tgbota.top
+[2026-01-16T16:24:02+08:00][info] /uploads
+[2026-01-16T16:24:05+08:00][info] 开始时间：2026-01-16 16:24:03
+[2026-01-16T16:24:05+08:00][info] 接口响应原始数据{"action":"update_photo","tdata_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202601\/6963e890e2d63\/15716669805\/tdata\/temp_8473635518.session","photo_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/\/uploads\/admin\/202601\/6969f5a296833.jpg"}
+[2026-01-16T16:24:05+08:00][info] 接口响应原始数据{"status":true,"message":"头像更新成功","data":{}}
+[2026-01-16T16:24:05+08:00][info] 接口调用成功：耗时：1.7秒
+[2026-01-16T16:24:05+08:00][info] {"status":true,"message":"\u5934\u50cf\u66f4\u65b0\u6210\u529f","data":[]}
+[2026-01-16T16:24:14+08:00][info] https://tdata.tgbota.top
+[2026-01-16T16:24:14+08:00][info] /uploads
+[2026-01-16T16:24:18+08:00][info] isp.decodo.com:10086##user-splmqynpf0-country-hk##9u6virjzTwd1PRZp4=
+[2026-01-16T16:24:18+08:00][info] 开始时间：2026-01-16 16:24:15
+[2026-01-16T16:24:18+08:00][info] 接口响应原始数据{"action":"update_photo","tdata_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202601\/6963e890e2d63\/15716669782\/tdata\/temp_7862580332.session","proxy":"socks5:\/\/user-splmqynpf0-country-hk:9u6virjzTwd1PRZp4=@isp.decodo.com:10086","photo_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/\/uploads\/admin\/202601\/6969f5ae86481.jpg"}
+[2026-01-16T16:24:18+08:00][info] 接口响应原始数据{"status":true,"message":"头像更新成功","data":{}}
+[2026-01-16T16:24:18+08:00][info] 接口调用成功：耗时：2.2秒
+[2026-01-16T16:24:18+08:00][info] {"status":true,"message":"\u5934\u50cf\u66f4\u65b0\u6210\u529f","data":[]}
+[2026-01-16T16:24:26+08:00][info] https://tdata.tgbota.top
+[2026-01-16T16:24:26+08:00][info] /uploads
+[2026-01-16T16:24:30+08:00][info] isp.decodo.com:10015##user-splmqynpf0-country-hk##9u6virjzTwd1PRZp4=
+[2026-01-16T16:24:30+08:00][info] 开始时间：2026-01-16 16:24:27
+[2026-01-16T16:24:30+08:00][info] 接口响应原始数据{"action":"update_photo","tdata_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202601\/6963e80fd3ac0\/15716465739\/tdata\/temp_8194948442.session","proxy":"socks5:\/\/user-splmqynpf0-country-hk:9u6virjzTwd1PRZp4=@isp.decodo.com:10015","photo_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/\/uploads\/admin\/202601\/6969f5baa840f.jpg"}
+[2026-01-16T16:24:30+08:00][info] 接口响应原始数据{"status":true,"message":"头像更新成功","data":{}}
+[2026-01-16T16:24:30+08:00][info] 接口调用成功：耗时：2.12秒
+[2026-01-16T16:24:30+08:00][info] {"status":true,"message":"\u5934\u50cf\u66f4\u65b0\u6210\u529f","data":[]}
+[2026-01-16T16:24:38+08:00][info] https://tdata.tgbota.top
+[2026-01-16T16:24:38+08:00][info] /uploads
+[2026-01-16T16:24:43+08:00][info] isp.decodo.com:10009##user-splmqynpf0-country-hk##9u6virjzTwd1PRZp4=
+[2026-01-16T16:24:43+08:00][info] 开始时间：2026-01-16 16:24:40
+[2026-01-16T16:24:43+08:00][info] 接口响应原始数据{"action":"update_photo","tdata_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202601\/6963e80fd3ac0\/15716467887\/tdata\/temp_8315968594.session","proxy":"socks5:\/\/user-splmqynpf0-country-hk:9u6virjzTwd1PRZp4=@isp.decodo.com:10009","photo_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/\/uploads\/admin\/202601\/6969f5c6abbc2.jpg"}
+[2026-01-16T16:24:43+08:00][info] 接口响应原始数据{"status":true,"message":"头像更新成功","data":{}}
+[2026-01-16T16:24:43+08:00][info] 接口调用成功：耗时：3.34秒
+[2026-01-16T16:24:43+08:00][info] {"status":true,"message":"\u5934\u50cf\u66f4\u65b0\u6210\u529f","data":[]}
+[2026-01-16T16:24:54+08:00][info] https://tdata.tgbota.top
+[2026-01-16T16:24:54+08:00][info] /uploads
+[2026-01-16T16:24:58+08:00][info] isp.decodo.com:10069##user-splmqynpf0-country-hk##9u6virjzTwd1PRZp4=
+[2026-01-16T16:24:58+08:00][info] 开始时间：2026-01-16 16:24:55
+[2026-01-16T16:24:58+08:00][info] 接口响应原始数据{"action":"update_photo","tdata_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202601\/6963e7b2efd4b\/15708538778\/tdata\/temp_8035912033.session","proxy":"socks5:\/\/user-splmqynpf0-country-hk:9u6virjzTwd1PRZp4=@isp.decodo.com:10069","photo_path":"\/www\/wwwroot\/tdata.tgbota.top\/public\/\/uploads\/admin\/202601\/6969f5d6089b2.jpg"}
+[2026-01-16T16:24:58+08:00][info] 接口响应原始数据{"status":true,"message":"头像更新成功","data":{}}
+[2026-01-16T16:24:58+08:00][info] 接口调用成功：耗时：2.28秒
+[2026-01-16T16:24:58+08:00][info] {"status":true,"message":"\u5934\u50cf\u66f4\u65b0\u6210\u529f","data":[]}
+[2026-01-16T16:25:05+08:00][info] 任务开始: ID=25, 名称=测试222
+[2026-01-16T16:25:53+08:00][info] 任务开始: ID=26, 名称=测试111
+[2026-01-16T23:35:24+08:00][info] 任务开始: ID=26, 名称=测试111
+[2026-01-16T23:35:29+08:00][info] 任务停止: ID=26, 名称=测试111
+[2026-01-16T23:35:52+08:00][info] [telegram队列] 批次:  耗时=0.01秒

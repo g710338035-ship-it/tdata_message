@@ -1,0 +1,164 @@
+[2026-02-07T23:56:23+08:00][info] 消息状态标记为已发送: task_id=31, group_id=https://t.me/+4azhFwWhx1czMzE0, msg_index=189
+[2026-02-07T23:56:23+08:00][info] 任务 31 将在 85 秒后继续处理下一条消息，索引: 190, 实例ID: task_31_index_190_1770479783.8238
+[2026-02-07T23:56:24+08:00][info] 开始处理队列任务: task_id=26, current_index=196
+[2026-02-07T23:56:26+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":21924}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:56:26+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=196, message_id=21924
+[2026-02-07T23:56:26+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=196
+[2026-02-07T23:56:26+08:00][info] 任务 26 将在 90 秒后继续处理下一条消息，索引: 197, 实例ID: task_26_index_197_1770479786.8221
+[2026-02-07T23:56:32+08:00][info] 开始处理队列任务: task_id=32, current_index=146
+[2026-02-07T23:56:33+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3831491224,"group_link":"https:\/\/t.me\/+9wGtVakI0F9kYTM0","type":"megagroup","message":"发送成功","message_id":790}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+9wGtVakI0F9kYTM0, 清理后: https:\/\/t.me\/+9wGtVakI0F9kYTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:56:33+08:00][info] 消息ID缓存成功: task_id=32, group_id=https://t.me/+9wGtVakI0F9kYTM0, msg_index=146, message_id=790
+[2026-02-07T23:56:33+08:00][info] 消息状态标记为已发送: task_id=32, group_id=https://t.me/+9wGtVakI0F9kYTM0, msg_index=146
+[2026-02-07T23:56:33+08:00][info] 任务 32 将在 81 秒后继续处理下一条消息，索引: 147, 实例ID: task_32_index_147_1770479793.8084
+[2026-02-07T23:56:33+08:00][info] 开始处理队列任务: task_id=27, current_index=196
+[2026-02-07T23:56:37+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":23467}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:56:37+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=196, message_id=23467
+[2026-02-07T23:56:37+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=196
+[2026-02-07T23:56:37+08:00][info] 任务 27 将在 90 秒后继续处理下一条消息，索引: 197, 实例ID: task_27_index_197_1770479797.5476
+[2026-02-07T23:56:41+08:00][info] 开始处理队列任务: task_id=33, current_index=146
+[2026-02-07T23:56:42+08:00][info] 开始处理队列任务: task_id=29, current_index=196
+[2026-02-07T23:56:43+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3658905404,"group_link":"https:\/\/t.me\/+wcqRUxDn6zczYmM0","type":"megagroup","message":"发送成功","message_id":788}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+wcqRUxDn6zczYmM0, 清理后: https:\/\/t.me\/+wcqRUxDn6zczYmM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:56:43+08:00][info] 消息ID缓存成功: task_id=33, group_id=https://t.me/+wcqRUxDn6zczYmM0, msg_index=146, message_id=788
+[2026-02-07T23:56:43+08:00][info] 消息状态标记为已发送: task_id=33, group_id=https://t.me/+wcqRUxDn6zczYmM0, msg_index=146
+[2026-02-07T23:56:43+08:00][info] 任务 33 将在 81 秒后继续处理下一条消息，索引: 147, 实例ID: task_33_index_147_1770479803.7439
+[2026-02-07T23:56:45+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3780502866,"group_link":"https:\/\/t.me\/+WZlsKfz1W89jYjE0","type":"megagroup","message":"发送成功","message_id":11972}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+WZlsKfz1W89jYjE0, 清理后: https:\/\/t.me\/+WZlsKfz1W89jYjE0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:56:45+08:00][info] 消息ID缓存成功: task_id=29, group_id=https://t.me/+WZlsKfz1W89jYjE0, msg_index=196, message_id=11972
+[2026-02-07T23:56:45+08:00][info] 消息状态标记为已发送: task_id=29, group_id=https://t.me/+WZlsKfz1W89jYjE0, msg_index=196
+[2026-02-07T23:56:45+08:00][info] 任务 29 将在 90 秒后继续处理下一条消息，索引: 197, 实例ID: task_29_index_197_1770479805.7784
+[2026-02-07T23:56:49+08:00][info] 开始处理队列任务: task_id=34, current_index=146
+[2026-02-07T23:56:51+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3719450736,"group_link":"https:\/\/t.me\/+CUyn8iqnQwEzNDY0","type":"megagroup","message":"发送成功","message_id":791}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+CUyn8iqnQwEzNDY0, 清理后: https:\/\/t.me\/+CUyn8iqnQwEzNDY0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:56:51+08:00][info] 消息ID缓存成功: task_id=34, group_id=https://t.me/+CUyn8iqnQwEzNDY0, msg_index=146, message_id=791
+[2026-02-07T23:56:51+08:00][info] 消息状态标记为已发送: task_id=34, group_id=https://t.me/+CUyn8iqnQwEzNDY0, msg_index=146
+[2026-02-07T23:56:51+08:00][info] 任务 34 将在 81 秒后继续处理下一条消息，索引: 147, 实例ID: task_34_index_147_1770479811.3679
+[2026-02-07T23:56:57+08:00][info] 开始处理队列任务: task_id=35, current_index=146
+[2026-02-07T23:57:00+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3646934744,"group_link":"https:\/\/t.me\/+BrIuI_-gkNhhYTE0","type":"megagroup","message":"发送成功","message_id":791}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+BrIuI_-gkNhhYTE0, 清理后: https:\/\/t.me\/+BrIuI_-gkNhhYTE0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:57:00+08:00][info] 消息ID缓存成功: task_id=35, group_id=https://t.me/+BrIuI_-gkNhhYTE0, msg_index=146, message_id=791
+[2026-02-07T23:57:00+08:00][info] 消息状态标记为已发送: task_id=35, group_id=https://t.me/+BrIuI_-gkNhhYTE0, msg_index=146
+[2026-02-07T23:57:00+08:00][info] 任务 35 将在 81 秒后继续处理下一条消息，索引: 147, 实例ID: task_35_index_147_1770479820.0587
+[2026-02-07T23:57:01+08:00][info] 开始处理队列任务: task_id=36, current_index=146
+[2026-02-07T23:57:03+08:00][info] 开始处理队列任务: task_id=37, current_index=146
+[2026-02-07T23:57:03+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3479387283,"group_link":"https:\/\/t.me\/+o12qlRNkdiViMjE0","type":"megagroup","message":"发送成功","message_id":790}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+o12qlRNkdiViMjE0, 清理后: https:\/\/t.me\/+o12qlRNkdiViMjE0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:57:03+08:00][info] 消息ID缓存成功: task_id=36, group_id=https://t.me/+o12qlRNkdiViMjE0, msg_index=146, message_id=790
+[2026-02-07T23:57:03+08:00][info] 消息状态标记为已发送: task_id=36, group_id=https://t.me/+o12qlRNkdiViMjE0, msg_index=146
+[2026-02-07T23:57:03+08:00][info] 任务 36 将在 81 秒后继续处理下一条消息，索引: 147, 实例ID: task_36_index_147_1770479823.9289
+[2026-02-07T23:57:05+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":5262403684,"group_link":"https:\/\/t.me\/+DUAGbZI5vW41NWI8","type":"chat","message":"发送成功","message_id":546}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+DUAGbZI5vW41NWI8, 清理后: https:\/\/t.me\/+DUAGbZI5vW41NWI8, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:57:05+08:00][info] 消息ID缓存成功: task_id=37, group_id=https://t.me/+DUAGbZI5vW41NWI8, msg_index=146, message_id=546
+[2026-02-07T23:57:05+08:00][info] 消息状态标记为已发送: task_id=37, group_id=https://t.me/+DUAGbZI5vW41NWI8, msg_index=146
+[2026-02-07T23:57:05+08:00][info] 任务 37 将在 81 秒后继续处理下一条消息，索引: 147, 实例ID: task_37_index_147_1770479825.5036
+[2026-02-07T23:57:42+08:00][info] 开始处理队列任务: task_id=28, current_index=197
+[2026-02-07T23:57:46+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3657218256,"group_link":"https:\/\/t.me\/+Hg62NsrbOCZmZmY8","type":"megagroup","message":"发送成功","message_id":11910}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+Hg62NsrbOCZmZmY8, 清理后: https:\/\/t.me\/+Hg62NsrbOCZmZmY8, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:57:46+08:00][info] 消息ID缓存成功: task_id=28, group_id=https://t.me/+Hg62NsrbOCZmZmY8, msg_index=197, message_id=11910
+[2026-02-07T23:57:46+08:00][info] 消息状态标记为已发送: task_id=28, group_id=https://t.me/+Hg62NsrbOCZmZmY8, msg_index=197
+[2026-02-07T23:57:46+08:00][info] 任务 28 将在 100 秒后继续处理下一条消息，索引: 198, 实例ID: task_28_index_198_1770479866.7218
+[2026-02-07T23:57:48+08:00][info] 开始处理队列任务: task_id=25, current_index=197
+[2026-02-07T23:57:49+08:00][info] 开始处理队列任务: task_id=31, current_index=190
+[2026-02-07T23:57:51+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":20321}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:57:51+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=197, message_id=20321
+[2026-02-07T23:57:51+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=197
+[2026-02-07T23:57:51+08:00][info] 任务 25 将在 100 秒后继续处理下一条消息，索引: 198, 实例ID: task_25_index_198_1770479871.6731
+[2026-02-07T23:57:52+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3079998653,"group_link":"https:\/\/t.me\/+4azhFwWhx1czMzE0","type":"megagroup","message":"发送成功","message_id":4763}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+4azhFwWhx1czMzE0, 清理后: https:\/\/t.me\/+4azhFwWhx1czMzE0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:57:52+08:00][info] 消息ID缓存成功: task_id=31, group_id=https://t.me/+4azhFwWhx1czMzE0, msg_index=190, message_id=4763
+[2026-02-07T23:57:52+08:00][info] 消息状态标记为已发送: task_id=31, group_id=https://t.me/+4azhFwWhx1czMzE0, msg_index=190
+[2026-02-07T23:57:52+08:00][info] 任务 31 将在 81 秒后继续处理下一条消息，索引: 191, 实例ID: task_31_index_191_1770479872.4492
+[2026-02-07T23:57:54+08:00][info] 开始处理队列任务: task_id=32, current_index=147
+[2026-02-07T23:57:56+08:00][info] 开始处理队列任务: task_id=26, current_index=197
+[2026-02-07T23:57:56+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3831491224,"group_link":"https:\/\/t.me\/+9wGtVakI0F9kYTM0","type":"megagroup","message":"发送成功","message_id":791}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+9wGtVakI0F9kYTM0, 清理后: https:\/\/t.me\/+9wGtVakI0F9kYTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:57:56+08:00][info] 消息ID缓存成功: task_id=32, group_id=https://t.me/+9wGtVakI0F9kYTM0, msg_index=147, message_id=791
+[2026-02-07T23:57:56+08:00][info] 消息状态标记为已发送: task_id=32, group_id=https://t.me/+9wGtVakI0F9kYTM0, msg_index=147
+[2026-02-07T23:57:56+08:00][info] 任务 32 将在 89 秒后继续处理下一条消息，索引: 148, 实例ID: task_32_index_148_1770479876.5497
+[2026-02-07T23:57:58+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":21925}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:57:58+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=197, message_id=21925
+[2026-02-07T23:57:58+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=197
+[2026-02-07T23:57:58+08:00][info] 任务 26 将在 100 秒后继续处理下一条消息，索引: 198, 实例ID: task_26_index_198_1770479878.6309
+[2026-02-07T23:58:04+08:00][info] 开始处理队列任务: task_id=33, current_index=147
+[2026-02-07T23:58:06+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3658905404,"group_link":"https:\/\/t.me\/+wcqRUxDn6zczYmM0","type":"megagroup","message":"发送成功","message_id":789}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+wcqRUxDn6zczYmM0, 清理后: https:\/\/t.me\/+wcqRUxDn6zczYmM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:58:06+08:00][info] 消息ID缓存成功: task_id=33, group_id=https://t.me/+wcqRUxDn6zczYmM0, msg_index=147, message_id=789
+[2026-02-07T23:58:06+08:00][info] 消息状态标记为已发送: task_id=33, group_id=https://t.me/+wcqRUxDn6zczYmM0, msg_index=147
+[2026-02-07T23:58:06+08:00][info] 任务 33 将在 89 秒后继续处理下一条消息，索引: 148, 实例ID: task_33_index_148_1770479886.4919
+[2026-02-07T23:58:07+08:00][info] 开始处理队列任务: task_id=27, current_index=197
+[2026-02-07T23:58:10+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":23468}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:58:10+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=197, message_id=23468
+[2026-02-07T23:58:10+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=197
+[2026-02-07T23:58:10+08:00][info] 任务 27 将在 100 秒后继续处理下一条消息，索引: 198, 实例ID: task_27_index_198_1770479890.4788
+[2026-02-07T23:58:12+08:00][info] 开始处理队列任务: task_id=34, current_index=147
+[2026-02-07T23:58:14+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3719450736,"group_link":"https:\/\/t.me\/+CUyn8iqnQwEzNDY0","type":"megagroup","message":"发送成功","message_id":792}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+CUyn8iqnQwEzNDY0, 清理后: https:\/\/t.me\/+CUyn8iqnQwEzNDY0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:58:14+08:00][info] 消息ID缓存成功: task_id=34, group_id=https://t.me/+CUyn8iqnQwEzNDY0, msg_index=147, message_id=792
+[2026-02-07T23:58:14+08:00][info] 消息状态标记为已发送: task_id=34, group_id=https://t.me/+CUyn8iqnQwEzNDY0, msg_index=147
+[2026-02-07T23:58:14+08:00][info] 任务 34 将在 89 秒后继续处理下一条消息，索引: 148, 实例ID: task_34_index_148_1770479894.3381
+[2026-02-07T23:58:16+08:00][info] 开始处理队列任务: task_id=29, current_index=197
+[2026-02-07T23:58:19+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3780502866,"group_link":"https:\/\/t.me\/+WZlsKfz1W89jYjE0","type":"megagroup","message":"发送成功","message_id":11973}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+WZlsKfz1W89jYjE0, 清理后: https:\/\/t.me\/+WZlsKfz1W89jYjE0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:58:19+08:00][info] 消息ID缓存成功: task_id=29, group_id=https://t.me/+WZlsKfz1W89jYjE0, msg_index=197, message_id=11973
+[2026-02-07T23:58:19+08:00][info] 消息状态标记为已发送: task_id=29, group_id=https://t.me/+WZlsKfz1W89jYjE0, msg_index=197
+[2026-02-07T23:58:19+08:00][info] 任务 29 将在 100 秒后继续处理下一条消息，索引: 198, 实例ID: task_29_index_198_1770479899.3515
+[2026-02-07T23:58:22+08:00][info] 开始处理队列任务: task_id=35, current_index=147
+[2026-02-07T23:58:24+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3646934744,"group_link":"https:\/\/t.me\/+BrIuI_-gkNhhYTE0","type":"megagroup","message":"发送成功","message_id":792}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+BrIuI_-gkNhhYTE0, 清理后: https:\/\/t.me\/+BrIuI_-gkNhhYTE0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:58:24+08:00][info] 消息ID缓存成功: task_id=35, group_id=https://t.me/+BrIuI_-gkNhhYTE0, msg_index=147, message_id=792
+[2026-02-07T23:58:24+08:00][info] 消息状态标记为已发送: task_id=35, group_id=https://t.me/+BrIuI_-gkNhhYTE0, msg_index=147
+[2026-02-07T23:58:24+08:00][info] 任务 35 将在 89 秒后继续处理下一条消息，索引: 148, 实例ID: task_35_index_148_1770479904.2176
+[2026-02-07T23:58:24+08:00][info] 开始处理队列任务: task_id=36, current_index=147
+[2026-02-07T23:58:26+08:00][info] 开始处理队列任务: task_id=37, current_index=147
+[2026-02-07T23:58:26+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3479387283,"group_link":"https:\/\/t.me\/+o12qlRNkdiViMjE0","type":"megagroup","message":"发送成功","message_id":791}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+o12qlRNkdiViMjE0, 清理后: https:\/\/t.me\/+o12qlRNkdiViMjE0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:58:26+08:00][info] 消息ID缓存成功: task_id=36, group_id=https://t.me/+o12qlRNkdiViMjE0, msg_index=147, message_id=791
+[2026-02-07T23:58:26+08:00][info] 消息状态标记为已发送: task_id=36, group_id=https://t.me/+o12qlRNkdiViMjE0, msg_index=147
+[2026-02-07T23:58:26+08:00][info] 任务 36 将在 89 秒后继续处理下一条消息，索引: 148, 实例ID: task_36_index_148_1770479906.5402
+[2026-02-07T23:58:27+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":5262403684,"group_link":"https:\/\/t.me\/+DUAGbZI5vW41NWI8","type":"chat","message":"发送成功","message_id":546}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+DUAGbZI5vW41NWI8, 清理后: https:\/\/t.me\/+DUAGbZI5vW41NWI8, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:58:27+08:00][info] 消息ID缓存成功: task_id=37, group_id=https://t.me/+DUAGbZI5vW41NWI8, msg_index=147, message_id=546
+[2026-02-07T23:58:27+08:00][info] 消息状态标记为已发送: task_id=37, group_id=https://t.me/+DUAGbZI5vW41NWI8, msg_index=147
+[2026-02-07T23:58:27+08:00][info] 任务 37 将在 89 秒后继续处理下一条消息，索引: 148, 实例ID: task_37_index_148_1770479907.7224
+[2026-02-07T23:59:14+08:00][info] 开始处理队列任务: task_id=31, current_index=191
+[2026-02-07T23:59:14+08:00][info] 使用feedbackType=189的消息ID: 4761
+[2026-02-07T23:59:20+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3079998653,"group_link":"https:\/\/t.me\/+4azhFwWhx1czMzE0","type":"megagroup","message":"发送成功","message_id":4764}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+4azhFwWhx1czMzE0, 清理后: https:\/\/t.me\/+4azhFwWhx1czMzE0, 识别为链接: True, 识别为数字ID: False","文件1有效: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae3a0a245d.jpg (77289字节)","发送单个文件: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae3a0a245d.jpg"],"warning":""}}
+[2026-02-07T23:59:20+08:00][info] 消息ID缓存成功: task_id=31, group_id=https://t.me/+4azhFwWhx1czMzE0, msg_index=191, message_id=4764
+[2026-02-07T23:59:20+08:00][info] 消息状态标记为已发送: task_id=31, group_id=https://t.me/+4azhFwWhx1czMzE0, msg_index=191
+[2026-02-07T23:59:20+08:00][info] 任务 31 将在 103 秒后继续处理下一条消息，索引: 192, 实例ID: task_31_index_192_1770479960.1353
+[2026-02-07T23:59:26+08:00][info] 开始处理队列任务: task_id=32, current_index=148
+[2026-02-07T23:59:26+08:00][info] 开始处理队列任务: task_id=28, current_index=198
+[2026-02-07T23:59:29+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3657218256,"group_link":"https:\/\/t.me\/+Hg62NsrbOCZmZmY8","type":"megagroup","message":"发送成功","message_id":11911}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+Hg62NsrbOCZmZmY8, 清理后: https:\/\/t.me\/+Hg62NsrbOCZmZmY8, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:29+08:00][info] 消息ID缓存成功: task_id=28, group_id=https://t.me/+Hg62NsrbOCZmZmY8, msg_index=198, message_id=11911
+[2026-02-07T23:59:29+08:00][info] 消息状态标记为已发送: task_id=28, group_id=https://t.me/+Hg62NsrbOCZmZmY8, msg_index=198
+[2026-02-07T23:59:29+08:00][info] 任务 28 将在 68 秒后继续处理下一条消息，索引: 199, 实例ID: task_28_index_199_1770479969.7239
+[2026-02-07T23:59:30+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3831491224,"group_link":"https:\/\/t.me\/+9wGtVakI0F9kYTM0","type":"megagroup","message":"发送成功","message_id":792}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+9wGtVakI0F9kYTM0, 清理后: https:\/\/t.me\/+9wGtVakI0F9kYTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:30+08:00][info] 消息ID缓存成功: task_id=32, group_id=https://t.me/+9wGtVakI0F9kYTM0, msg_index=148, message_id=792
+[2026-02-07T23:59:30+08:00][info] 消息状态标记为已发送: task_id=32, group_id=https://t.me/+9wGtVakI0F9kYTM0, msg_index=148
+[2026-02-07T23:59:30+08:00][info] 任务 32 将在 78 秒后继续处理下一条消息，索引: 149, 实例ID: task_32_index_149_1770479970.1415
+[2026-02-07T23:59:32+08:00][info] 开始处理队列任务: task_id=25, current_index=198
+[2026-02-07T23:59:35+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":20322}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:35+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=198, message_id=20322
+[2026-02-07T23:59:35+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=198
+[2026-02-07T23:59:35+08:00][info] 任务 25 将在 68 秒后继续处理下一条消息，索引: 199, 实例ID: task_25_index_199_1770479975.4127
+[2026-02-07T23:59:35+08:00][info] 开始处理队列任务: task_id=33, current_index=148
+[2026-02-07T23:59:37+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3658905404,"group_link":"https:\/\/t.me\/+wcqRUxDn6zczYmM0","type":"megagroup","message":"发送成功","message_id":790}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+wcqRUxDn6zczYmM0, 清理后: https:\/\/t.me\/+wcqRUxDn6zczYmM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:37+08:00][info] 消息ID缓存成功: task_id=33, group_id=https://t.me/+wcqRUxDn6zczYmM0, msg_index=148, message_id=790
+[2026-02-07T23:59:37+08:00][info] 消息状态标记为已发送: task_id=33, group_id=https://t.me/+wcqRUxDn6zczYmM0, msg_index=148
+[2026-02-07T23:59:37+08:00][info] 任务 33 将在 78 秒后继续处理下一条消息，索引: 149, 实例ID: task_33_index_149_1770479977.692
+[2026-02-07T23:59:38+08:00][info] 开始处理队列任务: task_id=26, current_index=198
+[2026-02-07T23:59:41+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":21926}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:41+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=198, message_id=21926
+[2026-02-07T23:59:41+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=198
+[2026-02-07T23:59:41+08:00][info] 任务 26 将在 68 秒后继续处理下一条消息，索引: 199, 实例ID: task_26_index_199_1770479981.5604
+[2026-02-07T23:59:43+08:00][info] 开始处理队列任务: task_id=34, current_index=148
+[2026-02-07T23:59:45+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3719450736,"group_link":"https:\/\/t.me\/+CUyn8iqnQwEzNDY0","type":"megagroup","message":"发送成功","message_id":793}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+CUyn8iqnQwEzNDY0, 清理后: https:\/\/t.me\/+CUyn8iqnQwEzNDY0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:45+08:00][info] 消息ID缓存成功: task_id=34, group_id=https://t.me/+CUyn8iqnQwEzNDY0, msg_index=148, message_id=793
+[2026-02-07T23:59:45+08:00][info] 消息状态标记为已发送: task_id=34, group_id=https://t.me/+CUyn8iqnQwEzNDY0, msg_index=148
+[2026-02-07T23:59:45+08:00][info] 任务 34 将在 78 秒后继续处理下一条消息，索引: 149, 实例ID: task_34_index_149_1770479985.6445
+[2026-02-07T23:59:50+08:00][info] 开始处理队列任务: task_id=27, current_index=198
+[2026-02-07T23:59:53+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":23469}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:53+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=198, message_id=23469
+[2026-02-07T23:59:53+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=198
+[2026-02-07T23:59:53+08:00][info] 任务 27 将在 68 秒后继续处理下一条消息，索引: 199, 实例ID: task_27_index_199_1770479993.5985
+[2026-02-07T23:59:53+08:00][info] 开始处理队列任务: task_id=35, current_index=148
+[2026-02-07T23:59:55+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3646934744,"group_link":"https:\/\/t.me\/+BrIuI_-gkNhhYTE0","type":"megagroup","message":"发送成功","message_id":793}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+BrIuI_-gkNhhYTE0, 清理后: https:\/\/t.me\/+BrIuI_-gkNhhYTE0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:55+08:00][info] 消息ID缓存成功: task_id=35, group_id=https://t.me/+BrIuI_-gkNhhYTE0, msg_index=148, message_id=793
+[2026-02-07T23:59:55+08:00][info] 消息状态标记为已发送: task_id=35, group_id=https://t.me/+BrIuI_-gkNhhYTE0, msg_index=148
+[2026-02-07T23:59:55+08:00][info] 任务 35 将在 78 秒后继续处理下一条消息，索引: 149, 实例ID: task_35_index_149_1770479995.5214
+[2026-02-07T23:59:55+08:00][info] 开始处理队列任务: task_id=36, current_index=148
+[2026-02-07T23:59:56+08:00][info] 开始处理队列任务: task_id=37, current_index=148
+[2026-02-07T23:59:57+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3479387283,"group_link":"https:\/\/t.me\/+o12qlRNkdiViMjE0","type":"megagroup","message":"发送成功","message_id":792}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+o12qlRNkdiViMjE0, 清理后: https:\/\/t.me\/+o12qlRNkdiViMjE0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:57+08:00][info] 消息ID缓存成功: task_id=36, group_id=https://t.me/+o12qlRNkdiViMjE0, msg_index=148, message_id=792
+[2026-02-07T23:59:57+08:00][info] 消息状态标记为已发送: task_id=36, group_id=https://t.me/+o12qlRNkdiViMjE0, msg_index=148
+[2026-02-07T23:59:57+08:00][info] 任务 36 将在 78 秒后继续处理下一条消息，索引: 149, 实例ID: task_36_index_149_1770479997.5962
+[2026-02-07T23:59:59+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":5262403684,"group_link":"https:\/\/t.me\/+DUAGbZI5vW41NWI8","type":"chat","message":"发送成功","message_id":544}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+DUAGbZI5vW41NWI8, 清理后: https:\/\/t.me\/+DUAGbZI5vW41NWI8, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-02-07T23:59:59+08:00][info] 消息ID缓存成功: task_id=37, group_id=https://t.me/+DUAGbZI5vW41NWI8, msg_index=148, message_id=544
+[2026-02-07T23:59:59+08:00][info] 消息状态标记为已发送: task_id=37, group_id=https://t.me/+DUAGbZI5vW41NWI8, msg_index=148
+[2026-02-07T23:59:59+08:00][info] 任务 37 将在 78 秒后继续处理下一条消息，索引: 149, 实例ID: task_37_index_149_1770479999.5849
+[2026-02-07T23:59:59+08:00][info] 开始处理队列任务: task_id=29, current_index=198

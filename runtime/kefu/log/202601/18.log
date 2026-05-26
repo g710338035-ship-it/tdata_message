@@ -1,0 +1,3 @@
+[2026-01-18T22:31:40+08:00][info] []
+[2026-01-18T22:31:50+08:00][info] [{"id":2027,"account_status":"退出","count":146},{"id":2044,"account_status":"异常","count":3},{"id":2060,"account_status":"冻结","count":12},{"id":2088,"account_status":"未授权","count":1}]
+[2026-01-18T22:32:40+08:00][info] [{"id":2027,"account_status":"正常","count":145},{"id":2044,"account_status":"未授权","count":4},{"id":2060,"account_status":"冻结","count":12},{"id":2123,"account_status":"异常","count":1}]

@@ -1,0 +1,32 @@
+[2026-01-31T08:48:55+08:00][info] [telegram队列] 批次:  耗时=0秒
+[2026-01-31T16:41:03+08:00][info] [telegram队列] 批次:  耗时=0秒
+[2026-01-31T17:35:37+08:00][info] [telegram队列] 批次:  耗时=0秒
+[2026-01-31T17:41:20+08:00][info] [telegram队列] 批次:  耗时=0秒
+[2026-01-31T17:56:48+08:00][warning] [checkAccount] 以下账号 session 不存在: 2379,2380,2381,2382,2383,2384,2385,2386,2387,2388,2389,2390,2391,2392,2393,2394,2395,2396,2397,2399
+[2026-01-31T17:58:19+08:00][info] [telegram队列] 批次:  耗时=0秒
+[2026-01-31T18:05:02+08:00][info] [telegram队列] 批次:  耗时=0秒
+[2026-01-31T18:17:12+08:00][info] [telegram队列] 批次:  耗时=0秒
+[2026-01-31T18:24:27+08:00][info] [telegram队列] 批次:  耗时=0秒
+[2026-01-31T18:26:07+08:00][info] [telegram队列] 批次:  耗时=0.01秒
+[2026-01-31T18:45:16+08:00][info] [telegram队列] 批次:  耗时=0.01秒
+[2026-01-31T18:45:57+08:00][info] 任务开始: ID=29, 名称=5
+[2026-01-31T18:46:01+08:00][info] 任务开始: ID=28, 名称=555
+[2026-01-31T18:46:04+08:00][info] 任务开始: ID=27, 名称=3333
+[2026-01-31T18:46:08+08:00][info] 任务开始: ID=26, 名称=测试111
+[2026-01-31T18:46:11+08:00][info] 任务开始: ID=25, 名称=测试222
+[2026-01-31T19:05:16+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]
+[2026-01-31T20:55:20+08:00][error] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'tdata_tgbota_top.cd_mt_user' doesn't exist[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-01-31T20:55:58+08:00][error] [0]方法不存在[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Admin.php:128]
+[2026-01-31T20:56:35+08:00][error] [0]Call to undefined method think\response\File::deleteFileAfterSend()[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1827]
+[2026-01-31T20:58:50+08:00][error] [0]Call to undefined method think\response\Html::file()[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1827]
+[2026-01-31T20:59:22+08:00][error] [0]Call to undefined method think\response\Html::file()[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1828]
+[2026-01-31T21:00:08+08:00][error] [0]Class "think\facade\Response" not found[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1828]
+[2026-01-31T21:04:38+08:00][error] [0]Invalid or uninitialized Zip object[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1874]
+[2026-01-31T21:06:15+08:00][error] [0]Invalid or uninitialized Zip object[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1906]
+[2026-01-31T21:08:20+08:00][error] [0]Class "think\facade\Response" not found[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1828]
+[2026-01-31T21:09:55+08:00][error] [0]Call to undefined method think\Response::download()[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1828]
+[2026-01-31T21:19:03+08:00][error] [0]download(): Argument #3 ($content) must be of type bool, array given, called in /www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php on line 1828[/www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/helper.php:174]
+[2026-01-31T21:20:17+08:00][error] [0]Call to undefined method think\response\File::deleteFileAfterSend()[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1829]
+[2026-01-31T21:20:52+08:00][error] [0]Call to undefined method think\response\File::deleteFileAfterSend()[/www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php:1829]
+[2026-01-31T21:21:54+08:00][error] [0]think\response\File::__construct(): Argument #2 ($code) must be of type int, string given, called in /www/wwwroot/tdata.tgbota.top/app/admin/controller/Mtuser.php on line 1828[/www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/response/File.php:29]
+[2026-01-31T21:24:32+08:00][info] [telegram队列] 批次:  耗时=0秒

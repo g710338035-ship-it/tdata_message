@@ -1,0 +1,4 @@
+[2026-02-06T15:31:25+08:00][info] [{"id":1282,"account_status":"退出","count":151},{"id":2387,"account_status":"正常","count":1}]
+[2026-02-06T15:46:21+08:00][info] [{"id":1282,"account_status":"正常","count":148},{"id":1950,"account_status":"异常","count":4}]
+[2026-02-06T18:13:20+08:00][error] [0]方法不存在[/www/wwwroot/tdata.tgbota.top/app/kefu/controller/Baseinfo.php:146]
+[2026-02-06T18:32:19+08:00][error] [0]方法不存在[/www/wwwroot/tdata.tgbota.top/app/kefu/controller/Baseinfo.php:146]

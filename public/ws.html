@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <h1>WebSocket 测试</h1>
+    <input id="msgInput" placeholder="输入消息">
+    <button id="sendBtn">发送</button>
+    <ul id="log"></ul>
+
+    <script>
+        let socket;
+        const logEl = document.getElementById('log');
+
+        function log(msg) {
+            console.log(msg);
+            const li = document.createElement('li');
+            li.textContent = msg;
+            logEl.appendChild(li);
+        }
+
+        function initWebSocket() {
+            const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsUrl = `${wsProtocol}//${window.location.host}/ws`;
+            socket = new WebSocket(wsUrl);
+
+            socket.onopen = () => {
+                log('WebSocket 已连接');
+            };
+
+            socket.onmessage = (event) => {
+                log('收到消息: ' + event.data);
+            };
+
+            socket.onclose = (event) => {
+                log('WebSocket 关闭: ' + event.code);
+                setTimeout(initWebSocket, 3000); // 自动重连
+            };
+
+            socket.onerror = (err) => {
+                log('WebSocket 错误: ' + err);
+            };
+        }
+
+        initWebSocket();
+
+        document.getElementById('sendBtn').onclick = () => {
+            const msg = document.getElementById('msgInput').value;
+            if (socket && socket.readyState === WebSocket.OPEN) {
+                socket.send(msg);
+                log('发送消息: ' + msg);
+            } else {
+                log('WebSocket 未连接');
+            }
+        };
+    </script>
+</body>
+</html>

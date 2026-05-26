@@ -1,0 +1,3370 @@
+[
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "你们好，刚来的怎么领币安空投收益❤️",
+    "file": "",
+    "index": 7042957,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "币安给的bnb吗",
+    "file": "https://tgfile.hzhu.com/loadFile/20241227/202412272339409259.jpg",
+    "index": 7042957,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "对的，BNB空投合约👍👍👍",
+    "file": "",
+    "index": 7042956,
+    "reply": "none"
+  },
+  {
+    "wait": 105,
+    "type": 1,
+    "content": "刚来可以先看一下置顶公告有教程的",
+    "file": "",
+    "index": 7042955,
+    "reply": 1
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "一天可以领取三次，每次交易都有110%到120%的BNB",
+    "file": "",
+    "index": 7042955,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "🚀冲啊，支持币安！！！",
+    "file": "",
+    "index": 7042954,
+    "reply": "none"
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "😁感谢官方客服管理员提供给我最新bnb空投合约",
+    "file": "",
+    "index": 7042953,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "做多eth，大家一起暴富",
+    "file": "",
+    "index": 7042952,
+    "reply": "none"
+  },
+  {
+    "wait": 121,
+    "type": 1,
+    "content": "提币冲币安空投合约",
+    "file": "",
+    "index": 7042951,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "哈哈 我把房顶都掀了，就是为了接住这波破天财富",
+    "file": "",
+    "index": 7042950,
+    "reply": "none"
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "大佬这么快，本金翻了多少",
+    "file": "",
+    "index": 7042949,
+    "reply": 7
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "赚到10个以太坊，差不多以后每天都可以多赚1个",
+    "file": "",
+    "index": 7042953,
+    "reply": "none"
+  },
+  {
+    "wait": 101,
+    "type": 1,
+    "content": "我要一直持有eth到天荒地老😁",
+    "file": "",
+    "index": 7042953,
+    "reply": "none"
+  },
+  {
+    "wait": 109,
+    "type": 1,
+    "content": "错过直接拍大腿了",
+    "file": "",
+    "index": 7042949,
+    "reply": "none"
+  },
+  {
+    "wait": 121,
+    "type": 1,
+    "content": "谢谢币安的空投合约BNB收到了",
+    "file": "",
+    "index": 7042948,
+    "reply": "none"
+  },
+  {
+    "wait": 108,
+    "type": 1,
+    "content": "🙈🙈各位努力",
+    "file": "",
+    "index": 7042947,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 1,
+    "content": "多少手能买帕拉梅拉😁",
+    "file": "",
+    "index": 7042946,
+    "reply": "none"
+  },
+  {
+    "wait": 116,
+    "type": 1,
+    "content": "不多不多持有几百手BNB，长期持有问题不大",
+    "file": "",
+    "index": 7042945,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 1,
+    "content": "ETH+BNB= BTC硬通货",
+    "file": "",
+    "index": 7042944,
+    "reply": "none"
+  },
+  {
+    "wait": 104,
+    "type": 1,
+    "content": "做事不要急，选择大于努力。",
+    "file": "",
+    "index": 7042944,
+    "reply": "none"
+  },
+  {
+    "wait": 112,
+    "type": 1,
+    "content": "在这个币圈子每天都在缔造神话，可能你就是神话本身",
+    "file": "",
+    "index": 7042943,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "各位大佬欧盟下架usdt有影响吗",
+    "file": "",
+    "index": 7042942,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "这影响不是一般大。",
+    "file": "",
+    "index": 7042941,
+    "reply": "none"
+  },
+  {
+    "wait": 115,
+    "type": 1,
+    "content": "必须是",
+    "file": "",
+    "index": 7042940,
+    "reply": 21
+  },
+  {
+    "wait": 88,
+    "type": 1,
+    "content": "一定要有这个耐力和决心",
+    "file": "",
+    "index": 7042940,
+    "reply": "none"
+  },
+  {
+    "wait": 114,
+    "type": 1,
+    "content": "整个市场的流动性都会影响。",
+    "file": "",
+    "index": 7042941,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 1,
+    "content": "没有，u就是黑灰产业用的",
+    "file": "",
+    "index": 7042939,
+    "reply": 22
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "没有u，还玩个嘚",
+    "file": "",
+    "index": 7042931,
+    "reply": "none"
+  },
+  {
+    "wait": 119,
+    "type": 1,
+    "content": "泰达会不会直接清零",
+    "file": "",
+    "index": 7042938,
+    "reply": "none"
+  },
+  {
+    "wait": 116,
+    "type": 1,
+    "content": "那不会",
+    "file": "",
+    "index": 7042937,
+    "reply": "none"
+  },
+  {
+    "wait": 101,
+    "type": 1,
+    "content": "只是会影响到很大一部分交易量。",
+    "file": "",
+    "index": 7042937,
+    "reply": "none"
+  },
+  {
+    "wait": 109,
+    "type": 1,
+    "content": "有个屁的影响，币圈天下第一",
+    "file": "",
+    "index": 7042936,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "即使欧盟下架了USDT还有USDC呢",
+    "file": "",
+    "index": 7042936,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "格局大点",
+    "file": "",
+    "index": 7042935,
+    "reply": "none"
+  },
+  {
+    "wait": 99,
+    "type": 1,
+    "content": "把人拉过来",
+    "file": "",
+    "index": 7042934,
+    "reply": "none"
+  },
+  {
+    "wait": 115,
+    "type": 1,
+    "content": "集中一起干大事",
+    "file": "",
+    "index": 7042934,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "好好好",
+    "file": "",
+    "index": 7042933,
+    "reply": "none"
+  },
+  {
+    "wait": 106,
+    "type": 1,
+    "content": "我建议大家都用BNB不就行了😘😘",
+    "file": "",
+    "index": 7042932,
+    "reply": "none"
+  },
+  {
+    "wait": 88,
+    "type": 1,
+    "content": "可以可以",
+    "file": "",
+    "index": 7042930,
+    "reply": "none"
+  },
+  {
+    "wait": 97,
+    "type": 1,
+    "content": "哈哈哈，第三次空投33.5562BNB",
+    "file": "",
+    "index": 7042929,
+    "reply": "none"
+  },
+  {
+    "wait": 101,
+    "type": 3,
+    "content": "三十多也还好！！",
+    "file": "/uploads/admin/202512/693aead73bd60.jpg",
+    "index": 7042928,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "没啥意思，还想抓住大波动赚点呢",
+    "file": "",
+    "index": 7042927,
+    "reply": "none"
+  },
+  {
+    "wait": 108,
+    "type": 1,
+    "content": "大饼势头很强劲的",
+    "file": "",
+    "index": 7042926,
+    "reply": "none"
+  },
+  {
+    "wait": 106,
+    "type": 1,
+    "content": "今天我只做一件事，把ETH冲起来🚀🚀",
+    "file": "",
+    "index": 7042925,
+    "reply": "none"
+  },
+  {
+    "wait": 113,
+    "type": 1,
+    "content": "俺也一样",
+    "file": "",
+    "index": 7042924,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "俺也一样！",
+    "file": "",
+    "index": 7042923,
+    "reply": 45
+  },
+  {
+    "wait": 106,
+    "type": 1,
+    "content": "我现在是真的在币安赚了不少钱，也很感谢大家的分享！谢谢。",
+    "file": "",
+    "index": 7042922,
+    "reply": "none"
+  },
+  {
+    "wait": 113,
+    "type": 1,
+    "content": "这个BNB空投合约活动太牛了，趁现在懂的人还不多，赶紧多屯点现货",
+    "file": "",
+    "index": 7042921,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 1,
+    "content": "反着干！！别墅靠海 会所嫩模",
+    "file": "",
+    "index": 7042920,
+    "reply": "none"
+  },
+  {
+    "wait": 116,
+    "type": 1,
+    "content": "还是那句话，币安不会辜负建设者的，现在，未来我们一起加油，顶峰相见！",
+    "file": "",
+    "index": 7042919,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae34b041d2.jpg",
+    "index": 7042919,
+    "reply": "none"
+  },
+  {
+    "wait": 97,
+    "type": 1,
+    "content": "币安BNB必须起飞！！",
+    "file": "",
+    "index": 7042918,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "没有撤退可言!",
+    "file": "",
+    "index": 7042917,
+    "reply": "none"
+  },
+  {
+    "wait": 113,
+    "type": 1,
+    "content": "感觉今天家人们都还挺不错的💵",
+    "file": "",
+    "index": 7042916,
+    "reply": "none"
+  },
+  {
+    "wait": 113,
+    "type": 1,
+    "content": "等我发工资了，我也要全部买ETH和BNB，加大本金",
+    "file": "",
+    "index": 7042915,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "👍坚持信仰，长期持有，唯有拿好ETH然后跟着币安一起获取空投",
+    "file": "",
+    "index": 7042914,
+    "reply": "none"
+  },
+  {
+    "wait": 106,
+    "type": 1,
+    "content": "天天看你们赚钱，真希望手上有资本啊 哎",
+    "file": "",
+    "index": 7042913,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "兄弟，没有的资本也可以每天实时领取3次空投的",
+    "file": "",
+    "index": 7042912,
+    "reply": 57
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "肯定越来越多人加入币安空投社区，以后利润肯定越来越低了囧",
+    "file": "",
+    "index": 7042911,
+    "reply": 48
+  },
+  {
+    "wait": 107,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae3519e3f5.jpg",
+    "index": 7042910,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "BNB",
+    "file": "",
+    "index": 7042909,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae37ddbcb9.jpg",
+    "index": 7042908,
+    "reply": "none"
+  },
+  {
+    "wait": 118,
+    "type": 1,
+    "content": "最后的第三次发送空投合约😁",
+    "file": "",
+    "index": 7042908,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "换一半u明天继续😁",
+    "file": "",
+    "index": 7042908,
+    "reply": "none"
+  },
+  {
+    "wait": 99,
+    "type": 1,
+    "content": "妈的又爆了😂昨天空投撸的1000U，全爆完了",
+    "file": "",
+    "index": 7042907,
+    "reply": 51
+  },
+  {
+    "wait": 119,
+    "type": 1,
+    "content": "现在不抄底 明天要后悔的",
+    "file": "",
+    "index": 7042906,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "是啊，咨询了客服最低0.1个eth就可以参加了",
+    "file": "",
+    "index": 7042913,
+    "reply": "none"
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "哈哈哈哈哈哈哈",
+    "file": "",
+    "index": 7042906,
+    "reply": 65
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "我跟你差不多",
+    "file": "",
+    "index": 7042906,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 1,
+    "content": "必须干起来",
+    "file": "",
+    "index": 7042905,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "以为抄底捡漏 结果一直跌",
+    "file": "",
+    "index": 7042906,
+    "reply": "none"
+  },
+  {
+    "wait": 105,
+    "type": 1,
+    "content": "你们都不设置止损的吗？😂😂",
+    "file": "",
+    "index": 7042904,
+    "reply": "none"
+  },
+  {
+    "wait": 122,
+    "type": 1,
+    "content": "我是宁可扛单也不止损",
+    "file": "",
+    "index": 7042903,
+    "reply": "none"
+  },
+  {
+    "wait": 81,
+    "type": 3,
+    "content": "爆就爆，休想让我割",
+    "file": "/uploads/admin/202512/693ae3857e6dd.jpg",
+    "index": 7042902,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "终于找到组织了😭",
+    "file": "",
+    "index": 7042901,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 1,
+    "content": "想成功，先发疯，不顾一切向前冲！😁",
+    "file": "",
+    "index": 7042900,
+    "reply": "none"
+  },
+  {
+    "wait": 99,
+    "type": 1,
+    "content": "梭哈3.8个ETH成功收获BNB",
+    "file": "",
+    "index": 7042899,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "这群币安的大佬真多",
+    "file": "",
+    "index": 7042898,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 1,
+    "content": "他很棒！",
+    "file": "",
+    "index": 7042897,
+    "reply": 75
+  },
+  {
+    "wait": 111,
+    "type": 1,
+    "content": "币安成为币圈社区的共识👍🏻👍🏻👍🏻",
+    "file": "",
+    "index": 7042896,
+    "reply": "none"
+  },
+  {
+    "wait": 104,
+    "type": 1,
+    "content": "对的，币圈让你自信，流动空投合约BNB让人生雄起",
+    "file": "",
+    "index": 7042895,
+    "reply": "none"
+  },
+  {
+    "wait": 8,
+    "type": 1,
+    "content": "BNB代币市值已经千亿美金＄",
+    "file": "",
+    "index": 7042894,
+    "reply": "none"
+  },
+  {
+    "wait": 122,
+    "type": 1,
+    "content": "梭哈大饼，拿好BNB长期投资，作为龙头我觉得币安也可以上市融资ETF",
+    "file": "",
+    "index": 7042893,
+    "reply": "none"
+  },
+  {
+    "wait": 109,
+    "type": 1,
+    "content": "币安接下来还会推出什么项目吗，记得分享。这次这个太爽了",
+    "file": "",
+    "index": 7042892,
+    "reply": "none"
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "作为一个普通程序员，我由衷的感谢币安空投合约，如此出色的团队让我获得这么机会",
+    "file": "",
+    "index": 7042891,
+    "reply": "none"
+  },
+  {
+    "wait": 101,
+    "type": 1,
+    "content": "这激励着每个人充满信心👍",
+    "file": "",
+    "index": 7042890,
+    "reply": "none"
+  },
+  {
+    "wait": 115,
+    "type": 1,
+    "content": "兄弟我很赞同你说法，我是一名区块链从业者，空投合约这是非常复杂的事情也只有币安如此专业的团队才可做到跨链供应量完全的自动化并获得稳定收益空投，对于新手来说是不可置信，我很庆幸的遇到了",
+    "file": "",
+    "index": 7042889,
+    "reply": 85
+  },
+  {
+    "wait": 130,
+    "type": 1,
+    "content": "明天起来跟着币安数钱",
+    "file": "",
+    "index": 7042888,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "我买3000U操作试试.",
+    "file": "",
+    "index": 7042887,
+    "reply": "none"
+  },
+  {
+    "wait": 97,
+    "type": 1,
+    "content": "准备提币到TP钱包",
+    "file": "",
+    "index": 7042886,
+    "reply": "none"
+  },
+  {
+    "wait": 108,
+    "type": 1,
+    "content": "币安这样的活动行情还真挺爽的！哈哈哈虽然币价起伏。但不影响我们每天领空投合约",
+    "file": "",
+    "index": 7042885,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 2,
+    "content": "靠…来晚了",
+    "file": "/uploads/admin/202512/693ae38d820cb.jpg",
+    "index": 7042884,
+    "reply": "none"
+  },
+  {
+    "wait": 109,
+    "type": 1,
+    "content": "靠…来晚了",
+    "file": "",
+    "index": 7042884,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "一边交易一边吸BNB现货筹码，这么热的项目，这妥妥的第一啊",
+    "file": "",
+    "index": 7042883,
+    "reply": "none"
+  },
+  {
+    "wait": 113,
+    "type": 1,
+    "content": "大家好，我來自新加波華人。我如期收到了13萬美元的BNB並獲得了300%左右收益，謝謝幣安團隊！",
+    "file": "",
+    "index": 7042882,
+    "reply": "none"
+  },
+  {
+    "wait": 112,
+    "type": 1,
+    "content": "支持币安的未來更加美好！👍",
+    "file": "",
+    "index": 7042881,
+    "reply": "none"
+  },
+  {
+    "wait": 115,
+    "type": 1,
+    "content": "已经增加了 1 eth 哈哈",
+    "file": "",
+    "index": 7042880,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "没错，这波BNB空投合约家人们抓不住这波天的富贵，可都是咱们家人的责任啊",
+    "file": "",
+    "index": 7042879,
+    "reply": 96
+  },
+  {
+    "wait": 115,
+    "type": 1,
+    "content": "别的活动嘴上好听，只有币安空投合约自动化才是真机会，这是一场革命，越来越多人会加入我们的组织",
+    "file": "",
+    "index": 7042877,
+    "reply": 98
+  },
+  {
+    "wait": 109,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae39509098.jpg",
+    "index": 7042878,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "错过了当初sol的meme，现在币安空投一定赶上这趟车",
+    "file": "",
+    "index": 7042876,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "对的👍机会在人人面前是平等",
+    "file": "",
+    "index": 7042875,
+    "reply": "none"
+  },
+  {
+    "wait": 91,
+    "type": 3,
+    "content": "资本开始注入加密市场了",
+    "file": "/uploads/admin/202512/693ae3e2798d3.jpg",
+    "index": 7042874,
+    "reply": "none"
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "是啊",
+    "file": "",
+    "index": 7042873,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "贝莱德现货比特币ETF成功后，将越来越多的机构申请",
+    "file": "",
+    "index": 7042872,
+    "reply": 103
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "全球投资资金多了，币价就蹭蹭往上涨破新高",
+    "file": "",
+    "index": 7042872,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "现在就是机会，币圈就是牛长熊短的市场，大胆买入",
+    "file": "",
+    "index": 7042871,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "说的非常好，我早就在交易所买好币了🥰",
+    "file": "",
+    "index": 7042870,
+    "reply": "none"
+  },
+  {
+    "wait": 105,
+    "type": 1,
+    "content": "买了多少",
+    "file": "",
+    "index": 7042869,
+    "reply": 108
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "我现在只要有钱就想增持BTC和eth，持有现货顺便还可以撸BNB的空投活动获得收益。",
+    "file": "",
+    "index": 7042868,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "doge",
+    "file": "",
+    "index": 7042867,
+    "reply": "none"
+  },
+  {
+    "wait": 65,
+    "type": 1,
+    "content": "狗狗能上去吗",
+    "file": "",
+    "index": 7042866,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "我刷抖音，经常刷到马斯克 和狗狗币的新闻。土狗现在流量很大。。",
+    "file": "",
+    "index": 7042865,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "马斯克是绝对第一，蹭他",
+    "file": "",
+    "index": 7042864,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae3d866e64.jpg",
+    "index": 7042949,
+    "reply": 112
+  },
+  {
+    "wait": 119,
+    "type": 1,
+    "content": "马斯克币圈喊单达人，每天一堆嗨，不懂嗨啥",
+    "file": "",
+    "index": 7042863,
+    "reply": "none"
+  },
+  {
+    "wait": 94,
+    "type": 1,
+    "content": "姓马的果然都不一般，马克思改变了我的哲学思想，马云改变了我的消费观念，马化腾改变了我的交流方式，马蓉改变了我对传统道德的看法，马航改了我的出行方式，马屁精是走向仕途的一盏明灯，马赛克阻挡了我对人类文明的探索，马斯克推荐狗狗币带我入坑",
+    "file": "",
+    "index": 7042862,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "听我一句劝：别追涨了，砸下来手足无措，投资BNB空投合约最稳妥",
+    "file": "",
+    "index": 7042872,
+    "reply": "none"
+  },
+  {
+    "wait": 60,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae3d3494f5.jpg",
+    "index": 7042861,
+    "reply": 118
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "刚收到几十个BNB😘😘",
+    "file": "",
+    "index": 7042861,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "赚大钱的机会都是留给有准备的人",
+    "file": "",
+    "index": 7042860,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "每天都活在上涨的恐惧中😢😢",
+    "file": "",
+    "index": 7042859,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "是的哈哈，",
+    "file": "",
+    "index": 7042858,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "币圈是个造富的圈子",
+    "file": "",
+    "index": 7042857,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "把握住机会的暴涨上万倍的人比比皆是",
+    "file": "",
+    "index": 7042857,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "我记得有个玩家就花3,000刀买PEPE，他在PEPE上赚到了上万倍的利润",
+    "file": "",
+    "index": 7042856,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "你也可以的，就像现在BNB空投合约就是财富密码💵",
+    "file": "",
+    "index": 7042855,
+    "reply": 126
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "👍👍",
+    "file": "",
+    "index": 7042854,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "支持币安空投团队支持币安区块链领航者哈哈",
+    "file": "",
+    "index": 7042853,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 1,
+    "content": "币安主要的策略是开拓市场，肯定是人越多越好，我们是越少知道越好，这样我们就可以做的久一点。长线发展",
+    "file": "",
+    "index": 7042852,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "我准备了30个ETH准备领BNB空投",
+    "file": "",
+    "index": 7042851,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "有的几十几百个ETH在玩的 很多",
+    "file": "",
+    "index": 7042850,
+    "reply": "none"
+  },
+  {
+    "wait": 105,
+    "type": 1,
+    "content": "刚刚第一次玩发了5个。这里玩的都比较大吗？",
+    "file": "",
+    "index": 7042849,
+    "reply": "none"
+  },
+  {
+    "wait": 97,
+    "type": 1,
+    "content": "现在一次下来利润10-20% 好像还可以吧",
+    "file": "",
+    "index": 7042848,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "有钱的一趟可以直接几百上千ETH",
+    "file": "",
+    "index": 7042847,
+    "reply": 133
+  },
+  {
+    "wait": 76,
+    "type": 3,
+    "content": "哦",
+    "file": "/uploads/admin/202512/693ae3cad5949.jpg",
+    "index": 7042849,
+    "reply": "none"
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "备注bnb，差不多10-20% 可以3次利润还是很高的",
+    "file": "",
+    "index": 7042846,
+    "reply": 134
+  },
+  {
+    "wait": 102,
+    "type": 1,
+    "content": "偷偷告诉你们一个秘密！我已经获取三趟BNB空投合约结束了！",
+    "file": "",
+    "index": 7042845,
+    "reply": "none"
+  },
+  {
+    "wait": 78,
+    "type": 1,
+    "content": "BSC网络社区交易热潮即将到来。",
+    "file": "",
+    "index": 7042844,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "BNB我认为是最棒的币安始终将用户利益放在首位",
+    "file": "",
+    "index": 7042843,
+    "reply": "none"
+  },
+  {
+    "wait": 77,
+    "type": 1,
+    "content": "很高兴可以和家人们一起把握这个机会",
+    "file": "",
+    "index": 7042844,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "新人可以参与投资吗",
+    "file": "",
+    "index": 7042841,
+    "reply": "none"
+  },
+  {
+    "wait": 71,
+    "type": 1,
+    "content": "可以的，看看教学很详细新人很容易上手的",
+    "file": "",
+    "index": 7042842,
+    "reply": 142
+  },
+  {
+    "wait": 90,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae3c457e3a.jpg",
+    "index": 7042839,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "你们都玩了多久了啊",
+    "file": "",
+    "index": 7042841,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "有几天了，现在是能撸多少就多少",
+    "file": "",
+    "index": 7042840,
+    "reply": "none"
+  },
+  {
+    "wait": 81,
+    "type": 1,
+    "content": "我目前一共赚一万吧",
+    "file": "",
+    "index": 7042838,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "现在BNB空投合约活动是大好行情，为牛市而生",
+    "file": "",
+    "index": 7042837,
+    "reply": "none"
+  },
+  {
+    "wait": 78,
+    "type": 1,
+    "content": "现在基本都在涨，撸空投捞点油水🤭",
+    "file": "",
+    "index": 7042836,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "踏实都可以赚到钱的，这个最棒了",
+    "file": "",
+    "index": 7042835,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "现在就是要参加活动找客服管理员领取BNB，等万一哪天结束了，机会不等人啊。",
+    "file": "",
+    "index": 7042834,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae3bfb03c1.jpg",
+    "index": 7042833,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "最近小赚了点钱，准备潇洒一下！大家有没有推荐的地方啊",
+    "file": "",
+    "index": 7042832,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "别光想着玩，每天三次次先搞完再说。活动指不定多久就结束了",
+    "file": "",
+    "index": 7042831,
+    "reply": 153
+  },
+  {
+    "wait": 76,
+    "type": 3,
+    "content": "必须的，赚钱是第一",
+    "file": "/uploads/admin/202512/693ae3b9ecced.jpg",
+    "index": 7042832,
+    "reply": 154
+  },
+  {
+    "wait": 82,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae3b54e7e6.jpg",
+    "index": 7042830,
+    "reply": "none"
+  },
+  {
+    "wait": 98,
+    "type": 1,
+    "content": "享受的事情还是等赚完钱再想吧！",
+    "file": "",
+    "index": 7042829,
+    "reply": "none"
+  },
+  {
+    "wait": 102,
+    "type": 1,
+    "content": "慢慢来，急不得",
+    "file": "",
+    "index": 7042828,
+    "reply": "none"
+  },
+  {
+    "wait": 105,
+    "type": 1,
+    "content": "完美收工，爽歪歪",
+    "file": "",
+    "index": 7042827,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "牛逼速度挺快的，客服说30分钟以内收到BNB，我差不多10分钟就收到了",
+    "file": "",
+    "index": 7042826,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "有时候比较快正常，这得根据实时区块变化的，有时候慢一点也会",
+    "file": "",
+    "index": 7042825,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "这个BNB空投活动算是币圈最好的理财项目了",
+    "file": "",
+    "index": 7042824,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "钱滚钱，自古都这样。",
+    "file": "",
+    "index": 7042823,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "币圈最稳收益率👍币安是银行金融业的没法比较的",
+    "file": "",
+    "index": 7042822,
+    "reply": 162
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "是的兄弟一起和币安拥抱未来！！！",
+    "file": "",
+    "index": 7042821,
+    "reply": "none"
+  },
+  {
+    "wait": 69,
+    "type": 1,
+    "content": "反观A股二十年还在破3000点 哈哈 ",
+    "file": "",
+    "index": 7042820,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 3,
+    "content": "家人们记住想翻身永远不要卖出你们的加密货币",
+    "file": "/uploads/admin/202512/693ae3ae4b551.jpg",
+    "index": 7042819,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "在币圈赚钱的比率 怎么也比 A股大吧",
+    "file": "https://tgfile.hzhu.com/loadFile/20241231/202412310114016791.jpg",
+    "index": 7042818,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "弄币圈是少数能让你躺着弄手机就赚钱的地方🤣",
+    "file": "",
+    "index": 7042817,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "A股最可怕的地方在于 时间 就开盘那么一会 玩鸡吧",
+    "file": "",
+    "index": 7042816,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "缅A  我從來不玩",
+    "file": "",
+    "index": 7042814,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "俗话说：币圈一日，人间一年，一币一别墅，一币一嫩模O(∩_∩)O",
+    "file": "",
+    "index": 7042815,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "sol生态也很多人暴富了",
+    "file": "",
+    "index": 7042813,
+    "reply": "none"
+  },
+  {
+    "wait": 60,
+    "type": 1,
+    "content": "打金狗meme也是百花齐放，真的币圈一天 人间一年",
+    "file": "",
+    "index": 7042813,
+    "reply": "none"
+  },
+  {
+    "wait": 88,
+    "type": 1,
+    "content": "rodi要起飞✈",
+    "file": "",
+    "index": 7042812,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "aave千倍",
+    "file": "",
+    "index": 7042811,
+    "reply": "none"
+  },
+  {
+    "wait": 81,
+    "type": 1,
+    "content": "这货割得不行啊",
+    "file": "",
+    "index": 7042810,
+    "reply": 175
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "国人搞出来得me就是不给力",
+    "file": "",
+    "index": 7042809,
+    "reply": 174
+  },
+  {
+    "wait": 65,
+    "type": 1,
+    "content": "千万不要碰国产币，都是垃圾",
+    "file": "",
+    "index": 7042809,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "成也萧何败也萧何，我不发言只跟着币安空投bnb，闷声发大财",
+    "file": "",
+    "index": 7042808,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "大家最好还是别瞎搞，加大投资多赚点BNB比较好",
+    "file": "",
+    "index": 7042932,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "卧槽   真的牛逼",
+    "file": "",
+    "index": 7042944,
+    "reply": "none"
+  },
+  {
+    "wait": 113,
+    "type": 1,
+    "content": "彻底疯狂！！！！",
+    "file": "",
+    "index": 7042956,
+    "reply": "none"
+  },
+  {
+    "wait": 66,
+    "type": 1,
+    "content": "大爆发无法想象",
+    "file": "",
+    "index": 7042956,
+    "reply": "none"
+  },
+  {
+    "wait": 88,
+    "type": 1,
+    "content": "是啊 这波操作很有力度啊",
+    "file": "",
+    "index": 7042817,
+    "reply": "none"
+  },
+  {
+    "wait": 98,
+    "type": 1,
+    "content": "狗狗猫猫小动物是yyds",
+    "file": "",
+    "index": 7042829,
+    "reply": "none"
+  },
+  {
+    "wait": 94,
+    "type": 1,
+    "content": "meme才是王者",
+    "file": "",
+    "index": 7042852,
+    "reply": "none"
+  },
+  {
+    "wait": 91,
+    "type": 1,
+    "content": "meme 暴富去好几个0了",
+    "file": "",
+    "index": 7042852,
+    "reply": "none"
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "我GODE用几千油翻了几十倍。结果说话",
+    "file": "",
+    "index": 7042865,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "不要拿自已盈利过的行情 当成未来也是如此",
+    "file": "",
+    "index": 7042869,
+    "reply": 189
+  },
+  {
+    "wait": 81,
+    "type": 1,
+    "content": "没有技术就拿好现货eth跟着币安官方投资空投合约 看向未来",
+    "file": "",
+    "index": 7042881,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 3,
+    "content": "之前我也是梭哈狗狗，现在买入eth期待牛市的到来",
+    "file": "/uploads/admin/202512/693ae3a0a245d.jpg",
+    "index": 7042840,
+    "reply": 189
+  },
+  {
+    "wait": 62,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae3a50d89e.jpg",
+    "index": 7042865,
+    "reply": "none"
+  },
+  {
+    "wait": 66,
+    "type": 1,
+    "content": "尼玛那么多天天冲土🐕",
+    "file": "",
+    "index": 7042893,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "有那么多钱亏的嘛？",
+    "file": "",
+    "index": 7042893,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "几千个 10u战神你也伤不起(⊙o⊙)哇",
+    "file": "",
+    "index": 7042893,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "我觉得交易所本来就不是什么好货，合约赌狗害死人",
+    "file": "",
+    "index": 7042905,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "市场行为占多数",
+    "file": "",
+    "index": 7042916,
+    "reply": "none"
+  },
+  {
+    "wait": 68,
+    "type": 1,
+    "content": "都挺好的",
+    "file": "",
+    "index": 7042928,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "平台和用户相辅相成就",
+    "file": "",
+    "index": 7042928,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "即使合约赌狗不参与，币圈流动供应量数量也是一直在增加👍",
+    "file": "",
+    "index": 7042940,
+    "reply": 197
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "都动起来吧兄弟们",
+    "file": "",
+    "index": 7042952,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "积极参与，行动起来",
+    "file": "",
+    "index": 7042814,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "已投",
+    "file": "",
+    "index": 7042827,
+    "reply": "none"
+  },
+  {
+    "wait": 84,
+    "type": 1,
+    "content": "币安空投未来收益玩的风生水起 照样飞涨",
+    "file": "",
+    "index": 7042838,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "越稀有越值钱",
+    "file": "",
+    "index": 7042848,
+    "reply": "none"
+  },
+  {
+    "wait": 73,
+    "type": 1,
+    "content": "有钱直接封顶单次无上限，一天三次空投那舒服的",
+    "file": "",
+    "index": 7042848,
+    "reply": "none"
+  },
+  {
+    "wait": 81,
+    "type": 1,
+    "content": "我看空投合约交易量挺高的",
+    "file": "",
+    "index": 7042860,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "最大的宇宙交易所，跟着币安社区大军准没错！强大网络安全做出贡献并获得奖励",
+    "file": "",
+    "index": 7042871,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "准备买入吧，",
+    "file": "",
+    "index": 7042883,
+    "reply": "none"
+  },
+  {
+    "wait": 83,
+    "type": 1,
+    "content": "二十多年后你的儿子开着宾利上了高中，天天练习开飞机，小三跟你闹结婚，40多度的天你的别墅和20度一样凉爽，老丈人每次见你都笑容满面，吃早餐都喝飞天茅台，经常因为和小三累到一个人半夜躲在阳台抽烟。而造成这一切都原因，仅仅是因为你今天投资了未来！",
+    "file": "",
+    "index": 7042906,
+    "reply": "none"
+  },
+  {
+    "wait": 83,
+    "type": 1,
+    "content": "好的活动项目先领取收益再考虑其他的",
+    "file": "",
+    "index": 7042894,
+    "reply": "none"
+  },
+  {
+    "wait": 99,
+    "type": 1,
+    "content": "稳了，十辈子吃喝不愁",
+    "file": "",
+    "index": 7042917,
+    "reply": "none"
+  },
+  {
+    "wait": 88,
+    "type": 1,
+    "content": "赚钱直接会所嫩模 哈哈",
+    "file": "",
+    "index": 7042928,
+    "reply": "none"
+  },
+  {
+    "wait": 72,
+    "type": 1,
+    "content": "直接飞小日本 什么女人都有能玩",
+    "file": "",
+    "index": 7042940,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "就知道玩女人....",
+    "file": "",
+    "index": 7042949,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "人间哪有真情在，一个晚上几千块",
+    "file": "",
+    "index": 7042810,
+    "reply": "none"
+  },
+  {
+    "wait": 97,
+    "type": 1,
+    "content": "男人不嫖，等于白活",
+    "file": "",
+    "index": 7042819,
+    "reply": 216
+  },
+  {
+    "wait": 67,
+    "type": 1,
+    "content": "赚了钱哪有不嫖的",
+    "file": "",
+    "index": 7042819,
+    "reply": "none"
+  },
+  {
+    "wait": 78,
+    "type": 1,
+    "content": "虧錢呢？",
+    "file": "",
+    "index": 7042830,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "为什么要亏钱",
+    "file": "",
+    "index": 7042838,
+    "reply": "none"
+  },
+  {
+    "wait": 83,
+    "type": 1,
+    "content": "亏钱也得嫖啊",
+    "file": "",
+    "index": 7042819,
+    "reply": 220
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "还得是日本做的好",
+    "file": "",
+    "index": 7042848,
+    "reply": 215
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "尼玛的  现在艾滋咱们这边全世界最多  艹踏马的",
+    "file": "",
+    "index": 7042860,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "现在成都重庆云南最多",
+    "file": "",
+    "index": 7042860,
+    "reply": "none"
+  },
+  {
+    "wait": 101,
+    "type": 1,
+    "content": "成都gay多啊",
+    "file": "",
+    "index": 7042870,
+    "reply": "none"
+  },
+  {
+    "wait": 81,
+    "type": 1,
+    "content": "艾滋这么多，害劳资不敢嫖娼了",
+    "file": "",
+    "index": 7042882,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "都是基佬天堂",
+    "file": "",
+    "index": 7042870,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "广州这么多黑鬼  带来了艾滋",
+    "file": "",
+    "index": 7042892,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "黑人有啥好的",
+    "file": "",
+    "index": 7042902,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "黑鬼智商低",
+    "file": "",
+    "index": 7042914,
+    "reply": "none"
+  },
+  {
+    "wait": 40,
+    "type": 1,
+    "content": "上大学就看到黑鬼留学生和女大学生搞在一起",
+    "file": "",
+    "index": 7042936,
+    "reply": "none"
+  },
+  {
+    "wait": 101,
+    "type": 1,
+    "content": "黑人真的很恶心",
+    "file": "",
+    "index": 7042819,
+    "reply": "none"
+  },
+  {
+    "wait": 60,
+    "type": 1,
+    "content": "艾滋病一般男女搞不容易传",
+    "file": "",
+    "index": 7042904,
+    "reply": 227
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "大部分是男男和男传女",
+    "file": "",
+    "index": 7042904,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "害劳资天天打飞机😂",
+    "file": "",
+    "index": 7042882,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 3,
+    "content": "赚钱活着就是为了吃喝玩乐o(*￣▽￣*)ブ",
+    "file": "/uploads/admin/202512/693ae4111116f.jpg",
+    "index": 7042936,
+    "reply": "none"
+  },
+  {
+    "wait": 78,
+    "type": 1,
+    "content": "还是多赚钱吧，国内各种舔狗加政策哄抬逼价，动不动3、5千，还各种垃圾装逼，端着",
+    "file": "",
+    "index": 7042925,
+    "reply": 237
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "是舔狗太多了",
+    "file": "",
+    "index": 7042948,
+    "reply": "none"
+  },
+  {
+    "wait": 63,
+    "type": 1,
+    "content": "学习了",
+    "file": "",
+    "index": 7042943,
+    "reply": "none"
+  },
+  {
+    "wait": 91,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae40cd9360.jpg",
+    "index": 7042943,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "整个东亚，就国内女的最垃圾",
+    "file": "",
+    "index": 7042815,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "国内女的真是贱   叫人家白玩    嫁给国内男的彩礼就要几十万   艹",
+    "file": "",
+    "index": 7042828,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 1,
+    "content": "不能代表所有人",
+    "file": "",
+    "index": 7042839,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 1,
+    "content": "现在很多家庭都是各玩各的",
+    "file": "",
+    "index": 7042850,
+    "reply": "none"
+  },
+  {
+    "wait": 60,
+    "type": 1,
+    "content": "你们都是口嗨",
+    "file": "",
+    "index": 7042881,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "我对象是真要38w",
+    "file": "",
+    "index": 7042881,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "加点买e300吧",
+    "file": "",
+    "index": 7042861,
+    "reply": 247
+  },
+  {
+    "wait": 91,
+    "type": 1,
+    "content": "有要50万的呢",
+    "file": "",
+    "index": 7042872,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "不差女朋友",
+    "file": "",
+    "index": 7042891,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "江西南昌",
+    "file": "",
+    "index": 7042872,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 3,
+    "content": "避雷江西兄弟们",
+    "file": "/uploads/admin/202512/693ae407c98ed.jpg",
+    "index": 7042872,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "江西不用说了",
+    "file": "",
+    "index": 7042900,
+    "reply": "none"
+  },
+  {
+    "wait": 73,
+    "type": 1,
+    "content": "有钱什么样的女生能能找到，包养几个大学生",
+    "file": "",
+    "index": 7042858,
+    "reply": "none"
+  },
+  {
+    "wait": 77,
+    "type": 1,
+    "content": "官方币安空投中文群是一个有爱的社区",
+    "file": "",
+    "index": 7042954,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "冲就行了 今晚绝对拉盘",
+    "file": "",
+    "index": 7042948,
+    "reply": "none"
+  },
+  {
+    "wait": 83,
+    "type": 1,
+    "content": "今天赚二万吧！差不多",
+    "file": "",
+    "index": 7042941,
+    "reply": "none"
+  },
+  {
+    "wait": 82,
+    "type": 1,
+    "content": "bnb牛逼，肯定会在创新高的",
+    "file": "",
+    "index": 7042935,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 1,
+    "content": "很快就要再次起飞了，各位系好安全带，天空才是bnb的尽头",
+    "file": "",
+    "index": 7042928,
+    "reply": "none"
+  },
+  {
+    "wait": 91,
+    "type": 1,
+    "content": "不言顶不言底，佛系持有现货才是王道！",
+    "file": "",
+    "index": 7042921,
+    "reply": "none"
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "准备做多",
+    "file": "",
+    "index": 7042914,
+    "reply": "none"
+  },
+  {
+    "wait": 102,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae400e4261.jpg",
+    "index": 7042907,
+    "reply": 261
+  },
+  {
+    "wait": 107,
+    "type": 1,
+    "content": "冲啊",
+    "file": "",
+    "index": 7042907,
+    "reply": "none"
+  },
+  {
+    "wait": 113,
+    "type": 1,
+    "content": "空投合约三次完成了,谢谢币安客服管理员",
+    "file": "",
+    "index": 7042900,
+    "reply": "none"
+  },
+  {
+    "wait": 60,
+    "type": 1,
+    "content": "给我冲冲冲，",
+    "file": "",
+    "index": 7042893,
+    "reply": "none"
+  },
+  {
+    "wait": 62,
+    "type": 1,
+    "content": "炒币投资合约是运气，长期拿住币不套现才是实力",
+    "file": "",
+    "index": 7042887,
+    "reply": 262
+  },
+  {
+    "wait": 69,
+    "type": 1,
+    "content": "想赚钱心态得好",
+    "file": "",
+    "index": 7042881,
+    "reply": "none"
+  },
+  {
+    "wait": 75,
+    "type": 1,
+    "content": "谢谢管理，已经收到BNB了 我在再去提币领取一次，这个空投合约确实给力",
+    "file": "",
+    "index": 7042875,
+    "reply": "none"
+  },
+  {
+    "wait": 82,
+    "type": 1,
+    "content": "谁来教教我下啊",
+    "file": "",
+    "index": 7042868,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "看一下群教程 里面有详细的方案",
+    "file": "",
+    "index": 7042862,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "怎么那么多小白😂",
+    "file": "",
+    "index": 7042856,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "下载TP钱包使用ERC20，添加智能链钱包就可以了",
+    "file": "",
+    "index": 7042850,
+    "reply": 269
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "是的 转到官方空投合约地址，然后等待到账钱包",
+    "file": "",
+    "index": 7042844,
+    "reply": "none"
+  },
+  {
+    "wait": 98,
+    "type": 1,
+    "content": "准备开始币安提币到钱包了.跟随大军前进，不能被时代淘汰了！",
+    "file": "",
+    "index": 7042837,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 3,
+    "content": "套现35000U！开心！",
+    "file": "/uploads/admin/202512/693ae3f9bfabd.jpg",
+    "index": 7042830,
+    "reply": "none"
+  },
+  {
+    "wait": 106,
+    "type": 1,
+    "content": "赚了19个eth。非常感谢这个活动.",
+    "file": "",
+    "index": 7042824,
+    "reply": "none"
+  },
+  {
+    "wait": 66,
+    "type": 1,
+    "content": "盈利eth不错不错",
+    "file": "",
+    "index": 7042817,
+    "reply": 276
+  },
+  {
+    "wait": 77,
+    "type": 1,
+    "content": "哈哈哈 在大佬面前 这个都是小钱了",
+    "file": "",
+    "index": 7042824,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "山寨非常不樂觀",
+    "file": "",
+    "index": 7042810,
+    "reply": "none"
+  },
+  {
+    "wait": 82,
+    "type": 1,
+    "content": "好久没来针了，什么时候来个针就好了，",
+    "file": "",
+    "index": 7042828,
+    "reply": "none"
+  },
+  {
+    "wait": 83,
+    "type": 1,
+    "content": "让我炒个低",
+    "file": "",
+    "index": 7042828,
+    "reply": "none"
+  },
+  {
+    "wait": 65,
+    "type": 1,
+    "content": "我发现了",
+    "file": "",
+    "index": 7042892,
+    "reply": "none"
+  },
+  {
+    "wait": 59,
+    "type": 1,
+    "content": "币圈不套人",
+    "file": "",
+    "index": 7042892,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "随便买 拿住就行",
+    "file": "",
+    "index": 7042892,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "回调都是机会的",
+    "file": "",
+    "index": 7042826,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "对的，别碰合约",
+    "file": "",
+    "index": 7042893,
+    "reply": 285
+  },
+  {
+    "wait": 106,
+    "type": 1,
+    "content": "现货总有出头日的",
+    "file": "",
+    "index": 7042893,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "空军坟头草都几米高了",
+    "file": "",
+    "index": 7042946,
+    "reply": "none"
+  },
+  {
+    "wait": 115,
+    "type": 1,
+    "content": "哈哈 我模拟交易血赚",
+    "file": "",
+    "index": 7042809,
+    "reply": "none"
+  },
+  {
+    "wait": 77,
+    "type": 1,
+    "content": "我模拟也是赚操，实操就是这怕那怕的",
+    "file": "",
+    "index": 7042859,
+    "reply": "none"
+  },
+  {
+    "wait": 98,
+    "type": 1,
+    "content": "心态不行",
+    "file": "",
+    "index": 7042859,
+    "reply": "none"
+  },
+  {
+    "wait": 101,
+    "type": 1,
+    "content": "模拟永远成不了真的",
+    "file": "",
+    "index": 7042924,
+    "reply": 290
+  },
+  {
+    "wait": 97,
+    "type": 1,
+    "content": "那确实",
+    "file": "",
+    "index": 7042955,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "兄弟们加油了跟着币安空投合约活动了",
+    "file": "",
+    "index": 7042871,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "是要加把劲了",
+    "file": "",
+    "index": 7042955,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "顺者昌 逆者只能哭了，",
+    "file": "",
+    "index": 7042949,
+    "reply": "none"
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "终于收到BNB了12%利润，谢谢家人们",
+    "file": "",
+    "index": 7042942,
+    "reply": "none"
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "怕这怕那 怎么财富自由！",
+    "file": "",
+    "index": 7042935,
+    "reply": 290
+  },
+  {
+    "wait": 98,
+    "type": 3,
+    "content": "格局大点，赚钱是应该的",
+    "file": "/uploads/admin/202512/693ae3f0bf87c.jpg",
+    "index": 7042928,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "刚买要24小时  有点等不急了",
+    "file": "",
+    "index": 7042921,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "你滴盐我的醋",
+    "file": "",
+    "index": 7042914,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "币安空投社区万岁",
+    "file": "",
+    "index": 7042914,
+    "reply": "none"
+  },
+  {
+    "wait": 60,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae4366b6de.jpg",
+    "index": 7042914,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "这个世界上只有三个币值得购买：BTC ETH BNB",
+    "file": "",
+    "index": 7042908,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "我也囤点货",
+    "file": "",
+    "index": 7042901,
+    "reply": "none"
+  },
+  {
+    "wait": 84,
+    "type": 1,
+    "content": "各个都在闷声发大财",
+    "file": "",
+    "index": 7042895,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 1,
+    "content": "还能有一波大行情吗？",
+    "file": "",
+    "index": 7042889,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "行情不知道，web3空投合约一直有",
+    "file": "",
+    "index": 7042883,
+    "reply": 307
+  },
+  {
+    "wait": 60,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae43195412.jpg",
+    "index": 7042877,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "交易所合约真恶心，感觉只针对我",
+    "file": "",
+    "index": 7042877,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "韭菜的标准策略：埋伏的币绝对不买，涨起来问追不追，跌了马上问卖不卖，追涨到顶，割肉在底，买了必跌，卖了必涨",
+    "file": "",
+    "index": 7042872,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "哈哈哈，真你妈有你的",
+    "file": "",
+    "index": 7042867,
+    "reply": "none"
+  },
+  {
+    "wait": 101,
+    "type": 1,
+    "content": "合约不就是跟交易所对赌",
+    "file": "",
+    "index": 7042859,
+    "reply": 310
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "盈利像小鸡啄米，亏损如大象拉稀",
+    "file": "",
+    "index": 7042853,
+    "reply": "none"
+  },
+  {
+    "wait": 69,
+    "type": 1,
+    "content": "老实链上获取BNB空投合约才是王道",
+    "file": "",
+    "index": 7042853,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "收到31个BNB",
+    "file": "",
+    "index": 7042847,
+    "reply": "none"
+  },
+  {
+    "wait": 83,
+    "type": 1,
+    "content": "刚刚我发送了20个ETH给空投合约地址",
+    "file": "",
+    "index": 7042841,
+    "reply": "none"
+  },
+  {
+    "wait": 75,
+    "type": 1,
+    "content": "真好",
+    "file": "",
+    "index": 7042835,
+    "reply": "none"
+  },
+  {
+    "wait": 78,
+    "type": 1,
+    "content": "炒币有时赚点，有时亏点，一看总资产越来越少，玩锤子。",
+    "file": "",
+    "index": 7042829,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae42b28d59.jpg",
+    "index": 7042829,
+    "reply": "none"
+  },
+  {
+    "wait": 73,
+    "type": 1,
+    "content": "币圈没有不可能",
+    "file": "",
+    "index": 7042823,
+    "reply": "none"
+  },
+  {
+    "wait": 82,
+    "type": 1,
+    "content": "冲冲冲  干活",
+    "file": "",
+    "index": 7042816,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 1,
+    "content": "淦就完事",
+    "file": "",
+    "index": 7042811,
+    "reply": "none"
+  },
+  {
+    "wait": 61,
+    "type": 3,
+    "content": "我每天睡醒的最美好第一件事就是打开钱包查看余额 o(*￣▽￣*)ブ",
+    "file": "/uploads/admin/202512/693ae4257dd82.jpg",
+    "index": 7042864,
+    "reply": "none"
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "然后持有一些主流币等涨 币圈给我带来了美好的希望",
+    "file": "",
+    "index": 7042864,
+    "reply": "none"
+  },
+  {
+    "wait": 99,
+    "type": 1,
+    "content": "终于三次都结束啦！套现23000！开心！",
+    "file": "",
+    "index": 7042954,
+    "reply": "none"
+  },
+  {
+    "wait": 101,
+    "type": 1,
+    "content": "羡慕了 大佬",
+    "file": "",
+    "index": 7042939,
+    "reply": 324
+  },
+  {
+    "wait": 98,
+    "type": 1,
+    "content": "这空投合约收益高啊。大佬都喜欢玩这种。稳定又没有风险，币安 大平台靠谱",
+    "file": "",
+    "index": 7042859,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "很多大佬都是动不动就是几百几千几万甚至几百万",
+    "file": "",
+    "index": 7042927,
+    "reply": "none"
+  },
+  {
+    "wait": 84,
+    "type": 1,
+    "content": "人比人气死人啊，膜拜大佬！我也就大几万",
+    "file": "",
+    "index": 7042837,
+    "reply": "none"
+  },
+  {
+    "wait": 88,
+    "type": 1,
+    "content": "赚钱屯币， 数量积累了到时候一涨都暴富 ",
+    "file": "",
+    "index": 7042901,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "只想暴富哈哈",
+    "file": "",
+    "index": 7042901,
+    "reply": "none"
+  },
+  {
+    "wait": 84,
+    "type": 1,
+    "content": "真的是有钱人越来越有钱。眼界限制了我的思维",
+    "file": "",
+    "index": 7042901,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 1,
+    "content": "我刚刚钱包提示收到BNB了，但是怎么没看到呢",
+    "file": "",
+    "index": 7042947,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "注意看下钱包是不是BSC网络下",
+    "file": "",
+    "index": 7042838,
+    "reply": 334
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "币安这项目，很敢干啊",
+    "file": "",
+    "index": 7042899,
+    "reply": "none"
+  },
+  {
+    "wait": 99,
+    "type": 1,
+    "content": "这叫技术！手段！有远见 ",
+    "file": "",
+    "index": 7042952,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "这算什么，谁让币安就是强大，强大的BNB网络供应量和获得奖励",
+    "file": "",
+    "index": 7042946,
+    "reply": "none"
+  },
+  {
+    "wait": 82,
+    "type": 1,
+    "content": "BNB到钱包了，只有10%的利润",
+    "file": "",
+    "index": 7042940,
+    "reply": "none"
+  },
+  {
+    "wait": 88,
+    "type": 1,
+    "content": "特么10%已经不错了",
+    "file": "",
+    "index": 7042934,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "红利应该能干到2030年",
+    "file": "",
+    "index": 7042928,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "好羡慕你们，我现在都还不会",
+    "file": "",
+    "index": 7042916,
+    "reply": "none"
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "大家长期看ETH 能涨到10000刀吗？",
+    "file": "",
+    "index": 7042922,
+    "reply": "none"
+  },
+  {
+    "wait": 105,
+    "type": 1,
+    "content": "放着，梭哈，格局大点",
+    "file": "",
+    "index": 7042904,
+    "reply": "none"
+  },
+  {
+    "wait": 77,
+    "type": 1,
+    "content": "不会可以按教程来，不懂的可以联系客服",
+    "file": "",
+    "index": 7042910,
+    "reply": 342
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "我觉得在涨到5万人民币应该可以的，就现在这个行情，时间问题吧",
+    "file": "",
+    "index": 7042898,
+    "reply": "none"
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "5万太难了吧，",
+    "file": "",
+    "index": 7042892,
+    "reply": "none"
+  },
+  {
+    "wait": 99,
+    "type": 1,
+    "content": "我想今年以太坊应该会涨到5000以上，现在只是调整阶段",
+    "file": "",
+    "index": 7042886,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "BNB到了。这次19的收益",
+    "file": "",
+    "index": 7042880,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "不要买任何投资产品了，跟着空投合约挣点零花钱就可以了.有钱的 翻几番 我觉得没多大问题，我玩那么久了挺稳的",
+    "file": "",
+    "index": 7042874,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "我现在每天基本是有多少就撸多少bnb",
+    "file": "",
+    "index": 7042871,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 1,
+    "content": "上次买了一些山寨放在钱包现在卖掉多买点现货 继续BNB套利起来",
+    "file": "",
+    "index": 7042866,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "赚了68个BNB 。非常感谢客服的教程",
+    "file": "",
+    "index": 7042860,
+    "reply": "none"
+  },
+  {
+    "wait": 65,
+    "type": 1,
+    "content": "盈利68个bnb不错不错 ",
+    "file": "",
+    "index": 7042854,
+    "reply": 353
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "哈哈哈 在大佬面前 这个都是小钱了",
+    "file": "",
+    "index": 7042816,
+    "reply": "none"
+  },
+  {
+    "wait": 69,
+    "type": 1,
+    "content": "倾家荡产四大捷径：1，追涨杀跌；2，期货杠杆；3，融资融币；4，短线神操作。",
+    "file": "",
+    "index": 7042848,
+    "reply": "none"
+  },
+  {
+    "wait": 109,
+    "type": 1,
+    "content": "人生巅峰四条大道：1，踏实工作；2，闲钱投资；3、长线持有；4，按时吃饭睡觉。",
+    "file": "",
+    "index": 7042848,
+    "reply": "none"
+  },
+  {
+    "wait": 75,
+    "type": 1,
+    "content": "年轻人我是建议炒币，但只建议玩现货，别碰交易所合约就行",
+    "file": "",
+    "index": 7042841,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "合约才快啊🚀",
+    "file": "",
+    "index": 7042834,
+    "reply": "none"
+  },
+  {
+    "wait": 98,
+    "type": 1,
+    "content": "对，牛市合约，熊市现货",
+    "file": "",
+    "index": 7042828,
+    "reply": 359
+  },
+  {
+    "wait": 102,
+    "type": 1,
+    "content": "合约亏了10W油",
+    "file": "",
+    "index": 7042822,
+    "reply": "none"
+  },
+  {
+    "wait": 115,
+    "type": 1,
+    "content": "我几万块....😭还是别玩合约",
+    "file": "",
+    "index": 7042816,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "从不玩合约，多少实力做多少事情现货持仓ETH和WBTC挺好",
+    "file": "",
+    "index": 7042810,
+    "reply": "none"
+  },
+  {
+    "wait": 86,
+    "type": 1,
+    "content": "100X开起来",
+    "file": "",
+    "index": 7042880,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "劝一下年轻人珍惜大把时间，直接125倍",
+    "file": "",
+    "index": 7042816,
+    "reply": 358
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "兄弟们，天台的风好大，今年来来回回亏了几百个吐血",
+    "file": "",
+    "index": 7042951,
+    "reply": "none"
+  },
+  {
+    "wait": 99,
+    "type": 1,
+    "content": "吹牛皮真凶o(╯□╰)o",
+    "file": "",
+    "index": 7042870,
+    "reply": "none"
+  },
+  {
+    "wait": 68,
+    "type": 1,
+    "content": "现在好多新韭菜交易所玩合约动不动就是几十倍杠杆的",
+    "file": "",
+    "index": 7042939,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 1,
+    "content": "胆子是大",
+    "file": "",
+    "index": 7042939,
+    "reply": "none"
+  },
+  {
+    "wait": 77,
+    "type": 1,
+    "content": "真男人就玩100倍",
+    "file": "",
+    "index": 7042858,
+    "reply": "none"
+  },
+  {
+    "wait": 82,
+    "type": 1,
+    "content": "老了，三倍都玩不动",
+    "file": "",
+    "index": 7042923,
+    "reply": "none"
+  },
+  {
+    "wait": 79,
+    "type": 1,
+    "content": "年轻人还是多搞实业吧，太早有钱对你不好😂",
+    "file": "",
+    "index": 7042915,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "搞实业三年负债30万😭😭😭",
+    "file": "",
+    "index": 7042849,
+    "reply": 372
+  },
+  {
+    "wait": 98,
+    "type": 1,
+    "content": "送外卖啊",
+    "file": "",
+    "index": 7042898,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "无脑买ETH",
+    "file": "",
+    "index": 7042957,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "币安开合约能出一个投降输一半的功能行吗 毕竟我都认怂了",
+    "file": "",
+    "index": 7042956,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "😭😭慢慢来了没办法",
+    "file": "",
+    "index": 7042955,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "你要倒赔偿庄家1000000U",
+    "file": "",
+    "index": 7042954,
+    "reply": 376
+  },
+  {
+    "wait": 109,
+    "type": 1,
+    "content": "币安支持未成年退款吗？",
+    "file": "",
+    "index": 7042953,
+    "reply": "none"
+  },
+  {
+    "wait": 118,
+    "type": 1,
+    "content": "支持未成年充值，不支持退款",
+    "file": "",
+    "index": 7042954,
+    "reply": "none"
+  },
+  {
+    "wait": 73,
+    "type": 1,
+    "content": "谁有加速器推荐一下",
+    "file": "",
+    "index": 7042952,
+    "reply": "none"
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "https://20teay4r.onelink.me/AAqn/8r9c35pv",
+    "file": "",
+    "index": 7042951,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "推荐快连加速器还不错比较稳定",
+    "file": "",
+    "index": 7042951,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "btc",
+    "file": "",
+    "index": 7042950,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 3,
+    "content": "救救我😭",
+    "file": "/uploads/admin/202512/693ae41d05686.jpg",
+    "index": 7042949,
+    "reply": "none"
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "炒币合约你开的次数越多 越赚不到钱 你只需要梭哈一次就够了 五十对五十 你怕什么？",
+    "file": "",
+    "index": 7042948,
+    "reply": 385
+  },
+  {
+    "wait": 99,
+    "type": 1,
+    "content": "梭哈，格局大点",
+    "file": "",
+    "index": 7042947,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "没事，兄弟一起加油！",
+    "file": "",
+    "index": 7042949,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "还好现在这个BNB链上空投合约活动回血，有了重头再来的机会，不然真不知道生活还怎么过下去",
+    "file": "",
+    "index": 7042949,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "雪茄过肺的刺激感？人才呀，怕是过不了下一个年了。",
+    "file": "",
+    "index": 7042946,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "现在币圈交易量很高啊，关注一下趋势",
+    "file": "",
+    "index": 7042945,
+    "reply": "none"
+  },
+  {
+    "wait": 103,
+    "type": 1,
+    "content": "WEB3，MEME火出圈，ETF大量资金入圈，支持BNB Chain官方网络就是我们的趋势，选择绝对大于努力",
+    "file": "",
+    "index": 7042944,
+    "reply": 391
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "应该交易量要起来了",
+    "file": "",
+    "index": 7042943,
+    "reply": "none"
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "俗话说 站在风口上，猪都会飞~~~哈哈",
+    "file": "",
+    "index": 7042942,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "交易量起来就看趋势了",
+    "file": "",
+    "index": 7042941,
+    "reply": 393
+  },
+  {
+    "wait": 76,
+    "type": 1,
+    "content": "meme这是有机构入场了嘛 这么猛",
+    "file": "",
+    "index": 7042940,
+    "reply": "none"
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "现在是个屎都在涨量，造富神话",
+    "file": "",
+    "index": 7042939,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "有没有被骗下车的，又要冲了",
+    "file": "",
+    "index": 7042938,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "看来meme要加仓了 感觉要冲了",
+    "file": "",
+    "index": 7042937,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "冲冲冲  跟我喊！！！",
+    "file": "",
+    "index": 7042936,
+    "reply": "none"
+  },
+  {
+    "wait": 99,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae47eb24e6.jpg",
+    "index": 7042935,
+    "reply": "none"
+  },
+  {
+    "wait": 98,
+    "type": 1,
+    "content": "又不是赌博，跟着币安大趋势赚钱是应该的",
+    "file": "",
+    "index": 7042934,
+    "reply": 401
+  },
+  {
+    "wait": 87,
+    "type": 1,
+    "content": "你们都这么Nice的吗",
+    "file": "",
+    "index": 7042933,
+    "reply": "none"
+  },
+  {
+    "wait": 76,
+    "type": 2,
+    "content": "",
+    "file": "/uploads/admin/202512/693ae3cad5949.jpg",
+    "index": 7042932,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "情绪必须到位~~",
+    "file": "",
+    "index": 7042931,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "各位大佬都持仓多少",
+    "file": "",
+    "index": 7042930,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "我准备了十几个eth冲击牛市",
+    "file": "",
+    "index": 7042929,
+    "reply": "none"
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "别问我",
+    "file": "",
+    "index": 7042928,
+    "reply": "none"
+  },
+  {
+    "wait": 93,
+    "type": 1,
+    "content": "反正不多是真的",
+    "file": "",
+    "index": 7042928,
+    "reply": "none"
+  },
+  {
+    "wait": 95,
+    "type": 1,
+    "content": "好，筹码分散了",
+    "file": "",
+    "index": 7042927,
+    "reply": "none"
+  },
+  {
+    "wait": 100,
+    "type": 1,
+    "content": "总比握在一个人手里好",
+    "file": "",
+    "index": 7042927,
+    "reply": "none"
+  },
+  {
+    "wait": 85,
+    "type": 1,
+    "content": "我没下载钱包，我能从交易所直接提到空投合约地址吗？",
+    "file": "",
+    "index": 7042926,
+    "reply": "none"
+  },
+  {
+    "wait": 89,
+    "type": 1,
+    "content": "不行，链上合约必须钱包添加BNB Smart chain网络",
+    "file": "",
+    "index": 7042925,
+    "reply": 412
+  },
+  {
+    "wait": 92,
+    "type": 1,
+    "content": "还是要用的钱包，以后也可以用。冷钱包防止助记词泄露 ",
+    "file": "",
+    "index": 7042923,
+    "reply": "none"
+  },
+  {
+    "wait": 90,
+    "type": 1,
+    "content": "币圈现在每天都好多新人听闻来学习的了",
+    "file": "",
+    "index": 7042924,
+    "reply": "none"
+  },
+  {
+    "wait": 96,
+    "type": 1,
+    "content": "我要赚钱 我要网恋  我要小姐姐",
+    "file": "",
+    "index": 7042922,
+    "reply": "none"
+  },
+  {
+    "wait": 65,
+    "type": 1,
+    "content": "返回的BNB是到交易所还是钱包？",
+    "file": "",
+    "index": 7042926,
+    "reply": 413
+  },
+  {
+    "wait": 70,
+    "type": 1,
+    "content": "是直接转入你钱包的",
+    "file": "",
+    "index": 7042925,
+    "reply": "none"
+  },
+  {
+    "wait": 80,
+    "type": 1,
+    "content": "好的，谢谢你",
+    "file": "",
+    "index": 7042926,
+    "reply": "none"
+  },
+  {
+    "wait": 109,
+    "type": 1,
+    "content": "感谢管理员 我刚收到了空投合约获取的BNB",
+    "file": "",
+    "index": 7042921,
+    "reply": "none"
+  },
+  {
+    "wait": 110,
+    "type": 1,
+    "content": "准备梭哈50个以太提到钱包里，慢慢盈利！坐等牛市！",
+    "file": "",
+    "index": 7042920,
+    "reply": "none"
+  }
+]

@@ -1,0 +1,18 @@
+[2026-01-02T01:45:58+08:00][error] 错误信息:controller not exists:app\admin\controller\Env
+[2026-01-02T02:50:19+08:00][error] 错误信息:controller not exists:app\admin\controller\Git
+[2026-01-02T08:29:23+08:00][error] 错误信息:controller not exists:app\admin\controller\Env
+[2026-01-02T17:16:46+08:00][info] https://tdata.tgbota.top
+[2026-01-02T17:16:46+08:00][info] /uploads
+[2026-01-02T17:16:49+08:00][info] 批次batch_69578d01437557.88848983：子批次0（100个账号）投递成功，任务ID：ZyrpMSLfJGXLOHdXNJPVnoYnYhTnrtxK
+[2026-01-02T17:16:49+08:00][info] 批次batch_69578d01437557.88848983：子批次1（50个账号）投递成功，任务ID：HmHDPkeLPwqVIgRVbNHYdjxsXQfoWUGB
+[2026-01-02T17:16:49+08:00][info] 批次batch_69578d01437557.88848983处理完成：总账号150，子批次2，成功入队150个
+[2026-01-02T17:16:49+08:00][info] 返回结果: {"total":150,"queued":150,"failed":0,"chunk_count":2,"errors":[],"batch_id":"batch_69578d01437557.88848983"}
+[2026-01-02T18:14:02+08:00][info] https://tdata.tgbota.top
+[2026-01-02T18:14:02+08:00][info] /uploads
+[2026-01-02T18:14:03+08:00][info] 批次batch_69579a6b8b7927.67816285：子批次0（100个账号）投递成功，任务ID：CZyNRwMiBPvKMXSaABwTZkrxMrnYQakL
+[2026-01-02T18:14:03+08:00][info] 批次batch_69579a6b8b7927.67816285：子批次1（50个账号）投递成功，任务ID：kLSmVpqJzAlViXOtgsbHtUTMTKAMuVaZ
+[2026-01-02T18:14:03+08:00][info] 批次batch_69579a6b8b7927.67816285处理完成：总账号150，子批次2，成功入队150个
+[2026-01-02T18:14:03+08:00][info] 返回结果: {"total":150,"queued":150,"failed":0,"chunk_count":2,"errors":[],"batch_id":"batch_69579a6b8b7927.67816285"}
+[2026-01-02T18:14:14+08:00][info] 用户归档缓存已强制从数据库更新，共处理 1 个用户
+[2026-01-02T18:14:24+08:00][info] 用户归档缓存已强制从数据库更新，共处理 1 个用户
+[2026-01-02T18:14:28+08:00][info] [telegram队列] 批次:  耗时=0秒

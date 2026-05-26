@@ -1,0 +1,136 @@
+[2026-02-15T05:57:28+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T05:57:28+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T05:57:28+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T05:57:28+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T05:57:28+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T05:57:28+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T05:57:28+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T05:57:28+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T05:57:28+08:00][error] [1]Uncaught think\db\exception\PDOException: SQLSTATE[HY000] [1040] Too many connections in /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836
+Stack trace:
+#0 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/connector/Mysql.php(68): think\db\PDOConnection->getPDOStatement()
+#1 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(438): think\db\connector\Mysql->getFields()
+#2 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(395): think\db\PDOConnection->getTableFieldsInfo()
+#3 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(360): think\db\PDOConnection->getCachedSchemaInfo()
+#4 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(424): think\db\PDOConnection->getSchemaInfo()
+#5 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(500): think\db\PDOConnection->getTableInfo()
+#6 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(660): think\db\PDOConnection->getTableFields()
+#7 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(801): think\Model->checkAllowFields()
+#8 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(621): think\Model->insertData()
+#9 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(963): think\Model->save()
+#10 /www/wwwroot/tdata.tgbota.top/extend/listen/ExceptionLog.php(32): think\Model::create()
+#11 [internal function]: listen\ExceptionLog->handle()
+#12 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(334): ReflectionMethod->invokeArgs()
+#13 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(367): think\Container->invokeMethod()
+#14 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(289): think\Container->invoke()
+#15 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(250): think\Event->dispatch()
+#16 [internal function]: think\Event->trigger()
+#17 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Facade.php(97): call_user_func_array()
+#18 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/helper.php(230): think\Facade::__callStatic()
+#19 /www/wwwroot/tdata.tgbota.top/app/ExceptionHandle.php(74): event()
+#20 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/initializer/Error.php(59): app\ExceptionHandle->render()
+#21 [internal function]: think\initializer\Error->appException()
+#22 {main}
+  thrown[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:01+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:01+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:01+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:01+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:01+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:01+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:01+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:01+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:01+08:00][error] [1]Uncaught think\db\exception\PDOException: SQLSTATE[HY000] [1040] Too many connections in /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836
+Stack trace:
+#0 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/connector/Mysql.php(68): think\db\PDOConnection->getPDOStatement()
+#1 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(438): think\db\connector\Mysql->getFields()
+#2 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(395): think\db\PDOConnection->getTableFieldsInfo()
+#3 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(360): think\db\PDOConnection->getCachedSchemaInfo()
+#4 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(424): think\db\PDOConnection->getSchemaInfo()
+#5 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(500): think\db\PDOConnection->getTableInfo()
+#6 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(660): think\db\PDOConnection->getTableFields()
+#7 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(801): think\Model->checkAllowFields()
+#8 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(621): think\Model->insertData()
+#9 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(963): think\Model->save()
+#10 /www/wwwroot/tdata.tgbota.top/extend/listen/ExceptionLog.php(32): think\Model::create()
+#11 [internal function]: listen\ExceptionLog->handle()
+#12 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(334): ReflectionMethod->invokeArgs()
+#13 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(367): think\Container->invokeMethod()
+#14 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(289): think\Container->invoke()
+#15 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(250): think\Event->dispatch()
+#16 [internal function]: think\Event->trigger()
+#17 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Facade.php(97): call_user_func_array()
+#18 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/helper.php(230): think\Facade::__callStatic()
+#19 /www/wwwroot/tdata.tgbota.top/app/ExceptionHandle.php(74): event()
+#20 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/initializer/Error.php(59): app\ExceptionHandle->render()
+#21 [internal function]: think\initializer\Error->appException()
+#22 {main}
+  thrown[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:14+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:14+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:14+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:14+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:14+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:14+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:14+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:14+08:00][error] [10501]SQLSTATE[HY000] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T06:07:14+08:00][error] [1]Uncaught think\db\exception\PDOException: SQLSTATE[HY000] [1040] Too many connections in /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836
+Stack trace:
+#0 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/connector/Mysql.php(68): think\db\PDOConnection->getPDOStatement()
+#1 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(438): think\db\connector\Mysql->getFields()
+#2 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(395): think\db\PDOConnection->getTableFieldsInfo()
+#3 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(360): think\db\PDOConnection->getCachedSchemaInfo()
+#4 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(424): think\db\PDOConnection->getSchemaInfo()
+#5 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(500): think\db\PDOConnection->getTableInfo()
+#6 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(660): think\db\PDOConnection->getTableFields()
+#7 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(801): think\Model->checkAllowFields()
+#8 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(621): think\Model->insertData()
+#9 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(963): think\Model->save()
+#10 /www/wwwroot/tdata.tgbota.top/extend/listen/ExceptionLog.php(32): think\Model::create()
+#11 [internal function]: listen\ExceptionLog->handle()
+#12 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(334): ReflectionMethod->invokeArgs()
+#13 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(367): think\Container->invokeMethod()
+#14 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(289): think\Container->invoke()
+#15 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(250): think\Event->dispatch()
+#16 [internal function]: think\Event->trigger()
+#17 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Facade.php(97): call_user_func_array()
+#18 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/helper.php(230): think\Facade::__callStatic()
+#19 /www/wwwroot/tdata.tgbota.top/app/ExceptionHandle.php(74): event()
+#20 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/initializer/Error.php(59): app\ExceptionHandle->render()
+#21 [internal function]: think\initializer\Error->appException()
+#22 {main}
+  thrown[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T12:28:27+08:00][error] [10501]SQLSTATE[08004] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T12:28:27+08:00][error] [10501]SQLSTATE[08004] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T12:28:27+08:00][error] [10501]SQLSTATE[08004] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T12:28:27+08:00][error] [10501]SQLSTATE[08004] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T12:28:27+08:00][error] [10501]SQLSTATE[08004] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T12:28:27+08:00][error] [10501]SQLSTATE[08004] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T12:28:27+08:00][error] [10501]SQLSTATE[08004] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T12:28:27+08:00][error] [10501]SQLSTATE[08004] [1040] Too many connections[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]
+[2026-02-15T12:28:27+08:00][error] [1]Uncaught think\db\exception\PDOException: SQLSTATE[08004] [1040] Too many connections in /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836
+Stack trace:
+#0 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/connector/Mysql.php(68): think\db\PDOConnection->getPDOStatement()
+#1 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(438): think\db\connector\Mysql->getFields()
+#2 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(395): think\db\PDOConnection->getTableFieldsInfo()
+#3 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(360): think\db\PDOConnection->getCachedSchemaInfo()
+#4 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(424): think\db\PDOConnection->getSchemaInfo()
+#5 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php(500): think\db\PDOConnection->getTableInfo()
+#6 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(660): think\db\PDOConnection->getTableFields()
+#7 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(801): think\Model->checkAllowFields()
+#8 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(621): think\Model->insertData()
+#9 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/Model.php(963): think\Model->save()
+#10 /www/wwwroot/tdata.tgbota.top/extend/listen/ExceptionLog.php(32): think\Model::create()
+#11 [internal function]: listen\ExceptionLog->handle()
+#12 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(334): ReflectionMethod->invokeArgs()
+#13 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Container.php(367): think\Container->invokeMethod()
+#14 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(289): think\Container->invoke()
+#15 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/Event.php(250): think\Event->dispatch()
+#16 [internal function]: think\Event->trigger()
+#17 /www/wwwroot/tdata.tgbota.top/vendor/topthink/think-container/src/Facade.php(97): call_user_func_array()
+#18 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/helper.php(230): think\Facade::__callStatic()
+#19 /www/wwwroot/tdata.tgbota.top/app/ExceptionHandle.php(74): event()
+#20 /www/wwwroot/tdata.tgbota.top/vendor/topthink/framework/src/think/initializer/Error.php(59): app\ExceptionHandle->render()
+#21 [internal function]: think\initializer\Error->appException()
+#22 {main}
+  thrown[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:836]

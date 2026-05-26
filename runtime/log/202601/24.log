@@ -1,0 +1,613 @@
+[2026-01-24T23:40:00+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:40:00+08:00][info] zh1
+[2026-01-24T23:40:00+08:00][info] zh11
+[2026-01-24T23:40:10+08:00][info] 开始处理队列任务: task_id=25, current_index=1571
+[2026-01-24T23:40:10+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1571
+[2026-01-24T23:40:10+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:40:10+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:40:10+08:00][info] zh1
+[2026-01-24T23:40:10+08:00][info] zh11
+[2026-01-24T23:40:13+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7724}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:40:13+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1571, message_id=7724
+[2026-01-24T23:40:13+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1571
+[2026-01-24T23:40:13+08:00][info] 任务 25 将在 109 秒后继续处理下一条消息，索引: 1572
+[2026-01-24T23:40:14+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11169}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:40:14+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=375, message_id=11169
+[2026-01-24T23:40:14+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=375
+[2026-01-24T23:40:14+08:00][info] 任务 26 将在 80 秒后继续处理下一条消息，索引: 376
+[2026-01-24T23:40:46+08:00][info] 开始处理队列任务: task_id=25, current_index=1572
+[2026-01-24T23:40:46+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1572
+[2026-01-24T23:40:46+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:40:46+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:40:46+08:00][info] zh1
+[2026-01-24T23:40:46+08:00][info] zh11
+[2026-01-24T23:40:49+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7725}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:40:49+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1572, message_id=7725
+[2026-01-24T23:40:49+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1572
+[2026-01-24T23:40:49+08:00][info] 任务 25 将在 115 秒后继续处理下一条消息，索引: 1573
+[2026-01-24T23:41:06+08:00][info] 开始处理队列任务: task_id=25, current_index=1573
+[2026-01-24T23:41:06+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1573
+[2026-01-24T23:41:06+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:41:06+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:41:06+08:00][info] zh1
+[2026-01-24T23:41:06+08:00][info] zh11
+[2026-01-24T23:41:06+08:00][info] 使用feedbackType=1564的消息ID: 7716
+[2026-01-24T23:41:09+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7726}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:41:09+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1573, message_id=7726
+[2026-01-24T23:41:09+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1573
+[2026-01-24T23:41:09+08:00][info] 任务 25 将在 91 秒后继续处理下一条消息，索引: 1574
+[2026-01-24T23:41:10+08:00][info] 开始处理队列任务: task_id=27, current_index=377
+[2026-01-24T23:41:10+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 377
+[2026-01-24T23:41:10+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:41:10+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:41:10+08:00][info] zh1
+[2026-01-24T23:41:10+08:00][info] zh11
+[2026-01-24T23:41:10+08:00][info] 使用feedbackType=376的消息ID: 11116
+[2026-01-24T23:41:27+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11118}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:41:27+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=377, message_id=11118
+[2026-01-24T23:41:27+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=377
+[2026-01-24T23:41:27+08:00][info] 任务 27 将在 100 秒后继续处理下一条消息，索引: 378
+[2026-01-24T23:41:34+08:00][info] 开始处理队列任务: task_id=26, current_index=376
+[2026-01-24T23:41:35+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 376
+[2026-01-24T23:41:35+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:41:35+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:41:35+08:00][info] zh1
+[2026-01-24T23:41:35+08:00][info] zh11
+[2026-01-24T23:41:48+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11170}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:41:48+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=376, message_id=11170
+[2026-01-24T23:41:48+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=376
+[2026-01-24T23:41:48+08:00][info] 任务 26 将在 90 秒后继续处理下一条消息，索引: 377
+[2026-01-24T23:42:02+08:00][info] 开始处理队列任务: task_id=25, current_index=1574
+[2026-01-24T23:42:02+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1574
+[2026-01-24T23:42:02+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:42:02+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:42:02+08:00][info] zh1
+[2026-01-24T23:42:02+08:00][info] zh11
+[2026-01-24T23:42:05+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7727}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:42:05+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1574, message_id=7727
+[2026-01-24T23:42:05+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1574
+[2026-01-24T23:42:05+08:00][info] 任务 25 将在 102 秒后继续处理下一条消息，索引: 1575
+[2026-01-24T23:42:41+08:00][info] 开始处理队列任务: task_id=25, current_index=1575
+[2026-01-24T23:42:41+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1575
+[2026-01-24T23:42:41+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:42:41+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:42:41+08:00][info] zh1
+[2026-01-24T23:42:41+08:00][info] zh11
+[2026-01-24T23:42:44+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7728}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:42:44+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1575, message_id=7728
+[2026-01-24T23:42:44+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1575
+[2026-01-24T23:42:44+08:00][info] 任务 25 将在 95 秒后继续处理下一条消息，索引: 1576
+[2026-01-24T23:42:44+08:00][info] 开始处理队列任务: task_id=25, current_index=1576
+[2026-01-24T23:42:44+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1576
+[2026-01-24T23:42:44+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:42:44+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:42:44+08:00][info] zh1
+[2026-01-24T23:42:44+08:00][info] zh11
+[2026-01-24T23:42:46+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7729}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:42:46+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1576, message_id=7729
+[2026-01-24T23:42:46+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1576
+[2026-01-24T23:42:46+08:00][info] 任务 25 将在 100 秒后继续处理下一条消息，索引: 1577
+[2026-01-24T23:43:07+08:00][info] 开始处理队列任务: task_id=27, current_index=378
+[2026-01-24T23:43:07+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 378
+[2026-01-24T23:43:08+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:43:08+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:43:08+08:00][info] zh1
+[2026-01-24T23:43:08+08:00][info] zh11
+[2026-01-24T23:43:18+08:00][info] 开始处理队列任务: task_id=26, current_index=377
+[2026-01-24T23:43:18+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 377
+[2026-01-24T23:43:18+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:43:18+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:43:18+08:00][info] zh1
+[2026-01-24T23:43:18+08:00][info] zh11
+[2026-01-24T23:43:18+08:00][info] 使用feedbackType=376的消息ID: 11169
+[2026-01-24T23:43:21+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11119}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:43:21+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=378, message_id=11119
+[2026-01-24T23:43:21+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=378
+[2026-01-24T23:43:21+08:00][info] 任务 27 将在 109 秒后继续处理下一条消息，索引: 379
+[2026-01-24T23:43:34+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11171}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:43:34+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=377, message_id=11171
+[2026-01-24T23:43:34+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=377
+[2026-01-24T23:43:34+08:00][info] 任务 26 将在 100 秒后继续处理下一条消息，索引: 378
+[2026-01-24T23:43:47+08:00][info] 开始处理队列任务: task_id=25, current_index=1577
+[2026-01-24T23:43:47+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1577
+[2026-01-24T23:43:48+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:43:48+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:43:48+08:00][info] zh1
+[2026-01-24T23:43:48+08:00][info] zh11
+[2026-01-24T23:43:50+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7730}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:43:50+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1577, message_id=7730
+[2026-01-24T23:43:50+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1577
+[2026-01-24T23:43:50+08:00][info] 任务 25 将在 91 秒后继续处理下一条消息，索引: 1578
+[2026-01-24T23:44:19+08:00][info] 开始处理队列任务: task_id=25, current_index=1578
+[2026-01-24T23:44:19+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1578
+[2026-01-24T23:44:19+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:44:19+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:44:19+08:00][info] zh1
+[2026-01-24T23:44:20+08:00][info] zh11
+[2026-01-24T23:44:26+08:00][info] 开始处理队列任务: task_id=25, current_index=1578
+[2026-01-24T23:44:26+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1578
+[2026-01-24T23:44:27+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:44:27+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:44:27+08:00][info] zh1
+[2026-01-24T23:44:27+08:00][info] zh11
+[2026-01-24T23:44:33+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7731}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:44:33+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1578, message_id=7731
+[2026-01-24T23:44:33+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1578
+[2026-01-24T23:44:33+08:00][info] 任务 25 将在 87 秒后继续处理下一条消息，索引: 1579
+[2026-01-24T23:44:46+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7732}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:44:46+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1578, message_id=7732
+[2026-01-24T23:44:46+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1578
+[2026-01-24T23:44:46+08:00][info] 任务 25 将在 87 秒后继续处理下一条消息，索引: 1579
+[2026-01-24T23:45:10+08:00][info] 开始处理队列任务: task_id=27, current_index=379
+[2026-01-24T23:45:10+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 379
+[2026-01-24T23:45:11+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:45:11+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:45:11+08:00][info] zh1
+[2026-01-24T23:45:11+08:00][info] zh11
+[2026-01-24T23:45:15+08:00][info] 开始处理队列任务: task_id=26, current_index=378
+[2026-01-24T23:45:15+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 378
+[2026-01-24T23:45:15+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:45:15+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:45:15+08:00][info] zh1
+[2026-01-24T23:45:15+08:00][info] zh11
+[2026-01-24T23:45:21+08:00][info] 开始处理队列任务: task_id=25, current_index=1579
+[2026-01-24T23:45:21+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1579
+[2026-01-24T23:45:21+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:45:21+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:45:21+08:00][info] zh1
+[2026-01-24T23:45:21+08:00][info] zh11
+[2026-01-24T23:45:21+08:00][info] 使用feedbackType=1578的消息ID: 7730
+[2026-01-24T23:45:24+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11120}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:45:24+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=379, message_id=11120
+[2026-01-24T23:45:24+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=379
+[2026-01-24T23:45:24+08:00][info] 任务 27 将在 118 秒后继续处理下一条消息，索引: 380
+[2026-01-24T23:45:29+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11172}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:45:29+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=378, message_id=11172
+[2026-01-24T23:45:29+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=378
+[2026-01-24T23:45:29+08:00][info] 任务 26 将在 109 秒后继续处理下一条消息，索引: 379
+[2026-01-24T23:45:35+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7733}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:45:35+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1579, message_id=7733
+[2026-01-24T23:45:35+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1579
+[2026-01-24T23:45:35+08:00][info] 任务 25 将在 78 秒后继续处理下一条消息，索引: 1580
+[2026-01-24T23:46:00+08:00][info] 开始处理队列任务: task_id=25, current_index=1580
+[2026-01-24T23:46:00+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1580
+[2026-01-24T23:46:00+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:46:00+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:46:00+08:00][info] zh1
+[2026-01-24T23:46:00+08:00][info] zh11
+[2026-01-24T23:46:04+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7734}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False","文件1有效: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae46969ada.jpg (87512字节)","发送单个文件: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae46969ada.jpg"],"warning":""}}
+[2026-01-24T23:46:04+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1580, message_id=7734
+[2026-01-24T23:46:04+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1580
+[2026-01-24T23:46:04+08:00][info] 任务 25 将在 68 秒后继续处理下一条消息，索引: 1581
+[2026-01-24T23:46:13+08:00][info] 开始处理队列任务: task_id=25, current_index=1581
+[2026-01-24T23:46:13+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1581
+[2026-01-24T23:46:13+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:46:13+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:46:13+08:00][info] zh1
+[2026-01-24T23:46:13+08:00][info] zh11
+[2026-01-24T23:46:16+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7735}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:46:16+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1581, message_id=7735
+[2026-01-24T23:46:16+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1581
+[2026-01-24T23:46:16+08:00][info] 任务 25 将在 110 秒后继续处理下一条消息，索引: 1582
+[2026-01-24T23:46:53+08:00][info] 开始处理队列任务: task_id=25, current_index=1582
+[2026-01-24T23:46:53+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1582
+[2026-01-24T23:46:53+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:46:53+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:46:53+08:00][info] zh1
+[2026-01-24T23:46:54+08:00][info] zh11
+[2026-01-24T23:46:58+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7736}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False","文件1有效: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae46969ada.jpg (87512字节)","发送单个文件: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae46969ada.jpg"],"warning":""}}
+[2026-01-24T23:46:58+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1582, message_id=7736
+[2026-01-24T23:46:58+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1582
+[2026-01-24T23:46:58+08:00][info] 任务 25 将在 60 秒后继续处理下一条消息，索引: 1583
+[2026-01-24T23:47:12+08:00][info] 开始处理队列任务: task_id=25, current_index=1583
+[2026-01-24T23:47:12+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1583
+[2026-01-24T23:47:13+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:47:13+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:47:13+08:00][info] zh1
+[2026-01-24T23:47:13+08:00][info] zh11
+[2026-01-24T23:47:15+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7737}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:47:15+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1583, message_id=7737
+[2026-01-24T23:47:15+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1583
+[2026-01-24T23:47:15+08:00][info] 任务 25 将在 98 秒后继续处理下一条消息，索引: 1584
+[2026-01-24T23:47:18+08:00][info] 开始处理队列任务: task_id=26, current_index=379
+[2026-01-24T23:47:18+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 379
+[2026-01-24T23:47:19+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:47:19+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:47:19+08:00][info] zh1
+[2026-01-24T23:47:19+08:00][info] zh11
+[2026-01-24T23:47:22+08:00][info] 开始处理队列任务: task_id=27, current_index=380
+[2026-01-24T23:47:22+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 380
+[2026-01-24T23:47:22+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:47:22+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:47:22+08:00][info] zh1
+[2026-01-24T23:47:22+08:00][info] zh11
+[2026-01-24T23:47:32+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11173}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:47:32+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=379, message_id=11173
+[2026-01-24T23:47:32+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=379
+[2026-01-24T23:47:32+08:00][info] 任务 26 将在 118 秒后继续处理下一条消息，索引: 380
+[2026-01-24T23:47:36+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11121}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:47:36+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=380, message_id=11121
+[2026-01-24T23:47:36+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=380
+[2026-01-24T23:47:36+08:00][info] 任务 27 将在 73 秒后继续处理下一条消息，索引: 381
+[2026-01-24T23:47:58+08:00][info] 开始处理队列任务: task_id=25, current_index=1584
+[2026-01-24T23:47:58+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1584
+[2026-01-24T23:47:58+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:47:58+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:47:58+08:00][info] zh1
+[2026-01-24T23:47:58+08:00][info] zh11
+[2026-01-24T23:48:01+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7738}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:48:01+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1584, message_id=7738
+[2026-01-24T23:48:01+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1584
+[2026-01-24T23:48:01+08:00][info] 任务 25 将在 76 秒后继续处理下一条消息，索引: 1585
+[2026-01-24T23:48:06+08:00][info] 开始处理队列任务: task_id=25, current_index=1585
+[2026-01-24T23:48:06+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1585
+[2026-01-24T23:48:06+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:48:06+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:48:06+08:00][info] zh1
+[2026-01-24T23:48:06+08:00][info] zh11
+[2026-01-24T23:48:09+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7739}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:48:09+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1585, message_id=7739
+[2026-01-24T23:48:09+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1585
+[2026-01-24T23:48:09+08:00][info] 任务 25 将在 87 秒后继续处理下一条消息，索引: 1586
+[2026-01-24T23:48:49+08:00][info] 开始处理队列任务: task_id=27, current_index=381
+[2026-01-24T23:48:49+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 381
+[2026-01-24T23:48:49+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:48:49+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:48:49+08:00][info] zh1
+[2026-01-24T23:48:49+08:00][info] zh11
+[2026-01-24T23:48:53+08:00][info] 开始处理队列任务: task_id=25, current_index=1586
+[2026-01-24T23:48:53+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1586
+[2026-01-24T23:48:54+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:48:54+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:48:54+08:00][info] zh1
+[2026-01-24T23:48:54+08:00][info] zh11
+[2026-01-24T23:48:56+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7740}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:48:56+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1586, message_id=7740
+[2026-01-24T23:48:56+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1586
+[2026-01-24T23:48:56+08:00][info] 任务 25 将在 108 秒后继续处理下一条消息，索引: 1587
+[2026-01-24T23:49:03+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11122}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:49:03+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=381, message_id=11122
+[2026-01-24T23:49:03+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=381
+[2026-01-24T23:49:03+08:00][info] 任务 27 将在 70 秒后继续处理下一条消息，索引: 382
+[2026-01-24T23:49:17+08:00][info] 开始处理队列任务: task_id=25, current_index=1587
+[2026-01-24T23:49:17+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1587
+[2026-01-24T23:49:17+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:49:17+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:49:17+08:00][info] zh1
+[2026-01-24T23:49:17+08:00][info] zh11
+[2026-01-24T23:49:17+08:00][info] 使用feedbackType=1564的消息ID: 7716
+[2026-01-24T23:49:20+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7741}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:49:20+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1587, message_id=7741
+[2026-01-24T23:49:20+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1587
+[2026-01-24T23:49:20+08:00][info] 任务 25 将在 78 秒后继续处理下一条消息，索引: 1588
+[2026-01-24T23:49:30+08:00][info] 开始处理队列任务: task_id=26, current_index=380
+[2026-01-24T23:49:30+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 380
+[2026-01-24T23:49:30+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:49:30+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:49:30+08:00][info] zh1
+[2026-01-24T23:49:30+08:00][info] zh11
+[2026-01-24T23:49:36+08:00][info] 开始处理队列任务: task_id=25, current_index=1588
+[2026-01-24T23:49:36+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1588
+[2026-01-24T23:49:36+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:49:36+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:49:36+08:00][info] zh1
+[2026-01-24T23:49:36+08:00][info] zh11
+[2026-01-24T23:49:39+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7742}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:49:39+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1588, message_id=7742
+[2026-01-24T23:49:39+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1588
+[2026-01-24T23:49:39+08:00][info] 任务 25 将在 88 秒后继续处理下一条消息，索引: 1589
+[2026-01-24T23:49:43+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11174}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:49:43+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=380, message_id=11174
+[2026-01-24T23:49:43+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=380
+[2026-01-24T23:49:43+08:00][info] 任务 26 将在 73 秒后继续处理下一条消息，索引: 381
+[2026-01-24T23:50:13+08:00][info] 开始处理队列任务: task_id=27, current_index=382
+[2026-01-24T23:50:13+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 382
+[2026-01-24T23:50:13+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:50:13+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:50:13+08:00][info] zh1
+[2026-01-24T23:50:13+08:00][info] zh11
+[2026-01-24T23:50:27+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11123}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:50:27+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=382, message_id=11123
+[2026-01-24T23:50:27+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=382
+[2026-01-24T23:50:27+08:00][info] 任务 27 将在 85 秒后继续处理下一条消息，索引: 383
+[2026-01-24T23:50:38+08:00][info] 开始处理队列任务: task_id=25, current_index=1589
+[2026-01-24T23:50:39+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1589
+[2026-01-24T23:50:39+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:50:39+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:50:39+08:00][info] zh1
+[2026-01-24T23:50:39+08:00][info] zh11
+[2026-01-24T23:50:41+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7743}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:50:41+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1589, message_id=7743
+[2026-01-24T23:50:41+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1589
+[2026-01-24T23:50:41+08:00][info] 任务 25 将在 98 秒后继续处理下一条消息，索引: 1590
+[2026-01-24T23:50:44+08:00][info] 开始处理队列任务: task_id=25, current_index=1590
+[2026-01-24T23:50:44+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1590
+[2026-01-24T23:50:45+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:50:45+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:50:45+08:00][info] zh1
+[2026-01-24T23:50:45+08:00][info] zh11
+[2026-01-24T23:50:47+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7744}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:50:47+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1590, message_id=7744
+[2026-01-24T23:50:47+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1590
+[2026-01-24T23:50:47+08:00][info] 任务 25 将在 108 秒后继续处理下一条消息，索引: 1591
+[2026-01-24T23:50:56+08:00][info] 开始处理队列任务: task_id=26, current_index=381
+[2026-01-24T23:50:56+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 381
+[2026-01-24T23:50:57+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:50:57+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:50:57+08:00][info] zh1
+[2026-01-24T23:50:57+08:00][info] zh11
+[2026-01-24T23:51:07+08:00][info] 开始处理队列任务: task_id=25, current_index=1591
+[2026-01-24T23:51:07+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1591
+[2026-01-24T23:51:07+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:51:07+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:51:07+08:00][info] zh1
+[2026-01-24T23:51:07+08:00][info] zh11
+[2026-01-24T23:51:10+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11175}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:51:10+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=381, message_id=11175
+[2026-01-24T23:51:10+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=381
+[2026-01-24T23:51:10+08:00][info] 任务 26 将在 70 秒后继续处理下一条消息，索引: 382
+[2026-01-24T23:51:19+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7745}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:51:19+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1591, message_id=7745
+[2026-01-24T23:51:19+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1591
+[2026-01-24T23:51:19+08:00][info] 任务 25 将在 118 秒后继续处理下一条消息，索引: 1592
+[2026-01-24T23:51:52+08:00][info] 开始处理队列任务: task_id=27, current_index=383
+[2026-01-24T23:51:52+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 383
+[2026-01-24T23:51:53+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:51:53+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:51:53+08:00][info] zh1
+[2026-01-24T23:51:53+08:00][info] zh11
+[2026-01-24T23:52:07+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11124}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:52:07+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=383, message_id=11124
+[2026-01-24T23:52:07+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=383
+[2026-01-24T23:52:07+08:00][info] 任务 27 将在 90 秒后继续处理下一条消息，索引: 384
+[2026-01-24T23:52:19+08:00][info] 开始处理队列任务: task_id=25, current_index=1592
+[2026-01-24T23:52:19+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1592
+[2026-01-24T23:52:19+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:52:19+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:52:19+08:00][info] zh1
+[2026-01-24T23:52:19+08:00][info] zh11
+[2026-01-24T23:52:21+08:00][info] 开始处理队列任务: task_id=26, current_index=382
+[2026-01-24T23:52:21+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 382
+[2026-01-24T23:52:21+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:52:21+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:52:21+08:00][info] zh1
+[2026-01-24T23:52:21+08:00][info] zh11
+[2026-01-24T23:52:22+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7746}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:52:22+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1592, message_id=7746
+[2026-01-24T23:52:22+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1592
+[2026-01-24T23:52:22+08:00][info] 任务 25 将在 78 秒后继续处理下一条消息，索引: 1593
+[2026-01-24T23:52:34+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11176}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:52:34+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=382, message_id=11176
+[2026-01-24T23:52:34+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=382
+[2026-01-24T23:52:34+08:00][info] 任务 26 将在 85 秒后继续处理下一条消息，索引: 383
+[2026-01-24T23:52:36+08:00][info] 开始处理队列任务: task_id=25, current_index=1593
+[2026-01-24T23:52:36+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1593
+[2026-01-24T23:52:36+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:52:36+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:52:36+08:00][info] zh1
+[2026-01-24T23:52:36+08:00][info] zh11
+[2026-01-24T23:52:39+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7747}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:52:39+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1593, message_id=7747
+[2026-01-24T23:52:39+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1593
+[2026-01-24T23:52:39+08:00][info] 任务 25 将在 88 秒后继续处理下一条消息，索引: 1594
+[2026-01-24T23:53:18+08:00][info] 开始处理队列任务: task_id=25, current_index=1594
+[2026-01-24T23:53:18+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1594
+[2026-01-24T23:53:18+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:53:18+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:53:18+08:00][info] zh1
+[2026-01-24T23:53:18+08:00][info] zh11
+[2026-01-24T23:53:31+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7748}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:53:31+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1594, message_id=7748
+[2026-01-24T23:53:31+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1594
+[2026-01-24T23:53:31+08:00][info] 任务 25 将在 100 秒后继续处理下一条消息，索引: 1595
+[2026-01-24T23:53:37+08:00][info] 开始处理队列任务: task_id=27, current_index=384
+[2026-01-24T23:53:37+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 384
+[2026-01-24T23:53:37+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:53:37+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:53:37+08:00][info] zh1
+[2026-01-24T23:53:37+08:00][info] zh11
+[2026-01-24T23:53:40+08:00][info] 开始处理队列任务: task_id=25, current_index=1595
+[2026-01-24T23:53:40+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1595
+[2026-01-24T23:53:40+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:53:40+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:53:40+08:00][info] zh1
+[2026-01-24T23:53:40+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11125}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False","文件1有效: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae41d05686.jpg (23476字节)","发送单个文件: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae41d05686.jpg"],"warning":""}}
+[2026-01-24T23:53:40+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=384, message_id=11125
+[2026-01-24T23:53:40+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=384
+[2026-01-24T23:53:40+08:00][info] zh11
+[2026-01-24T23:53:40+08:00][info] 任务 27 将在 93 秒后继续处理下一条消息，索引: 385
+[2026-01-24T23:53:53+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7749}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:53:53+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1595, message_id=7749
+[2026-01-24T23:53:53+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1595
+[2026-01-24T23:53:53+08:00][info] 任务 25 将在 110 秒后继续处理下一条消息，索引: 1596
+[2026-01-24T23:53:59+08:00][info] 开始处理队列任务: task_id=26, current_index=383
+[2026-01-24T23:54:00+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 383
+[2026-01-24T23:54:00+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:54:00+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:54:00+08:00][info] zh1
+[2026-01-24T23:54:00+08:00][info] zh11
+[2026-01-24T23:54:07+08:00][info] 开始处理队列任务: task_id=25, current_index=1596
+[2026-01-24T23:54:08+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1596
+[2026-01-24T23:54:08+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:54:08+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:54:08+08:00][info] zh1
+[2026-01-24T23:54:08+08:00][info] zh11
+[2026-01-24T23:54:13+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11177}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:54:13+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=383, message_id=11177
+[2026-01-24T23:54:13+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=383
+[2026-01-24T23:54:13+08:00][info] 任务 26 将在 90 秒后继续处理下一条消息，索引: 384
+[2026-01-24T23:54:22+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7750}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:54:22+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1596, message_id=7750
+[2026-01-24T23:54:22+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1596
+[2026-01-24T23:54:22+08:00][info] 任务 25 将在 76 秒后继续处理下一条消息，索引: 1597
+[2026-01-24T23:55:11+08:00][info] 开始处理队列任务: task_id=25, current_index=1597
+[2026-01-24T23:55:11+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1597
+[2026-01-24T23:55:11+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:55:11+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:55:11+08:00][info] zh1
+[2026-01-24T23:55:11+08:00][info] zh11
+[2026-01-24T23:55:13+08:00][info] 开始处理队列任务: task_id=27, current_index=385
+[2026-01-24T23:55:13+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 385
+[2026-01-24T23:55:13+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:55:13+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:55:13+08:00][info] zh1
+[2026-01-24T23:55:13+08:00][info] zh11
+[2026-01-24T23:55:13+08:00][info] 使用feedbackType=385的消息ID: 11125
+[2026-01-24T23:55:14+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7751}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:55:14+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1597, message_id=7751
+[2026-01-24T23:55:14+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1597
+[2026-01-24T23:55:14+08:00][info] 任务 25 将在 87 秒后继续处理下一条消息，索引: 1598
+[2026-01-24T23:55:16+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11126}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:55:16+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=385, message_id=11126
+[2026-01-24T23:55:16+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=385
+[2026-01-24T23:55:16+08:00][info] 任务 27 将在 95 秒后继续处理下一条消息，索引: 386
+[2026-01-24T23:55:38+08:00][info] 开始处理队列任务: task_id=25, current_index=1598
+[2026-01-24T23:55:38+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1598
+[2026-01-24T23:55:38+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:55:38+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:55:38+08:00][info] zh1
+[2026-01-24T23:55:38+08:00][info] zh11
+[2026-01-24T23:55:40+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7752}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:55:40+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1598, message_id=7752
+[2026-01-24T23:55:40+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1598
+[2026-01-24T23:55:40+08:00][info] 任务 25 将在 89 秒后继续处理下一条消息，索引: 1599
+[2026-01-24T23:55:43+08:00][info] 开始处理队列任务: task_id=25, current_index=1599
+[2026-01-24T23:55:43+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1599
+[2026-01-24T23:55:43+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:55:43+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:55:43+08:00][info] zh1
+[2026-01-24T23:55:43+08:00][info] zh11
+[2026-01-24T23:55:43+08:00][info] 开始处理队列任务: task_id=26, current_index=384
+[2026-01-24T23:55:43+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 384
+[2026-01-24T23:55:44+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:55:44+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:55:44+08:00][info] zh1
+[2026-01-24T23:55:44+08:00][info] zh11
+[2026-01-24T23:55:46+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7753}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:55:46+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1599, message_id=7753
+[2026-01-24T23:55:46+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1599
+[2026-01-24T23:55:46+08:00][info] 任务 25 将在 98 秒后继续处理下一条消息，索引: 1600
+[2026-01-24T23:55:47+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11178}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False","文件1有效: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae41d05686.jpg (23476字节)","发送单个文件: \/www\/wwwroot\/tdata.tgbota.top\/public\/uploads\/admin\/202512\/693ae41d05686.jpg"],"warning":""}}
+[2026-01-24T23:55:47+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=384, message_id=11178
+[2026-01-24T23:55:47+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=384
+[2026-01-24T23:55:47+08:00][info] 任务 26 将在 93 秒后继续处理下一条消息，索引: 385
+[2026-01-24T23:56:41+08:00][info] 开始处理队列任务: task_id=25, current_index=1600
+[2026-01-24T23:56:41+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1600
+[2026-01-24T23:56:41+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:56:41+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:56:41+08:00][info] zh1
+[2026-01-24T23:56:41+08:00][info] zh11
+[2026-01-24T23:56:44+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7754}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:56:44+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1600, message_id=7754
+[2026-01-24T23:56:44+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1600
+[2026-01-24T23:56:44+08:00][info] 任务 25 将在 79 秒后继续处理下一条消息，索引: 1601
+[2026-01-24T23:56:51+08:00][info] 开始处理队列任务: task_id=27, current_index=386
+[2026-01-24T23:56:51+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 386
+[2026-01-24T23:56:52+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:56:52+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:56:52+08:00][info] zh1
+[2026-01-24T23:56:52+08:00][info] zh11
+[2026-01-24T23:56:54+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11127}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:56:54+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=386, message_id=11127
+[2026-01-24T23:56:54+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=386
+[2026-01-24T23:56:54+08:00][info] 任务 27 将在 99 秒后继续处理下一条消息，索引: 387
+[2026-01-24T23:57:09+08:00][info] 开始处理队列任务: task_id=25, current_index=1601
+[2026-01-24T23:57:09+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1601
+[2026-01-24T23:57:10+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:57:10+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:57:10+08:00][info] zh1
+[2026-01-24T23:57:10+08:00][info] zh11
+[2026-01-24T23:57:20+08:00][info] 开始处理队列任务: task_id=26, current_index=385
+[2026-01-24T23:57:20+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 385
+[2026-01-24T23:57:20+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:57:20+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:57:20+08:00][info] zh1
+[2026-01-24T23:57:20+08:00][info] zh11
+[2026-01-24T23:57:20+08:00][info] 使用feedbackType=385的消息ID: 11178
+[2026-01-24T23:57:23+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11179}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:57:23+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=385, message_id=11179
+[2026-01-24T23:57:23+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=385
+[2026-01-24T23:57:23+08:00][info] 任务 26 将在 95 秒后继续处理下一条消息，索引: 386
+[2026-01-24T23:57:23+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7755}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:57:23+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1601, message_id=7755
+[2026-01-24T23:57:23+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1601
+[2026-01-24T23:57:23+08:00][info] 任务 25 将在 99 秒后继续处理下一条消息，索引: 1602
+[2026-01-24T23:57:25+08:00][info] 开始处理队列任务: task_id=25, current_index=1602
+[2026-01-24T23:57:25+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1602
+[2026-01-24T23:57:25+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:57:25+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:57:25+08:00][info] zh1
+[2026-01-24T23:57:25+08:00][info] zh11
+[2026-01-24T23:57:25+08:00][info] 使用feedbackType=1602的消息ID: 7755
+[2026-01-24T23:57:28+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7756}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:57:28+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1602, message_id=7756
+[2026-01-24T23:57:28+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1602
+[2026-01-24T23:57:28+08:00][info] 任务 25 将在 102 秒后继续处理下一条消息，索引: 1603
+[2026-01-24T23:58:04+08:00][info] 开始处理队列任务: task_id=25, current_index=1603
+[2026-01-24T23:58:04+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1603
+[2026-01-24T23:58:05+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:58:05+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:58:05+08:00][info] zh1
+[2026-01-24T23:58:05+08:00][info] zh11
+[2026-01-24T23:58:07+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7757}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:58:07+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1603, message_id=7757
+[2026-01-24T23:58:07+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1603
+[2026-01-24T23:58:07+08:00][info] 任务 25 将在 78 秒后继续处理下一条消息，索引: 1604
+[2026-01-24T23:58:34+08:00][info] 开始处理队列任务: task_id=27, current_index=387
+[2026-01-24T23:58:34+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 387
+[2026-01-24T23:58:34+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:58:34+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:58:34+08:00][info] zh1
+[2026-01-24T23:58:34+08:00][info] zh11
+[2026-01-24T23:58:37+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3649225144,"group_link":"https:\/\/t.me\/+_XaTo9Qrv0VjOTM0","type":"megagroup","message":"发送成功","message_id":11128}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 清理后: https:\/\/t.me\/+_XaTo9Qrv0VjOTM0, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:58:37+08:00][info] 消息ID缓存成功: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=387, message_id=11128
+[2026-01-24T23:58:37+08:00][info] 消息状态标记为已发送: task_id=27, group_id=https://t.me/+_XaTo9Qrv0VjOTM0, msg_index=387
+[2026-01-24T23:58:37+08:00][info] 任务 27 将在 80 秒后继续处理下一条消息，索引: 388
+[2026-01-24T23:58:58+08:00][info] 开始处理队列任务: task_id=26, current_index=386
+[2026-01-24T23:58:58+08:00][info] 任务 26 初始化开始，准备开始发送消息，当前索引: 386
+[2026-01-24T23:58:58+08:00][info] 消息缓存初始化完成: task_id=26, groups=https://t.me/+whdGi5iPfw40ZDMx
+[2026-01-24T23:58:58+08:00][info] 任务 26 第 2 次循环，重置群组 https://t.me/+whdGi5iPfw40ZDMx 消息状态
+[2026-01-24T23:58:58+08:00][info] zh1
+[2026-01-24T23:58:58+08:00][info] zh11
+[2026-01-24T23:59:01+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3642748012,"group_link":"https:\/\/t.me\/+whdGi5iPfw40ZDMx","type":"megagroup","message":"发送成功","message_id":11180}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 清理后: https:\/\/t.me\/+whdGi5iPfw40ZDMx, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:59:01+08:00][info] 消息ID缓存成功: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=386, message_id=11180
+[2026-01-24T23:59:01+08:00][info] 消息状态标记为已发送: task_id=26, group_id=https://t.me/+whdGi5iPfw40ZDMx, msg_index=386
+[2026-01-24T23:59:01+08:00][info] 任务 26 将在 99 秒后继续处理下一条消息，索引: 387
+[2026-01-24T23:59:02+08:00][info] 开始处理队列任务: task_id=25, current_index=1604
+[2026-01-24T23:59:02+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1604
+[2026-01-24T23:59:02+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:59:02+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:59:02+08:00][info] zh1
+[2026-01-24T23:59:02+08:00][info] zh11
+[2026-01-24T23:59:04+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7758}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:59:04+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1604, message_id=7758
+[2026-01-24T23:59:04+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1604
+[2026-01-24T23:59:04+08:00][info] 任务 25 将在 89 秒后继续处理下一条消息，索引: 1605
+[2026-01-24T23:59:10+08:00][info] 开始处理队列任务: task_id=25, current_index=1605
+[2026-01-24T23:59:10+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1605
+[2026-01-24T23:59:10+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:59:10+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:59:10+08:00][info] zh1
+[2026-01-24T23:59:10+08:00][info] zh11
+[2026-01-24T23:59:10+08:00][info] 使用feedbackType=1605的消息ID: 7758
+[2026-01-24T23:59:25+08:00][info] 开始处理队列任务: task_id=25, current_index=1605
+[2026-01-24T23:59:26+08:00][info] 任务 25 初始化开始，准备开始发送消息，当前索引: 1605
+[2026-01-24T23:59:26+08:00][info] 消息缓存初始化完成: task_id=25, groups=https://t.me/+HZFEhfAwKjhmZDZk
+[2026-01-24T23:59:26+08:00][info] 任务 25 第 2 次循环，重置群组 https://t.me/+HZFEhfAwKjhmZDZk 消息状态
+[2026-01-24T23:59:26+08:00][info] zh1
+[2026-01-24T23:59:26+08:00][info] zh11
+[2026-01-24T23:59:26+08:00][info] 使用feedbackType=1605的消息ID: 7758
+[2026-01-24T23:59:26+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7759}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:59:26+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1605, message_id=7759
+[2026-01-24T23:59:26+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1605
+[2026-01-24T23:59:26+08:00][info] 任务 25 将在 98 秒后继续处理下一条消息，索引: 1606
+[2026-01-24T23:59:41+08:00][info] 返回:{"status":true,"message":"发送完成，成功1个，失败0个[]","data":{"success":[{"group_id":3482989339,"group_link":"https:\/\/t.me\/+HZFEhfAwKjhmZDZk","type":"megagroup","message":"发送成功","message_id":7760}],"failed":[],"debug":["处理标识符: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 清理后: https:\/\/t.me\/+HZFEhfAwKjhmZDZk, 识别为链接: True, 识别为数字ID: False"],"warning":""}}
+[2026-01-24T23:59:41+08:00][info] 消息ID缓存成功: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1605, message_id=7760
+[2026-01-24T23:59:41+08:00][info] 消息状态标记为已发送: task_id=25, group_id=https://t.me/+HZFEhfAwKjhmZDZk, msg_index=1605
+[2026-01-24T23:59:41+08:00][info] 任务 25 将在 98 秒后继续处理下一条消息，索引: 1606
+[2026-01-24T23:59:59+08:00][info] 开始处理队列任务: task_id=27, current_index=388
+[2026-01-24T23:59:59+08:00][info] 任务 27 初始化开始，准备开始发送消息，当前索引: 388
+[2026-01-24T23:59:59+08:00][info] 消息缓存初始化完成: task_id=27, groups=https://t.me/+_XaTo9Qrv0VjOTM0
+[2026-01-24T23:59:59+08:00][info] 任务 27 第 2 次循环，重置群组 https://t.me/+_XaTo9Qrv0VjOTM0 消息状态
+[2026-01-24T23:59:59+08:00][info] zh1
+[2026-01-24T23:59:59+08:00][info] zh11

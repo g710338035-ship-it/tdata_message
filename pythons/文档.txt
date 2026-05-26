@@ -1,0 +1,78 @@
+安装 opentele 和 telethon   phonenumbers
+
+pip install git+https://github.com/ntqbit/tdesktop-decrypter.git
+
+pip install PySocks
+
+pip install flask-socketio eventlet
+
+pip install --upgrade opentele2
+
+pkill -f "gunicorn.*account_checker:app" && gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 127.0.0.1:5000 account_checker:app
+
+uvicorn account_checker:app --host 127.0.0.1 --port 5000 --workers 4
+
+uvicorn account_checker:app --host 127.0.0.1 --port 5000 --workers 4 --loop asyncio
+
+pip install aiomysql
+
+pip install redis
+
+pip3 install aiohttp
+
+命令执行python account_checker.py
+
+pip3 install PySocks flask-socketio eventlet aiomysql redis aiohttp 
+pip3 install pymysql aiomysql
+
+pip3 install opentele telethon phonenumbers --root-user-action=ignore
+pip3 install fastapi uvicorn --root-user-action=ignore
+
+pip install psutil
+主要改进点
+1. 线程池替代进程池
+使用 ThreadPoolExecutor 确保全局缓存共享
+
+保持异步I/O性能优势
+
+2. 智能缓存管理
+连接健康检查：验证客户端是否仍连接
+
+定期清理：每5分钟清理失效连接
+
+强制清理：支持手动清理指定handler
+
+3. 完善的资源管理
+应用启动/关闭时的自动清理
+
+失败任务的session文件清理
+
+异常情况下的连接断开
+
+4. 监控和调试接口
+/health：服务健康状态
+
+/cache_info：缓存详细信息
+
+/clear_cache：手动清理缓存
+
+5. 增强的日志记录
+详细的执行时间统计
+
+缓存命中/失效记录
+
+异常堆栈跟踪
+
+这个方案确保了：
+
+✅ 全局缓存真正有效（线程间共享内存）
+
+✅ 连接复用（减少Telegram认证开销）
+
+✅ 资源泄漏防护（自动清理机制）
+
+✅ 性能监控（详细的耗时统计）
+
+✅ 易于调试（丰富的状态接口）
+
+现在多线程运行时，客户端连接应该能够正确复用，显著提升性能！

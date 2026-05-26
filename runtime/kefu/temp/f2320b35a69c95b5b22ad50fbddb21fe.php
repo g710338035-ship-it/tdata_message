@@ -1,0 +1,83 @@
+<?php /*a:1:{s:60:"/www/wwwroot/tdata.tgbota.top/app/kefu/view/login/index.html";i:1765435144;}*/ ?>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>客服 <?php echo config('base_config.site_title'); ?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/assets/element/index.css">
+<link rel="stylesheet" href="/assets/css/base.css">
+<script src="/assets/element/vue.js"></script>
+<script src="/assets/element/index.js"></script>
+<script src="/assets/js/axios.min.js"></script>
+<script src="/assets/js/js.cookie.min.js"></script>
+</head>
+
+
+<div id="app" class="body-bg">
+	<div class="login-main">
+		<h2 class="site-title">客服<?php echo config('base_config.site_title'); ?></h2>
+		<el-form ref="login" :model="login" size="medium" :rules="loginRules" class="login-form" label-position="left" >
+			<el-form-item style="margin-bottom:18px;" prop="username">
+				<el-input v-model="login.username" type="text" placeholder="用户名" prefix-icon="el-icon-user" autocomplete="off" clearable />
+			</el-form-item>
+			<el-form-item style="margin-bottom:18px;" prop="password">
+				<el-input v-model="login.password"  type="text" placeholder="密码" prefix-icon="el-icon-lock" @keyup.enter.native="handleLogin" autocomplete="off" clearable show-password/>
+			</el-form-item>
+			
+		</el-form>
+		<el-button :loading="loading" size="small"  type="primary" style="width:100%;" @click.native.prevent="handleLogin">
+			<span v-if="!loading">登 录</span>
+			<span v-else>登 录 中...</span>
+		</el-button>
+	</div>
+</div>
+
+<script>
+base_url = '/kefu'
+new Vue({
+	el: '#app',
+	data: function() {
+		return {
+			loading: false,
+			login:{
+				username:'',
+				password:'',
+				rememberMe:false,
+			},
+			loginRules: {
+				username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+				password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+			
+			},
+			
+			verify_status:true,
+			success_url:'',
+			site_title:'',
+		}
+	},
+
+	mounted(){
+		
+	},
+	methods:{
+	
+		handleLogin(){
+			this.$refs['login'].validate(valid => {
+				if(valid){
+					this.loading = true
+					axios.post('<?php echo url("kefu/Login/index"); ?>',this.login).then(res => {
+						if(res.data.status == 200){
+							window.location.href = '<?php echo url("kefu/Index/index"); ?>';
+						}else{
+							this.loading = false							
+							this.$message.error(res.data.msg)
+						}
+					})
+				}
+			})
+		}
+	},
+})
+</script>
