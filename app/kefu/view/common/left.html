@@ -1,0 +1,68 @@
+<div id="sidebar-menu">
+	<div class="navbar-brand-box">
+		<div class="logo logo-light">
+			<span class="logo-sm">
+				<img src="__PUBLIC__/assets/images/vue.png" alt="" height="22">
+			</span>
+			<span class="logo-lg" style="font-size:16px;">
+				{:config('base_config.site_title')}
+			</span>
+		</div>
+	</div>
+	<ul class="metismenu list-unstyled" id="side-menu">
+		
+	</ul>
+</div>
+<script type="text/javascript">
+const base_url = '<?php echo getBaseUrl()?>';
+
+axios.post(base_url + '/Index/accountList').then(res => {
+	if(res.data.code == 200){
+	    
+	    console.log(res.data.data.list)
+		Cookies.set(base_url+'breadcrumb','')
+		var str = '';
+		res.data.data.list.forEach(one=>{
+	             console.log(one)
+				str += '<li><a target="iframe0" class="waves-effect j_menu" href="'+one.account+'"><i class="el-icon-s-promotion"></i><span key="'+one.account+'">'+one.account+''+one.nickName+'</span></a></li>'
+			
+		})
+		
+		$('#side-menu').metisMenu('dispose');
+		$("#side-menu").append(str);
+		$('#side-menu').metisMenu();
+		sessionStorage.setItem(base_url+'breadcrumb',JSON.stringify(res.data.data.list))
+	}
+})
+
+$(function(){
+	Cookies.set(base_url+'menu','')
+	$(document).on('click','.j_menu',function(){
+		menu = []
+		var path = {
+			title:$(this).find('span').text(),
+			url:$(this).attr('href'),
+			fullurl:$(this).attr('href'),
+		}
+				
+		if(path.title !== '首页'){
+			var noUrl = true
+			if(Cookies.get(base_url+'menu')){
+				var tags = JSON.parse(Cookies.get(base_url+'menu'))
+				tags.forEach(item=>{
+					if(item.url == path.url){
+						noUrl = false 
+					}
+				})
+				if(noUrl){
+					tags.push(path)
+					Cookies.set(base_url+'menu',JSON.stringify(tags))
+				}
+			}else{
+				menu.push(path)
+				Cookies.set(base_url+'menu',JSON.stringify(menu))
+			}
+		}
+	});
+})
+</script>

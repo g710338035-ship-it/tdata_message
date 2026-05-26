@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram 监控系统</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Telegram 监控系统</h1>
+        <div class="task-list">
+            <div class="task-item" v-for="task in tasks" :key="task.id">
+                <div class="task-info">
+                    <span>{{ task.name }}</span>
+                    <span>{{ task.status ? '运行中' : '已停止' }}</span>
+                </div>
+                <div class="task-actions">
+                    <button @click="startTask(task.id)" v-if="!task.status">启动</button>
+                    <button @click="stopTask(task.id)" v-else>停止</button>
+                    <button @click="deleteTask(task.id)">删除</button>
+                </div>
+            </div>
+        </div>
+        <div class="task-form">
+            <h2>添加新任务</h2>
+            <form @submit.prevent="addTask">
+                <input type="text" v-model="newTask.name" placeholder="任务名称" required>
+                <input type="text" v-model="newTask.phone" placeholder="手机号" required>
+                <textarea v-model="newTask.keywords" placeholder="监控关键词，用逗号分隔"></textarea>
+                <button type="submit">添加任务</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="/css/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+{extend name='common/container'}
+{block name="content"}
+<div style="margin:0 15px 15px 15px;">
+<el-card shadow="never" style="min-height:650px;">
+<div v-if="search_visible" id="search" class="search">
+	<el-form ref="form" size="small" :model="searchData" inline>
+		<el-form-item label="群组名称">
+			<el-input id="username" v-model="searchData.username"  style="width:150px;" placeholder="请输入群组名称"></el-input>
+		</el-form-item>
+        <el-form-item label="协议号">
+			<select-page :is_clear="is_clear" url="/Monitorphone/getRobot_id" :selectval.sync="searchData.phone"></select-page>
+		</el-form-item>
+		<search-tool :search_data.sync="searchData" @refesh_list="index"></search-tool>
+	</el-form>
+</div>
+<div class="btn-group" style="margin-top:10px;margin-bottom:10px;">
+	<div>
+		<el-button v-for="item in button_group" :key="item.access" v-if="checkPermission(item.access,'{:implode(',',session('admin.access'))}','{:session('admin.role_id')}',[1])" :disabled="$data[item.disabled]" :type="item.color" size="mini" :icon="item.icon" @click="fn(item.clickname)">
+			<span v-if="item.batch" v-text="$data['batchUpdateStatus']?'批量保存':'批量编辑'"></span>
+			<span v-else v-text="item.name"></span>
+		</el-button>
+	</div>
+	<div><table-tool :search_visible.sync="search_visible"  @refesh_list="index"></table-tool></div>
+</div>
+<el-table :row-class-name="rowClass" @selection-change="selection"  @row-click="handleRowClick"  row-key="id"  :header-cell-style="{ background: '#eef1f6', color: '#606266' }" v-loading="loading"  ref="multipleTable" border class="eltable" :data="list"  style="width: 100%">
+	<el-table-column align="center" type="selection" width="42"></el-table-column>
+	    <el-table-column align="center"  property="phone" label="协议号" show-overflow-tooltip >
+	</el-table-column>
+	<el-table-column align="center"  property="group_id" label="群聊id" show-overflow-tooltip >
+	</el-table-column>
+	<el-table-column align="center"  property="group_name" label="群标题" show-overflow-tooltip >
+	</el-table-column>
+	<el-table-column align="center"  property="group_username" label="群主" show-overflow-tooltip >
+	</el-table-column>
+	<el-table-column align="center"  property="group_type" label="类型" show-overflow-tooltip >
+	</el-table-column>
+	<el-table-column align="center"  property="description" label="描述" show-overflow-tooltip >
+	</el-table-column>
+
+
+	<el-table-column :fixed="ismobile()?false:'right'" label="操作" align="center" width="280">
+		<template slot-scope="scope">
+			<div v-if="scope.row.id">
+				<el-button v-if="checkPermission('/admin/Mpgroup/delete.html','{:implode(",",session("admin.access"))}','{:session("admin.role_id")}',[1])" size="mini" icon="el-icon-delete" type="danger" @click="del(scope.row)" >删除</el-button>
+			</div>
+		</template>
+	</el-table-column>
+</el-table>
+<Page :total="page_data.total" :page.sync="page_data.page" :limit.sync="page_data.limit" @pagination="index" />
+</el-card>
+
+
+
+</div>
+{/block}
+{block name="script"}
+<script src="__PUBLIC__/assets/js/app.js"></script>
+<script src="__PUBLIC__/assets/libs/xlsx/xlsx.core.min.js"></script>
+
+<script>
+new Vue({
+	el: '#app',
+	components:{
+	},
+	data: function() {
+		return {
+			dialog: {
+				addDialogStatus : false,
+				updateDialogStatus : false,
+				detailDialogStatus : false,				
+			},
+			searchData:{},
+			button_group:[
+				{name:'删除',color:'danger',access:'/admin/Mpgroup/delete.html',icon:'el-icon-delete',disabled:'multiple',clickname:'del'},				
+			],
+			loading: false,
+			page_data: {
+				limit: 20,
+				page: 1,
+				total:20,
+			},
+			ids: [],
+			single:true,
+			multiple:true,
+			search_visible:true,
+			list: [],
+			updateInfo:{},			
+			exceldata:[],
+			dumppage:1,
+			ws:{},
+			dumpshow:false,
+			percentage:0,
+			filename:'',
+			is_clear:false,
+		}
+	},
+	methods:{
+		index(){
+			let param = {limit:this.page_data.limit,page:this.page_data.page}
+			Object.assign(param, this.searchData)
+			this.loading = true
+			axios.post(base_url + '/Mpgroup/index',param).then(res => {
+				if(res.data.status == 200){
+					this.list = res.data.data.data
+					this.page_data.total = res.data.data.total
+					this.loading = false
+				}else{
+					this.$message.error(res.data.msg);
+				}
+			})
+		},
+		
+		del(row){
+			this.$confirm('确定操作吗?', '提示', {
+				confirmButtonText: '确定',
+				cancelButtonText: '取消',
+				type: 'warning'
+			}).then(() => {
+				let ids = row.id ? row.id : this.ids.join(',')
+				axios.post(base_url + '/Mpgroup/delete',{id:ids}).then(res => {
+					if(res.data.status == 200){
+						this.$message({message: res.data.msg, type: 'success'})
+						this.index()
+					}else{
+						this.$message.error(res.data.msg)
+					}
+				})
+			}).catch(() => {})
+		},
+	
+		selection(selection) {
+			this.ids = selection.map(item => item.membe_id)
+			this.single = selection.length != 1
+			this.multiple = !selection.length
+		},
+		handleRowClick(row, rowIndex,event){
+			if(event.target.className !== 'el-input__inner'){
+				this.$refs.multipleTable.toggleRowSelection(row)
+			}
+		},
+		rowClass ({ row, rowIndex }) {
+			for(let i=0;i<this.ids.length;i++) {
+				if (row.membe_id === this.ids[i]) {
+					return 'rowLight'
+				}
+			}
+		},
+		fn(method){
+			this[method](this.ids)
+		},
+	},
+	mounted(){
+		this.index()
+	},
+})
+</script>
+{/block}

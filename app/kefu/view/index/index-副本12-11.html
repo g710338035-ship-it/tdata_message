@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{:config('base_config.site_title')}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="__PUBLIC__/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/assets/element/index.css" rel="stylesheet">
+<link href="__PUBLIC__/assets/css/base.css" rel="stylesheet">
+<script src="__PUBLIC__/assets/element/vue.js"></script>
+<script src="__PUBLIC__/assets/element/index.js"></script>
+<script src="__PUBLIC__/assets/js/axios.min.js"></script>
+<script src="__PUBLIC__/components/base.component.js"></script>
+<script src="__PUBLIC__/assets/libs/jquery/jquery.min.js"></script>
+<script src="__PUBLIC__/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="__PUBLIC__/assets/js/js.cookie.min.js"></script>
+<script src="__PUBLIC__/assets/js/common.js"></script>
+<script type="text/javascript">
+<?php
+$action = request()->action();
+$dialogstate = request()->get('dialogstate');
+?>
+const base_url = '<?php echo getBaseUrl()?>';
+const base_dir = '';//勿要删除
+</script>
+<style>
+html,
+body {
+    height: 100%;
+}
+
+body.full-height-layout layout-wrapper{
+    height: 100%;
+}
+#content-main {
+    height: calc(100% - 100px);
+    overflow: hidden;
+}
+</style>
+</head>
+
+<body class="full-height-layout" style="height:100%; overflow:hidden" data-sidebar="dark">
+<div id="layout-wrapper" style="height:100%">
+    <div class="vertical-menu">
+		<div data-simplebar style="height: 100%!important">
+        	<div id="sidebar-menu">
+        	<div class="navbar-brand-box">
+        		<div class="logo logo-light">
+        			<span class="logo-lg" style="font-size:16px;">
+        				客服管理系统
+        			</span>
+        		</div>
+        	</div>
+        	<div class="account-search">
+                <el-input v-model="searchInput" size="small" prefix-icon="el-icon-search" clearable @blur="onBlur" placeholder="账号/昵称"></el-input>
+            </div>
+        	<ul class="metismenu list-unstyled" id="side-menu">
+                <li v-for="one in accounts" :key="one.account">
+                    <div class="waves-effect j_menu account-item" :class="{active: isActiveAccount(one), loading: loadingAccount && loadingAccount.tpid === one.tpid}" @click.prevent="!isActiveAccount(one) && onMenuClick(one)">
+                        <span class="account-left">
+                            <img v-if="one.avatar_url" :src="one.avatar_url" class="avatar">
+                            <span v-else class="avatar avatar-fallback">{{ getAvatarLetter(one) }}</span>
+                            <span class="account-info">
+                                <span class="account-nick">{{ one.nickName }}</span>
+							<span class="account-id">{{ one.account }} <sup v-if="one.account_status=='正常'">{{ one.account_status }}</sup> <sub v-else>{{ one.account_status }}</sub></span>
+						</span>
+					</span>
+					<span class="badge-unread" v-if="getUnread(one) > 0">{{ getUnread(one) }}</span>
+					<span v-if="loadingAccount && loadingAccount.tpid === one.tpid" class="loading-spinner">
+						<i class="el-icon-loading"></i>
+					</span>
+				</div>
+			</li>
+        		<li v-if="hasMore">
+        			<a href="javascript:void(0);" class="waves-effect" @click="loadMore">
+        				<span>加载更多（已加载{{ accounts.length }}/{{ total }}）</span>
+        			</a>
+        		</li>
+        	</ul>
+        </div>
+        </div>
+	</div>
+    <div id="content-main" class="main-content" style="height:100%; position:relative">
+        <div id="page-topbar">
+        	<div class="navbar-header">
+        		<div class="d-flex">
+        			<div class="navbar-header">
+        				<div class="d-flex" data-toggle="cospan">
+        					<i style="margin-left:15px;" @click="reload" class="el-icon-refresh hidden-sm-and-down"></i>
+        				</div>
+        				<div class="d-flex hidden-sm-and-down">
+        					<el-breadcrumb separator="/" style="margin-left:30px;">
+        						<el-breadcrumb-item v-for="item in levelList" :key="item.path">
+        							<a v-if="item.title == '首页'" :href="item.path">{{item.title}}</a>
+        							<span v-else>{{item.title}}</span>
+        						</el-breadcrumb-item>
+        					</el-breadcrumb>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="d-flex">
+        		
+        			
+        			<div class="iconbutton">
+        				
+        				<el-dropdown trigger="click" placement="bottom" style="cursor: pointer;margin-right:15px;">
+        					<span class="el-dropdown-link">
+        						{:session('kefu.username')}<i style="margin-left:0px; font-size:100%" class="icontool el-icon-arrow-down"></i>
+        					</span>
+        					<el-dropdown-menu slot="dropdown">
+        						<el-dropdown-item icon="el-icon-lock" @click.native.prevent="passwordDialogStatus = true">修改密码</el-dropdown-item>
+        						<el-dropdown-item icon="el-icon-back" @click.native.prevent="logout">退出</el-dropdown-item>
+        					</el-dropdown-menu>
+        				</el-dropdown>
+        			</div>
+        		</div>
+        	</div>
+        </div>	
+        <div v-if='iframeSrc' style="height:calc(100% - 100px);" v-loading="iframeLoading" element-loading-text="加载中..." element-loading-background="rgba(0,0,0,0.1)">
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" :src="iframeSrc" :key="iframeSrc" frameborder="0" seamless @load="onIframeLoad" @error="onIframeError"></iframe>
+        </div>
+        <div v-if="!iframeSrc" style="display:flex;align-items:center;justify-content:center;color:#8c8c8c;font-size:26px;height:100%">请选择右侧账户</div>
+    </div>
+    
+    <el-dialog title="重置密码" style="margin-top:100px;" width="450px"  :visible="passwordDialogStatus" :before-close="closeForm" append-to-body>
+		<el-form :size="size" ref="form" :model="form" :rules="rules" label-width="80px">
+			<el-row>
+				<el-col :span="24">
+					<el-form-item label="新密码" prop="password">
+						<el-input  show-password autoComplete="off" v-model="form.password"  clearable placeholder="请输入密码"/>
+					</el-form-item>
+				</el-col>
+			</el-row>
+			<el-row>
+				<el-col :span="24">
+					<el-form-item label="确认密码" prop="repassword">
+						<el-input  show-password autoComplete="off" v-model="form.repassword"  clearable placeholder="请输入确认密码"/>
+					</el-form-item>
+				</el-col>
+			</el-row>
+		</el-form>
+		<div slot="footer" class="dialog-footer">
+			<el-button :size="size" :loading="loading" type="primary" @click="submit" >
+				<span v-if="!loading">确 定</span>
+				<span v-else>提 交 中...</span>
+			</el-button>
+			<el-button :size="size" @click="closeForm">取 消</el-button>
+		</div>
+	</el-dialog>
+</div>
+
+
+<div class="menubar-overlay"></div>
+<script src="__PUBLIC__/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="__PUBLIC__/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="__PUBLIC__/assets/js/app.js"></script>
+
+<script>
+
+new Vue({
+    el: '#layout-wrapper',
+    data(){
+        
+		var validatePass2 = (rule, value, callback) => {
+			if(value === '') {
+				callback(new Error('请再次输入密码'))
+			}else if (value !== this.form.password) {
+				callback(new Error('两次输入密码不一致!'))
+			}else {
+				callback()
+			}
+		}
+
+	
+                return {
+                    base_url: '<?php echo getBaseUrl()?>',
+                    searchInput: '',
+                    accounts: [],
+                    iframeSrc: '',
+                    refreshInterval: 30000,
+                    refreshTimer: null,
+                    sessionCheckInterval: 5000,
+                    sessionCheckTimer: null,
+                    page: 1,
+                    pageSize: 200,
+                    total: 0,
+                    isLoading: false,
+                    hasMore: false,
+                    form: {
+                        password:'',
+                        repassword:'',
+                    },
+                    url:{},
+                    levelList:[],
+                    notice:[],
+                    passwordDialogStatus:false,
+                    loading:false,
+                    size:'small',
+                    urlobj:{},//这里是判断如果是弹窗链接的话 不显示头部
+                    clickSeq: 0,
+                    lastClickAt: 0,
+                    clickDelayMs: 300,
+                    loadingAccount: null,
+                    activeAccountKey: null,
+                    iframeLoading: false,
+                    iframeLoadTimer: null,
+                    iframeLoadTimeoutMs: 15000,
+                    rules: {
+                        password: [{ required: true, message: '密码不能为空', trigger: 'blur' }],
+                        repassword:[
+                            {required: true, validator: validatePass2, trigger: 'blur'},
+                        ],
+                    }
+                }
+        },
+        mounted(){
+            Cookies.set(this.base_url+'menu','')
+            this.loadAccounts(true)
+            this.startAutoRefresh()
+            this.startSessionCheck()
+            this.registerUnloadHandlers()//监听
+            //document.addEventListener('visibilitychange', () => { if (!document.hidden) this.sessionCheck() })
+            //window.addEventListener('focus', this.sessionCheck)
+        },
+        methods:{
+            onBlur() {
+                //if (this.searchInput) {
+                    // 输入为空：加载默认列表
+                    console.log(this.searchInput)
+                    //this.searchAccounts(this.searchInput);
+                    this.loadAccounts(true)
+                //} 
+            },
+            loadAccounts(reset=false){
+                if(this.isLoading) return
+                if(reset){
+                    this.page = 1
+                    this.accounts = []
+                }
+                this.isLoading = true
+                const payload = new URLSearchParams();
+                payload.append('page', this.page)
+                payload.append('pageSize', this.pageSize)
+                payload.append('keyword', this.searchInput)
+                axios.post(this.base_url + '/Index/accountList', payload).then(res => {
+                    this.isLoading = false
+                    if(res.data && res.data.code == 200){
+                        const list = Array.isArray(res.data.data && res.data.data.data) ? res.data.data.data : []
+                        this.total = Number(res.data.data && res.data.data.total || list.length)
+                        const existingKeys = new Set(this.accounts.map(a => a.account || a.tpid || a.id))
+                        list.forEach(one => {
+                            const key = one.account || one.tpid || one.id
+                            if(!existingKeys.has(key)){
+                                this.accounts.push(one)
+                            }
+                        })
+                        this.hasMore = this.accounts.length < this.total
+                        Cookies.set(this.base_url+'breadcrumb','')
+                        sessionStorage.setItem(this.base_url+'breadcrumb', JSON.stringify(this.accounts))
+                        this.$nextTick(() => {
+                            try{ $('#side-menu').metisMenu('dispose') }catch(e){}
+                            $('#side-menu').metisMenu()
+                        })
+                        if (reset) { this.startMonitorBatch() }
+                    }else if(res.data && res.data.code == 400){
+                        window.location.href = base_url+'/login/index'
+                    }
+                }).catch(() => { this.isLoading = false })
+            },
+            
+            startMonitorBatch(){
+                    axios.post(this.base_url + '/Index/startMonitorBatch').catch(() => {})
+            },
+            stopMonitorOne(one){
+                const payload = new URLSearchParams();
+                payload.append('tpid', one.tpid)
+                return axios.post(this.base_url + '/Index/stopMonitorOne', payload)
+            },
+            registerUnloadHandlers(){
+                    const stopAll = () => {
+                        try{
+                            const url = this.base_url + '/Index/stopAllMonitor'
+                            const data = new Blob([JSON.stringify({ ts: Date.now() })], { type: 'application/json' })
+                            if (navigator.sendBeacon) { navigator.sendBeacon(url, data) }
+                            else { fetch(url, { method: 'POST', body: data, keepalive: true }) }
+                        }catch(e){}
+                    }
+                    window.addEventListener('beforeunload', stopAll)
+                    document.addEventListener('visibilitychange', () => { if (document.hidden) stopAll() })
+                    window.addEventListener('pagehide', stopAll)
+            },    
+            submit(){
+    			this.$refs['form'].validate(valid => {
+    				if(valid) {
+    					this.loading = true
+    					axios.post(base_url+'/Baseinfo/resetPwd',this.form).then(res => {
+    						if(res.data.status == 200){
+    							this.$message({message: '操作成功', type: 'success'})
+    							this.closeForm()
+    						}else{
+    							this.$message.error('修改失败')
+    						}
+    					}).catch(()=>{
+    						this.loading = false
+    					})
+    				}
+    			})
+    		},
+    		closeForm(){
+    			this.passwordDialogStatus = false
+    			this.loading = false
+    			if (this.$refs['form']!==undefined) {
+    				this.$refs['form'].resetFields()
+    			}
+    		},
+    
+    	
+    		logout(){
+    			this.$confirm('确定注销并且退出系统?', '提示', {
+    				confirmButtonText: '确定',
+    				cancelButtonText: '取消',
+    				type: 'warning'
+    			}).then(()=>{
+    				axios.get(base_url+'/Login/logout').then(res => {
+    					if(res.data.status == 200){
+    						sessionStorage.setItem(base_url+'breadcrumb','')
+    						Cookies.set(base_url+'menu','')
+    						window.location.href = base_url+'/login/index'
+    					}
+    				})
+    			})
+    		},
+    		reload(){
+    			location.reload()
+    		},
+            loadMore(){
+                if(this.hasMore && !this.isLoading){
+                    this.page += 1
+                    this.loadAccounts(false)
+                }
+            },
+            startAutoRefresh(){
+                if(this.refreshTimer){
+                    clearInterval(this.refreshTimer)
+                }
+                this.refreshTimer = setInterval(() => {
+                    this.refreshUnread()
+                }, this.refreshInterval)
+            },
+            startSessionCheck(){
+                if(this.sessionCheckTimer){
+                    clearInterval(this.sessionCheckTimer)
+                }
+                this.sessionCheckTimer = setInterval(() => {
+                    this.sessionCheck()
+                }, this.sessionCheckInterval)
+            },
+            
+            sessionCheck(){
+                axios.post(this.base_url + '/Index/checkKf').then(res => {
+                    if(res && res.data && res.data.code === 400 ){
+                        window.top.location.href = this.base_url + '/login/index'
+                    }
+                }).catch(() => {})
+            },
+            
+            refreshUnread(){
+                if(this.accounts.length === 0){
+                    this.loadAccounts(true)
+                    return
+                }
+                const pagesNeeded = Math.max(1, Math.ceil(this.accounts.length / this.pageSize))
+                const reqs = []
+                for(let p = 1; p <= pagesNeeded; p++){
+                    const payload = new URLSearchParams()
+                    payload.append('page', p)
+                    payload.append('pageSize', this.pageSize)
+                    payload.append('keyword', this.searchInput)
+                    reqs.push(axios.post(this.base_url + '/Index/accountList', payload))
+                }
+                Promise.all(reqs).then(responses => {
+                    const map = {}
+                    responses.forEach(res => {
+                        if(res.data && res.data.code == 200){
+                            const list = Array.isArray(res.data.data && res.data.data.data) ? res.data.data.data : []
+                            list.forEach(one => { const key = one.account || one.tpid || one.id; map[key] = one })
+                            this.total = Number(res.data.data && res.data.data.total || this.total)
+                        }
+                    })
+                    this.accounts = this.accounts.map(old => {
+                        const key = old.account || old.tpid || old.id
+                        const newer = map[key]
+                        if(newer){
+                            return Object.assign({}, old, {
+                                unread: newer.unread ??  0,
+                                account_status:newer.account_status 
+                                })
+                        }
+                        return old
+                    })
+                    this.hasMore = this.accounts.length < this.total
+                    this.$nextTick(() => {
+                        try{ $('#side-menu').metisMenu('dispose') }catch(e){}
+                        $('#side-menu').metisMenu()
+                    })
+                })
+            },
+            getUnread(one){
+                const a = one.unread
+                const d = one.unread_chats
+                const e = one.unreadChats
+                const b = one.unreadCount
+                const c = one.count
+                const val = Number(a ?? d ?? e ?? b ?? c ?? 0)
+                return isNaN(val) ? 0 : val
+            },
+            getAvatarLetter(one){
+                const s = String((one.nickName || one.account || '').trim())
+                return s ? s.charAt(0).toUpperCase() : '?'
+            },
+            onMenuClick(one){
+                const now = Date.now()
+                if (now - this.lastClickAt < this.clickDelayMs) return
+                this.lastClickAt = now
+                const seq = ++this.clickSeq
+                this.loading = true
+                this.loadingAccount = one
+                
+                // 显示账户切换中的提示
+                this.$message({
+                    message: `正在切换到账户 ${one.account}，请稍候...`,
+                    type: 'info',
+                    duration: 3000
+                })
+                // 切换前停止该账户监听
+                //this.stopMonitorOne(one).catch(() => {})
+                
+                axios.post(base_url+'/index/chechAccount',{"id":one.tpid}).then(res => {
+                    if (seq !== this.clickSeq) return
+                    if(res.data.status == 200){
+                        one.main_dc_id=res.data.data.main_dc_id
+                        one.auth_key=res.data.data.auth_key
+                        const title = `${one.account}${one.nickName || ''}`
+                        const url = this.buildTelegramUrl(one)
+                        const path = { title, url, fullurl: url }
+                        this.iframeSrc = url
+                        const key = one.tpid 
+                        this.activeAccountKey = key
+                        this.iframeLoading = true
+                        if (this.iframeLoadTimer) { clearTimeout(this.iframeLoadTimer) }
+                        this.iframeLoadTimer = setTimeout(() => { this.iframeLoading = false }, this.iframeLoadTimeoutMs)
+                        this.loading = false
+                    }else{
+                        this.$message.error(res.data.msg)
+                        this.iframeLoading = false
+                        this.loading = false
+                    }
+                }).catch(()=>{
+                    if (seq !== this.clickSeq) return
+                    this.iframeLoading = false
+                    this.loading = false
+                })
+            },
+            buildTelegramUrl(one){
+                const id = one.tpid
+                const dc = one.main_dc_id || ''
+                const key = one.auth_key || ''
+                if(dc && key){
+                    return 'https://tdata.tgbotu.top/web/?reset=1&clearOnClose=1&idleClearMinutes=20&account=1&mainDcId=' + encodeURIComponent(dc) + '&hexAuthKey=' + encodeURIComponent(key) + '&userid=' + encodeURIComponent(id)
+                }
+                return this.base_url + '/Index/main'
+            },
+            isActiveAccount(one){
+                const key = one.tpid 
+                return key && key === this.activeAccountKey
+            },
+            onIframeLoad(e){
+                if (this.iframeLoadTimer) { clearTimeout(this.iframeLoadTimer); this.iframeLoadTimer = null }
+                const src = e && e.target && e.target.src ? e.target.src : ''
+                const cur = this.iframeSrc || ''
+                if (!cur || src === cur) { this.iframeLoading = false }
+            },
+            onIframeError(){
+                if (this.iframeLoadTimer) { clearTimeout(this.iframeLoadTimer); this.iframeLoadTimer = null }
+                this.iframeLoading = false
+            }
+    },
+})
+</script>
+
+<style>
+.account-search{ padding:10px;}
+.badge-unread{display:inline-block;margin-left:8px;padding:0 6px;line-height:16px;border-radius:8px;background:#ff4d4f;color:#fff;font-size:12px}
+.account-item{display:flex !important;align-items:center;justify-content:space-between;padding:10px; cursor:pointer;transition:background 0.3s}
+.account-item:hover{background:rgba(24,144,255,0.18);}
+.account-item.active{background:rgba(24,144,255,0.18)}
+.account-item.loading{background:rgba(24,144,255,0.08);}
+.account-left{display:flex;align-items:center;min-width:0}
+.avatar{width:24px;height:24px;border-radius:50%;margin-right:8px}
+.avatar-fallback{background:#1890ff;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:600}
+.account-info{display:flex;flex-direction:column;min-width:0;max-width:180px}
+.account-id{font-size:12px;color:#8c8c8c;line-height:16px}
+.account-id sup{ color:#67c23a; vertical-align:initial}
+.account-id sub{color:#F56C6C;  vertical-align:initial}
+.account-nick{font-size:14px;color:#fff;line-height:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.loading-spinner{display:inline-flex;align-items:center;justify-content:center;margin-left:8px;color:#1890ff;animation:spin 1s linear infinite}
+.loading-spinner .el-icon-loading{font-size:16px}
+@keyframes spin{
+    0%{transform:rotate(0deg)}
+    100%{transform:rotate(360deg)}
+}
+</style>
+
+</body>
+</html>

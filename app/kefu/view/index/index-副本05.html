@@ -1,0 +1,1965 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>实时多账号客服聊天系统</title>
+    <link rel="stylesheet" href="__PUBLIC__/kefu/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/kefu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+ 
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row mb-3">
+            <div class="col">
+                <h3>实时多账号客服聊天系统</h3>
+            </div>
+            <div class="col text-right">
+                <div id="logoutBtn" >{$kefuinfo['username']}  退出</div>
+            </div>
+        </div>
+        
+        <div class="chat-container">
+            <!-- 左侧账号列表 -->
+            <div class="accounts-sidebar">
+                <div class="accounts-header">
+                    所有账号
+                    <div class="account-search mt-2">
+                        <input type="text" id="accountSearchInput" 
+                               class="form-control form-control-sm" 
+                               placeholder="搜索账号/昵称...">
+                        <span class="clear-search" id="clearSearch"><i class="fa fa-times"></i></span>
+                    </div>
+                </div>
+                <div class="accounts-list" id="accountsList">
+                    <!-- 账号列表将动态生成 -->
+                </div>
+            </div>
+            
+            <!-- 中间会话列表 -->
+            <div class="sessions-container">
+                <div class="session-tabs">
+                    <ul class="nav nav-tabs w-100">
+                        <li class="nav-item w-50 text-center">
+                            <a class="nav-link active" data-type="groups">群组</a>
+                        </li>
+                        <li class="nav-item w-50 text-center">
+                            <a class="nav-link" data-type="friends">私聊</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="session-list p-0">
+                    <div id="groupsList" class="list-group p-2"></div>
+                    <div id="friendsList" class="list-group p-2 d-none"></div>
+                </div>
+            </div>
+            
+            <!-- 右侧聊天区域 -->
+            <div class="chat-area">
+                <div class="chat-header" id="chatHeader">
+                    <h5>请选择一个账号和会话</h5>
+                    <div class="connection-status">
+                        <span class="status-indicator status-offline" id="wsStatus"></span>
+                        <span id="wsStatusText">未连接</span>
+                    </div>
+                </div>
+                <div id="messageList" class="message-list"></div>
+                <div class="message-input">
+                    <div id="imagePreviewContainer" class="flex items-center gap-1 mr-2 overflow-x-auto max-w-[200px]">
+                    <!-- 预览图会通过JS动态添加 -->
+                    </div>
+                    <div id="is_replyinfo"></div> 
+                    
+                    <div class="input-group">
+                        <button id="emojiBtn" class="btn btn-light">😊</button>
+                        <button id="imageBtn" class="btn btn-light">🖼️</button>
+                        <textarea id="messageInput" class="form-control" rows="2" placeholder="输入消息..."></textarea>
+                        <div class="input-group-append">
+                            <button id="sendBtn" class="btn btn-primary" disabled>发送</button>
+                        </div>
+                    </div>    
+                    <!-- 表情面板 -->
+                    <div id="emojiPanel" class="d-none mb-2">
+                        <div class="emoji-row">  <span>😀</span>  <span>😂</span>  <span>😃</span>  <span>😄</span>  <span>😅</span>  <span>😆</span>  <span>😊</span>  <span>😋</span>  <span>😎</span>  <span>😍</span>  <span>😘</span>  <span>🥰</span>  <span>😗</span>  <span>😙</span>  <span>😚</span>  <span>🙃</span>  <span>😉</span>  <span>😌</span>  <span>😏</span>  <span>😣</span></div>
+                        <!-- 更多表情 -->
+                    </div>
+                    <!-- 图片上传控件 -->
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 私信列表项右键菜单 -->
+<div id="privateMenu" class="dropdown-menu" style="display: none; position: absolute;">
+    <a class="dropdown-item" id="blockUser">屏蔽此用户</a>
+    <a class="dropdown-item" id="deleteUser">删除联系人</a>
+    <a class="dropdown-item" id="deleteHistory">删除对话</a>
+</div>
+    <script src="__PUBLIC__/kefu/jquery.min.js"></script>
+    <script src="__PUBLIC__/kefu/bootstrap.min.js"></script>
+    <script>
+        // 全局状态管理
+        let accounts = []; // 当前已加载的账号列表（累加）
+        let currentAccount = null; // 当前选中的账号
+        let currentSession = null; // 当前选中的会话
+        let lastMsgId = 0; // 最后一条消息ID
+        let currentUserId = 'unknown'; // 当前用户ID
+        
+        // 账号分页状态
+        let accountPage = 1; // 当前页码
+        let accountPageSize = 10; // 每页加载10条
+        let accountTotal = 0; // 账号总数
+        let isLoadingAccounts = false; // 防止重复加载的锁
+        
+        // WebSocket相关
+        let socket = null;
+        let isSocketConnected = false;
+        let reconnectTimer = null;
+        
+        // 缓存管理
+        const userInfoCache = {}; // {id: {name, avatar, unread, last_msg}}
+        const groupInfoCache = {}; // {id: {title, avatar, unread, last_msg}}
+        const accountDataCache = {}; // 缓存每个账号的数据 {accountId: {unread, hasNew}}
+        
+        // 历史消息加载状态
+        let hasMoreHistory = true;
+        let lastLoadedOffset = 0;
+        let isLoadingHistory = false;
+        
+        // 全局变量存储当前回复的消息ID
+        let replyingToMsgId = null;
+        let replyingToMsg = null;
+        let replyingToMsgName=null;
+        let messages = [];
+        // 存储已上传的图片临时信息（供发送时使用）
+        let uploadedImages = [];
+        // 全局消息ID缓存（去重）
+        const loadedMessageIds = new Set();
+        
+        // 初始化
+        $(function() {
+            // 加载账号列表（分页版）
+            loadAllAccounts();
+            
+            // 初始化WebSocket连接
+            initWebSocket();
+            
+            // 切换群组/好友标签
+            $('.nav-tabs a').click(handleTabSwitch);
+            
+            // 发送消息事件
+            $('#sendBtn').click(sendMessage);
+            $('#messageInput').keydown(handleInputKeydown);
+            
+            $('#logoutBtn').click(logout);
+            // 消息列表滚动监听（加载更多历史消息）
+            $('#messageList').scroll(handleMessageScroll);
+            
+            // 账号搜索功能
+            $('#accountSearchInput').on('input', handleAccountSearch);
+            $('#clearSearch').on('click', function() {
+                $('#accountSearchInput').val('');
+                $(this).removeClass('show');
+                handleAccountSearch(); // 触发搜索逻辑（显示所有）
+            });
+
+            // 页面卸载时清理
+            $(window).on('beforeunload', function() {
+                if (socket) socket.close();
+            });
+        });
+        
+        // 账号搜索处理
+        function handleAccountSearch() {
+            const keyword = $('#accountSearchInput').val().trim().toLowerCase();
+            const $allItems = $('.account-item');
+            
+            // 显示/隐藏清除按钮
+            if (keyword) {
+                $('#clearSearch').addClass('show');
+            } else {
+                $('#clearSearch').removeClass('show');
+            }
+
+            if (!keyword) {
+                // 无关键词：显示所有已加载的账号
+                $allItems.show();
+                return;
+            }
+
+            // 有关键词：过滤显示匹配的账号（昵称/账号包含关键词）
+            $allItems.each(function() {
+                const $item = $(this);
+                const name = $item.find('.account-name').text().toLowerCase();
+                const number = $item.find('.account-number').text().toLowerCase();
+                const isMatch = name.includes(keyword) || number.includes(keyword);
+                $item.toggle(isMatch);
+            });
+        }
+        
+        // 表情面板控制
+        $('#emojiBtn').click(() => $('#emojiPanel').toggleClass('d-none'));
+        
+        // 插入表情
+        $('.emoji-row span').click(function() {
+            $('#messageInput').val($('#messageInput').val() + $(this).text());
+        });
+        
+        // 图片上传
+        $('#imageBtn').click(() => {
+            // 先检查是否有选中的会话
+            if (!currentSession || !currentAccount) {
+                showToast('请先选择一个会话', 'error');
+                return;
+            }
+            $('#imageUpload').click();
+        });
+    
+
+        // 图片选择后处理
+        $('#imageUpload').change(async function(e) {
+            const file = e.target.files[0];
+            if (!file) return; // 未选择文件
+            
+            // 1. 验证文件类型和大小
+            const validTypes = ['image/jpeg', 'image/png', 'image/gif'];
+            if (!validTypes.includes(file.type)) {
+                showToast('仅支持JPG、PNG、GIF格式', 'error');
+                $(this).val(''); // 清空选择
+                return;
+            }
+            
+            if (file.size > 10 * 1024 * 1024) { // 限制10MB
+                showToast('文件大小不能超过10MB', 'error');
+                $(this).val('');
+                return;
+            }
+            
+            // 2. 显示本地预览（提升体验）
+            const previewUrl = URL.createObjectURL(file);
+            const previewId = `preview_${Date.now()}`;
+            const previewMsg = $(`
+                <div class="image-preview-item"  data-preview-id="${previewId}">
+                    <img src="${previewUrl}" class="message-image" alt="上传中...">
+                    <div class="uploading-indicator">上传中...</div>
+                    <div class="image-preview-cancel" data-preview-id="${previewId}">×</div>
+                </div>
+            `);
+            $('#imagePreviewContainer').show();
+            $('#imagePreviewContainer').append(previewMsg);
+            scrollToBottom();
+        
+            // 3. 构建表单数据
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('temp_upload', 1); 
+        
+            // 4. 禁用按钮防止重复提交
+            $('#sendBtn').prop('disabled', true).text('上传中...');
+            $('#imageBtn').prop('disabled', true);
+        
+            try {
+                // 5. 发送上传请求
+                const res = await $.ajax({
+                    url: '/kefu/Upload/upload',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    timeout: 30000, // 30秒超时
+                    xhr: function() {
+                        // 监听上传进度
+                        const xhr = new XMLHttpRequest();
+                        xhr.upload.addEventListener('progress', function(e) {
+                            if (e.lengthComputable) {
+                                const percent = Math.round((e.loaded / e.total) * 100);
+                                previewMsg.find('.uploading-indicator').text(`上传中...${percent}%`);
+                            }
+                        });
+                        return xhr;
+                    }
+                });
+        
+                // 6. 处理上传结果
+                if (res.status=== 200) {
+                    showToast('图片上传成功');
+                    // 保存图片信息到待发送列表
+                    uploadedImages.push({
+                        previewId: previewId,
+                        fileUrl: res.data,
+                    });
+                    
+                    // 启用发送按钮
+                    $('#sendBtn').prop('disabled', false).text('发送');
+                    previewMsg.find('.uploading-indicator').remove();
+                } else {
+                    showToast(`发送失败: ${res.message || '未知错误'}`, 'error');
+                    previewMsg.addClass('error').find('.uploading-indicator').text('上传失败');
+                }
+            } catch (err) {
+                // 7. 处理网络错误
+                console.error('上传错误:', err);
+                showToast(err.statusText === 'timeout' ? '上传超时' : '网络错误', 'error');
+                previewMsg.addClass('error').find('.uploading-indicator').text('上传失败');
+            } finally {
+                // 8. 恢复状态
+                $('#imageBtn').prop('disabled', false);
+                $(this).val('');
+                URL.revokeObjectURL(previewUrl);
+            }
+        });
+        
+        // 监听预览图的取消按钮点击（删除单张图片）
+        $('#imagePreviewContainer').on('click', '.image-preview-cancel', function() {
+            const previewId = $(this).data('preview-id');
+            // 找到对应的图片信息
+            const imageInfo = uploadedImages.find(img => img.previewId === previewId);
+            // 移除预览和图片信息
+            removePreviewItem(previewId, imageInfo?.fileId);
+        });
+        
+        function removePreviewItem(previewId, fileId, callBackend = true) {
+            // 1. 移除DOM预览项
+            $(`.image-preview-item[data-preview-id="${previewId}"]`).remove();
+            // 2. 从图片列表中移除
+            uploadedImages = uploadedImages.filter(img => img.previewId !== previewId);
+            if (uploadedImages.length === 0) {
+                $('#imagePreviewContainer').hide();
+            }
+        }
+        
+        // 私信列表右键菜单
+        let currentPrivateId = null;
+        $('#friendsList').on('contextmenu', '.session-item', function(e) {
+            e.preventDefault();
+            currentPrivateId = $(this).data('id');
+            const $menu = $('#privateMenu');
+            $menu.css({
+                top: e.pageY,
+                left: e.pageX,
+                display: 'block'
+            });
+        });
+        
+        // 点击空白处关闭菜单
+        $(document).click(() => $('#privateMenu').hide());
+        
+        // 拉黑用户
+        $('#blockUser').click(async function() {
+            if (!currentPrivateId || !currentAccount) return;
+            
+            // 显示加载状态
+            $(this).text('处理中...').prop('disabled', true);
+            
+            const res = await $.post('/kefu/Index/blockUser', {
+                tpid: currentAccount.id,
+                user_id: currentPrivateId
+            });
+            
+            // 恢复按钮状态
+            $(this).text('屏蔽此用户').prop('disabled', false);
+            
+            if (res.code) {
+                // 1. 直接从DOM中删除对应的会话项
+                const $sessionItem = $(`#friendsList .session-item[data-id="${currentPrivateId}"]`);
+                if ($sessionItem.length) {
+                    $sessionItem.fadeOut(300, function() {
+                        $(this).remove();
+                    });
+                }
+                
+                // 2. 如果当前正在查看该会话，清空聊天区域
+                if (currentSession && currentSession.id === currentPrivateId) {
+                    resetMessageList();
+                    $('#chatHeader h5').text(`请选择一个会话 - ${currentAccount.name}`);
+                    currentSession = null;
+                }
+                
+                // 3. 更新缓存中的数据
+                if (userInfoCache[currentPrivateId]) {
+                    delete userInfoCache[currentPrivateId];
+                }
+                
+                // 4. 更新账号总未读计数
+                calculateAccountUnread();
+                renderAccountsList();
+                
+                showToast('屏蔽此用户成功');
+            } else {
+                showToast('屏蔽此用户失败: ' + res.message, 'error');
+            }
+            
+            $('#privateMenu').hide();
+        });
+      
+        $('#deleteUser').click(async function() {
+            if (!currentPrivateId || !currentAccount) return;
+            
+            // 显示加载状态
+            $(this).text('处理中...').prop('disabled', true);
+            
+            const res = await $.post('/kefu/Index/deleteUser', {
+                tpid: currentAccount.id,
+                user_id: currentPrivateId
+            });
+            
+            // 恢复按钮状态
+            $(this).text('删除联系人').prop('disabled', false);
+            
+            if (res.code) {
+                // 1. 直接从DOM中删除对应的会话项
+                const $sessionItem = $(`#friendsList .session-item[data-id="${currentPrivateId}"]`);
+                if ($sessionItem.length) {
+                    $sessionItem.fadeOut(300, function() {
+                        $(this).remove();
+                    });
+                }
+                
+                // 2. 如果当前正在查看该会话，清空聊天区域
+                if (currentSession && currentSession.id === currentPrivateId) {
+                    resetMessageList();
+                    $('#chatHeader h5').text(`请选择一个会话 - ${currentAccount.name}`);
+                    currentSession = null;
+                }
+                
+                // 3. 更新缓存中的数据
+                if (userInfoCache[currentPrivateId]) {
+                    delete userInfoCache[currentPrivateId];
+                }
+                
+                // 4. 更新账号总未读计数
+                calculateAccountUnread();
+                renderAccountsList();
+                
+                showToast('删除联系人成功');
+            } else {
+                showToast('删除联系人失败: ' + res.message, 'error');
+            }
+            
+            $('#privateMenu').hide();
+        });
+        
+        // 删除聊天记录
+        $('#deleteHistory').click(async function() {
+            if (!currentPrivateId || !currentAccount) return;
+            
+            // 二次确认
+            if (!confirm(`确定要删除与该用户的所有聊天记录吗？\n此操作不可恢复！`)) {
+                $('#privateMenu').hide();
+                return;
+            }
+        
+            // 显示加载状态
+            $(this).text('删除中...').prop('disabled', true);
+        
+            try {
+                const res = await $.post('/kefu/Index/deleteHistory', {
+                    tpid: currentAccount.id,
+                    target_id: currentPrivateId,
+                    is_private: true
+                });
+        
+                if (res.code) {
+                    // 1. 清空当前聊天区域
+                    if (currentSession && currentSession.id === currentPrivateId) {
+                        const $messageList = $('#messageList');
+                        $messageList.fadeOut(200, function() {
+                            resetMessageList();
+                            $(this).html('<div class="no-history">聊天记录已删除</div>').fadeIn(200);
+                        });
+                    }
+        
+                    // 2. 更新会话列表中的最后一条消息
+                    const $sessionItem = $(`#friendsList .session-item[data-id="${currentPrivateId}"]`);
+                    if ($sessionItem.length) {
+                        $sessionItem.find('.session-desc').text('[聊天记录已删除]').addClass('text-muted');
+                    }
+        
+                    // 3. 同步更新缓存
+                    if (userInfoCache[currentPrivateId]) {
+                        userInfoCache[currentPrivateId].last_msg = '[聊天记录已删除]';
+                        userInfoCache[currentPrivateId].unread = 0;
+                    }
+        
+                    showToast('聊天记录已成功删除');
+                } else {
+                    showToast(`删除失败: ${res.message}`, 'error');
+                }
+            } catch (err) {
+                showToast('网络错误，删除失败', 'error');
+            } finally {
+                $(this).text('删除聊天记录').prop('disabled', false);
+                $('#privateMenu').hide();
+            }
+        });
+        
+        // 轻提示工具函数
+        function showToast(message, type = 'success') {
+            // 创建提示元素
+            const toast = $(`
+                <div class="toast ${type === 'error' ? 'toast-error' : 'toast-success'}">
+                    ${message}
+                </div>
+            `);
+            
+            // 添加到页面
+            $('body').append(toast);
+            
+            // 显示动画
+            setTimeout(() => toast.addClass('show'), 10);
+            
+            // 3秒后自动消失
+            setTimeout(() => {
+                toast.removeClass('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+        
+        // 初始化WebSocket连接
+        function initWebSocket() {
+            // 关闭已有连接
+            if (socket) {
+                socket.close();
+            }
+
+            // 更新连接状态UI
+            updateWebSocketStatus(false);
+
+            // WebSocket地址
+            const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsUrl = `${wsProtocol}//${window.location.host}/ws`;
+            
+            try {
+                // 创建连接
+                socket = new WebSocket(wsUrl);
+                
+                // 连接成功
+                socket.onopen = function() {
+                    console.log('WebSocket连接成功');
+                    isSocketConnected = true;
+                    updateWebSocketStatus(true);
+                    
+                    // 清除重连计时器
+                    if (reconnectTimer) {
+                        clearTimeout(reconnectTimer);
+                        reconnectTimer = null;
+                    }
+                    // 连接成功后，订阅当前账号的消息
+                    if (currentAccount) {
+                        subscribeAccount(currentAccount.id);
+                    }
+                    // 订阅所有账号的未读更新
+                    subscribeAllAccountsUnread();
+                };
+                
+                // 接收消息
+                socket.onmessage = function(event) {
+                    console.log('所有WebSocket消息:', event.data);
+                    try {
+                        const data = JSON.parse(event.data);
+                        handleWebSocketMessage(data);
+                    } catch (e) {
+                        console.error('解析WebSocket消息失败:', e, event.data);
+                    }
+                };
+
+                // 连接关闭
+                socket.onclose = function(event) {
+                    console.log('WebSocket连接关闭，代码:', event.code);
+                    isSocketConnected = false;
+                    updateWebSocketStatus(false);
+                    
+                    // 自动重连（非正常关闭）
+                    if (event.code !== 1000 && !reconnectTimer) {
+                        reconnectTimer = setTimeout(initWebSocket, 3000);
+                        console.log('3秒后尝试重连...');
+                    }
+                };
+
+                // 连接错误
+                socket.onerror = function(error) {
+                    console.error('WebSocket错误:', error);
+                    updateWebSocketStatus(false);
+                };
+            } catch (e) {
+                console.error('创建WebSocket连接失败:', e);
+                updateWebSocketStatus(false);
+                reconnectTimer = setTimeout(initWebSocket, 3000);
+            }
+        }
+        
+        // 订阅所有账号的未读更新
+        function subscribeAllAccountsUnread() {
+            if (!isSocketConnected) return;
+            
+            try {
+                socket.send(JSON.stringify({
+                    action: 'subscribe_all_accounts_unread',
+                    timestamp: new Date().getTime(),
+                    kefuid: {$kefuinfo['id']} 
+                }));
+                console.log('已订阅所有账号的未读更新');
+            } catch (e) {
+                console.error('发送订阅所有账号未读请求失败:', e);
+            }
+        }
+        
+        function logout() {
+            // 1. 断开WebSocket连接
+            if (socket) {
+                if (isSocketConnected) {
+                    socket.send(JSON.stringify({
+                        action: 'logout',
+                        account_id: currentAccount ? currentAccount.id : null,
+                        reason: 'user主动退出'
+                    }));
+                }
+                socket.close(1000, '用户主动退出');
+                socket = null;
+                isSocketConnected = false;
+                updateWebSocketStatus(false);
+                
+                if (reconnectTimer) {
+                    clearTimeout(reconnectTimer);
+                    reconnectTimer = null;
+                }
+            }
+        
+            // 2. 调用后端退出接口
+            $.post('/kefu/Login/logout', function(res) {
+                if (res && res.status === 200) {
+                        window.location.href =  '/kefu/login/index';
+                } else {
+                    alert('退出失败：' + (res.msg || '未知错误'));
+                }
+            }).fail(function(xhr) {
+                alert('退出请求失败，请重试');
+                console.error('退出接口请求失败', xhr);
+            });
+        }
+        
+        // 更新WebSocket连接状态UI
+        function updateWebSocketStatus(connected) {
+            const $indicator = $('#wsStatus');
+            const $text = $('#wsStatusText');
+            
+            if (connected) {
+                $indicator.removeClass('status-offline').addClass('status-online');
+                $text.text('已连接');
+            } else {
+                $indicator.removeClass('status-online').addClass('status-offline');
+                $text.text('未连接');
+            }
+        }
+
+        // 订阅账号消息
+        function subscribeAccount(accountId) {
+            if (!isSocketConnected) return;
+            
+            try {
+                socket.send(JSON.stringify({
+                    action: 'subscribe',
+                    account_id: accountId
+                }));
+                
+                console.log('已订阅账号:', accountId);
+            } catch (e) {
+                console.error('发送订阅消息失败:', e);
+            }
+        }
+
+        // 处理WebSocket推送的消息
+        function handleWebSocketMessage(data) {
+            console.log('收到WebSocket消息:', data);
+            
+            switch (data.type) {
+                case 'new_message':
+                    // 处理新消息（当前会话的消息）
+                    if (currentSession && data.session_id === currentSession.id) {
+                        const msg = data.message;
+                        if (!loadedMessageIds.has(msg.id)) {
+                            renderMessage(msg);
+                            lastMsgId = Math.max(lastMsgId, msg.id);
+                            updateLastMessage(msg);
+                            scrollToBottom();
+                        }
+                    }
+                    break;
+                case 'groups_list':
+                    const groups = data.groups;
+                    // 渲染群组列表
+                    renderGroupList(groups);
+                case 'unread_update':
+                    // 处理未读消息更新
+                    handleUnreadUpdate(data.updates, data.accountId, data.total_unread);
+                    break;
+
+                case 'session_update':
+                    // 会话列表更新
+                    if (currentAccount && data.account_id === currentAccount.id) {
+                        loadSessions();
+                    }
+                    break;
+
+                case 'account_status':
+                    // 账号状态更新
+                    if (accountDataCache[data.account_id]) {
+                        accountDataCache[data.account_id].connected = data.status === 'online';
+                        renderAccountsList();
+                    }
+                    break;
+                case 'account_unread_update':
+                    // 处理账号级未读更新
+                    if (data.account_id && typeof data.unread_count === 'number') {
+                        if (accountDataCache[data.account_id]) {
+                            accountDataCache[data.account_id].unread = data.unread_count;
+                        } else {
+                            accountDataCache[data.account_id] = {
+                                unread: data.unread_count,
+                                connected: false
+                            };
+                        }
+                        updateAccountUnreadUI(data.account_id, data.unread_count);
+                    }
+                    break;    
+            }
+        }
+        
+        // 单独更新账号的未读计数UI
+        function updateAccountUnreadUI(accountId, unreadCount) {
+            const $accountItem = $(`.account-item[data-id="${accountId}"]`);
+            if ($accountItem.length) {
+                const $unreadBadge = $accountItem.find('.account-unread');
+                
+                if (unreadCount > 0) {
+                    const displayCount = unreadCount > 9999 ? '9999+' : unreadCount;
+                    if ($unreadBadge.length) {
+                        $unreadBadge.text(displayCount);
+                    } else {
+                        $accountItem.find('.account-info').after(`
+                            <span class="account-unread">${displayCount}</span>
+                        `);
+                    }
+                } else if ($unreadBadge.length) {
+                    $unreadBadge.remove();
+                }
+            }
+        }
+        
+        // 加载账号列表（分页版）
+        function loadAllAccounts() {
+            // 防止重复加载
+            if (isLoadingAccounts) return;
+            isLoadingAccounts = true;
+
+            // 首次加载时显示“加载中”，后续加载显示“加载更多”
+            const $accountsList = $('#accountsList');
+            if (accountPage === 1) {
+                $accountsList.html('<div class="account-loading p-3 text-muted text-center">加载账号中...</div>');
+            } else {
+                $accountsList.append('<div class="account-loading p-3 text-muted text-center">加载更多...</div>');
+            }
+
+            // 发送分页请求
+            $.post('/kefu/Index/accountList', {
+                page: accountPage,
+                pageSize: accountPageSize
+            }, function(res) {
+                // 移除加载提示
+                $('.account-loading').remove();
+                isLoadingAccounts = false;
+
+                if (res.code === 200) {
+                    const { list, total, page, pageSize } = res.data;
+                    accountTotal = total;
+                    accountPage = page;
+                    accountPageSize = pageSize;
+
+                    // 累加当前页数据
+                    if (list.length > 0) {
+                        accounts = [...accounts, ...list];
+                        
+                        // 初始化账号缓存
+                        list.forEach(account => {
+                            if (!accountDataCache[account.tpid]) {
+                                accountDataCache[account.tpid] = {
+                                    unread: account.unread,
+                                    connected: account.online
+                                };
+                            }
+                        });
+
+                        // 渲染当前页的账号
+                        renderAccountsList(list);
+
+                        // 显示“加载更多”按钮
+                        if (accounts.length < accountTotal) {
+                            $accountsList.append(`
+                                <div id="loadMoreAccounts" class="p-3 text-center text-primary cursor-pointer">
+                                    加载更多（已加载${accounts.length}/${accountTotal}条）
+                                </div>
+                            `);
+                        } else {
+                            $accountsList.append('<div class="p-3 text-muted text-center">已加载全部账号</div>');
+                        }
+                    } else {
+                        if (accountPage === 1) {
+                            $accountsList.html('<div class="p-3 text-danger text-center">无账号可以管理</div>');
+                        } else {
+                            $accountsList.append('<div class="p-3 text-muted text-center">已加载全部账号</div>');
+                        }
+                    }
+                } else {
+                    console.error('加载账号列表失败:', res.msg);
+                    $accountsList.html(`<div class="p-3 text-danger text-center">加载失败，<span id="reloadAccounts" class="text-primary cursor-pointer">点击重试</span></div>`);
+                }
+
+                // 绑定“加载更多”和“重试”事件
+                $('#loadMoreAccounts').off('click').on('click', function() {
+                    accountPage = parseInt(accountPage, 10);
+                    console.log('当前页码 before:', accountPage); // 查看点击前的页码
+                    accountPage += 1; 
+                    console.log('当前页码 after:', accountPage); // 查看点击后的页码
+                    loadAllAccounts();
+                });
+                $('#reloadAccounts').off('click').on('click', function() {
+                    accountPage = 1;
+                    accounts = [];
+                    loadAllAccounts();
+                });
+            }).fail(function() {
+                $('.account-loading').remove();
+                isLoadingAccounts = false;
+                console.error('加载账号列表网络错误');
+                $accountsList.html(`<div class="p-3 text-danger text-center">网络错误，<span id="reloadAccounts" class="text-primary cursor-pointer">点击重试</span></div>`);
+                $('#reloadAccounts').off('click').on('click', function() {
+                    loadAllAccounts();
+                });
+            });
+        }
+
+        // 渲染账号列表（增量版）
+        function renderAccountsList(newAccounts) {
+            const $accountsList = $('#accountsList');
+            
+            // 移除“加载更多”按钮
+            $('#loadMoreAccounts').remove();
+
+            // 创建文档片段优化性能
+            const fragment = document.createDocumentFragment();
+
+            newAccounts.forEach(account => {
+                const accountData = accountDataCache[account.tpid] || {};
+                const unreadHtml = accountData.unread > 0 
+                    ? `<span class="account-unread">${accountData.unread > 9999 ? '9999+' : accountData.unread}</span>`
+                    : '';
+                const connectedClass = accountData.connected ? 'connected' : '';
+                const isActive = currentAccount && currentAccount.id === account.tpid;
+
+                const accountEl = document.createElement('div');
+                accountEl.className = `account-item ${isActive ? 'active' : ''} ${connectedClass}`;
+                accountEl.setAttribute('data-id', account.tpid);
+                accountEl.innerHTML = `
+                    <div class="account-info">
+                        <span class="account-name">${account.nickName || '未知账号'}</span>
+                        <span class="account-number">${account.account || '无账号'}</span>
+                    </div>
+                    ${unreadHtml}
+                `;
+                
+                fragment.appendChild(accountEl);
+            });
+
+            // 一次性添加到DOM
+            $accountsList[0].appendChild(fragment);
+
+            // 绑定点击事件
+            $('.account-item').off('click').on('click', function() {
+                const accountId = $(this).data('id');
+                const account = accounts.find(acc => acc.tpid === accountId);
+                if (account) {
+                    selectAccount(account);
+                }
+            });
+        }
+
+        // 选择账号
+        function selectAccount(account) {
+            currentAccount = {
+                path: account.tpid,
+                id: account.tpid,
+                name: account.nickName || '未知账号',
+                account: account.account || '无账号'
+            };
+            
+            // 更新当前用户ID
+            currentUserId = account.user_id || 'unknown';
+            initCurrentUserCache();
+       
+            // 加载该账号的会话
+            loadSessions();
+            
+            // 更新UI
+            //renderAccountsList([]); // 只更新选中状态，不重新渲染列表
+            $('#chatHeader h5').text(`请选择一个会话 - ${currentAccount.name}`);
+            
+            // 订阅当前账号的实时消息
+            if (isSocketConnected) {
+                subscribeAccount(currentAccount.id);
+            }
+            currentSession = null;
+            // 重置消息区域
+            resetMessageList();
+        }
+
+        // 初始化当前用户缓存
+        function initCurrentUserCache() {
+            if (!userInfoCache[currentUserId]) {
+                userInfoCache[currentUserId] = {
+                    name: '我',
+                    avatar: '/assets/images/head.jpg',
+                    unread: 0,
+                    last_msg: ''
+                };
+            }
+        }
+
+        // 切换标签页
+        function handleTabSwitch(e) {
+          e.preventDefault();
+          
+          const $currentLink = $(this);
+          const $allLinks = $currentLink.closest('.nav-item').siblings().find('.nav-link');
+          
+          $allLinks.removeClass('active');
+          $currentLink.addClass('active');
+          
+          const type = $currentLink.data('type');
+          $(`#${type}List`).removeClass('d-none');
+          const otherType = type === 'groups' ? 'friends' : 'groups';
+          $(`#${otherType}List`).addClass('d-none');
+        }
+
+        // 输入框按键事件（Ctrl+Enter发送）
+        function handleInputKeydown(e) {
+            if(e.ctrlKey && e.keyCode === 13 && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        }
+
+        // 消息列表滚动事件
+        function handleMessageScroll() {
+            if ($(this).scrollTop() <= 10 && hasMoreHistory && !isLoadingHistory && currentSession) {
+                loadMoreHistory();
+            }
+        }
+
+        // 加载会话列表
+        function loadSessions() {
+            if (!currentAccount) return;
+            
+            // 显示加载提示
+            $('#groupsList').html('<div class="history-loading">加载会话列表中...</div>');
+            $('#friendsList').html('<div class="history-loading">加载会话列表中...</div>');
+            
+            $.post('/kefu/Index/loadSessions', {tpid: currentAccount.id}, function(res) {
+                if(res.code === 200) {
+                    // 清空缓存
+                    Object.keys(userInfoCache).forEach(key => {
+                        if (key !== currentUserId) delete userInfoCache[key];
+                    });
+                    Object.keys(groupInfoCache).forEach(key => delete groupInfoCache[key]);
+                    
+                    // 缓存好友信息
+                    (res.data.friends || []).forEach(friend => {
+                        const name = friend.first_name + (friend.last_name ? ' ' + friend.last_name : '');
+                        userInfoCache[friend.user_id] = {
+                            name: name || `用户${friend.user_id}`,
+                            userid: friend.user_id,
+                            tpid: currentAccount.id,
+                            avatar: getSafeAvatar(friend.avatar),
+                            unread: Number(friend.unread_count) || 0,
+                            last_msg: truncateText(friend.last_msg || '', 20)
+                        };
+                    });
+                    
+                    // 缓存群组信息
+                    (res.data.groups || []).forEach(group => {
+                        groupInfoCache[group.group_id] = {
+                            title: group.title || `群组${group.group_id}`,
+                            group_id: group.group_id,
+                            tpid: currentAccount.id,
+                            avatar: getSafeAvatar(group.avatar),
+                            unread: Number(group.unread_count) || 0,
+                            last_msg: truncateText(group.last_msg || '', 20),
+                            member_count: Number(group.member_count) || 0,
+                        };
+                    });
+                    
+                    // 计算当前账号总未读并更新缓存
+                  //  calculateAccountUnread();
+                    
+                    // 渲染列表
+                    renderGroupList();
+                    renderFriendList();
+                    bindSessionClick();
+                } else {
+                    showListError(res.msg || '加载失败，点击重试');
+                }
+            }).fail(function() {
+                showListError('网络错误，点击重试');
+            });
+        }
+
+        // 计算账号总未读
+        function calculateAccountUnread() {
+            if (!currentAccount) return;
+            
+            let totalUnread = 0;
+            
+            // 累加好友未读
+            Object.values(userInfoCache).forEach(user => {
+                totalUnread += user.unread || 0;
+            });
+            
+            // 累加群组未读
+            Object.values(groupInfoCache).forEach(group => {
+                totalUnread += group.unread || 0;
+            });
+            
+            // 更新账号未读计数
+            if (accountDataCache[currentAccount.id]) {
+                accountDataCache[currentAccount.id].unread = totalUnread;
+                //renderAccountsList([]); // 只更新未读状态
+            }
+        }
+
+        // 显示列表加载错误
+        function showListError(msg) {
+            $('#groupsList').html(`<div class="history-error">${msg}</div>`);
+            $('#friendsList').html(`<div class="history-error">${msg}</div>`);
+            $('.history-error').click(loadSessions);
+        }
+
+        // 渲染群组列表
+        function renderGroupList() {
+            const $groupsList = $('#groupsList');
+            $groupsList.empty();
+            
+            const groupIds = Object.keys(groupInfoCache);
+            if (groupIds.length === 0) {
+                $groupsList.html('<div class="no-history">暂无群组</div>');
+                return;
+            }
+            
+            groupIds.forEach(groupId => {
+                const group = groupInfoCache[groupId];
+                const unreadHtml = group.unread > 0 ? 
+                    (group.unread > 9999 ? `<span class="unread-badge">9999+</span>` : `<span class="unread-badge">${group.unread}</span>`) : '';
+                
+                $groupsList.append(`
+                    <a href="#" class="list-group-item list-group-item-action session-item" 
+                       data-type="group" data-id="${groupId}" data-title="${group.title}">
+                        <img class="session-avatar" src="${group.avatar}" 
+                             alt="${group.title}" onerror="this.src='/assets/images/head.jpg'">
+                        <div class="session-info">
+                            <div class="session-title">${group.title}
+                                <span class="member-count text-muted small ml-2">${group.member_count}人</span>
+                            </div>
+                            <div class="session-desc">${group.last_msg}</div>
+                        </div>
+                        ${unreadHtml}
+                    </a>
+                `);
+            });
+        }
+        
+        // 渲染好友列表
+        function renderFriendList() {
+            const $friendsList = $('#friendsList');
+            $friendsList.empty();
+            
+            const userIds = Object.keys(userInfoCache).filter(id => id !== currentUserId);
+            if (userIds.length === 0) {
+                $friendsList.html('<div class="no-history">暂无私聊对象</div>');
+                return;
+            }
+            
+            userIds.forEach(userId => {
+                const friend = userInfoCache[userId];
+                const unreadHtml = friend.unread > 0 ? 
+                    (friend.unread > 9999 ? `<span class="unread-badge">9999+</span>` : `<span class="unread-badge">${friend.unread}</span>`) : '';
+                
+                $friendsList.append(`
+                    <a href="#" class="list-group-item list-group-item-action session-item" 
+                       data-type="friend" data-id="${userId}" data-title="${friend.name}">
+                        <img class="session-avatar" src="${friend.avatar}" 
+                             alt="${friend.name}" onerror="this.src='/assets/images/head.jpg'">
+                        <div class="session-info">
+                            <div class="session-title">${friend.name}</div>
+                            <div class="session-desc">${friend.last_msg}</div>
+                        </div>
+                        ${unreadHtml}
+                    </a>
+                `);
+            });
+        }
+
+        // 绑定会话点击事件
+        function bindSessionClick() {
+            $('#groupsList, #friendsList').off('click', '.session-item').on('click', '.session-item', function (e) {
+                e.preventDefault();
+                
+                // 在当前列表里移除 active
+                $(this).closest('#groupsList, #friendsList').find('.session-item').removeClass('active');
+                // 给当前点击的会话加上 active
+                $(this).addClass('active');
+                
+                const sessionType = $(this).data('type');
+                const sessionId = $(this).data('id');
+                
+                // 重置未读计数
+                if (sessionType === 'group' && groupInfoCache[sessionId]) {
+                    groupInfoCache[sessionId].unread = 0;
+                    tdata_path = groupInfoCache[sessionId].tdata_path;
+                    target_id = groupInfoCache[sessionId].group_id;
+                } else if (userInfoCache[sessionId]) {
+                    userInfoCache[sessionId].unread = 0;
+                    tdata_path = userInfoCache[sessionId].tdata_path;
+                    target_id = userInfoCache[sessionId].userid;
+                }
+                
+                $.post('/kefu/index/readmsg', {
+                        tdata_path: tdata_path,
+                        target_id: target_id,
+                    }, function(res) {
+                        console.log(res);
+                    })
+                
+                // 更新未读计数
+                calculateAccountUnread();
+                renderGroupList();
+                renderFriendList();
+                
+                // 初始化聊天会话
+                currentSession = {
+                    type: sessionType,
+                    id: sessionId,
+                    title: $(this).data('title'),
+                    avatar: $(this).find('.session-avatar').attr('src')
+                };
+                
+                // 更新聊天头部
+                $('#chatHeader h5').text(`${currentSession.title} - ${currentAccount.name}`);
+                
+                // 加载历史消息
+                resetMessageList();
+                
+                // 如果是私聊，加载共同群组
+                if (sessionType === 'friend') {
+                    loadCommonGroups();
+                }
+                loadHistoryMessages();
+                
+                cancelReply();
+                
+                $('#imagePreviewContainer').hide();
+                uploadedImages = [];
+            });
+        }
+
+        // 重置消息列表状态
+        function resetMessageList() {
+            $('#messageList').empty();
+            lastMsgId = 0;
+            lastLoadedOffset = 0;
+            hasMoreHistory = true;
+            loadedMessageIds.clear();
+            
+            $('.common-groups-container, .common-groups-loading, .common-groups-error').remove();
+            
+            isLoadingHistory = false;
+            $('#sendBtn').prop('disabled', !currentSession);
+        }
+
+        // 加载历史消息（首次加载）
+        function loadHistoryMessages() {
+            if (!currentSession || !currentAccount) {
+                console.warn("没有选中会话，不加载历史消息");
+                return;
+            }
+            
+            isLoadingHistory = true;
+            
+            // 显示加载提示
+            $('#messageList').html('<div class="history-loading">加载历史消息中...</div>');
+            
+            $.post('/kefu/Index/loadHistory', {
+                tpid: currentAccount.id,
+                target_id: currentSession.id,
+                limit: 50,
+                offset: 0
+            }, function(res) {
+                $('#messageList').empty();
+                isLoadingHistory = false;
+                
+                if(res.code === 200) {
+                    messages = res.data.messages || [];
+                    // 按时间排序
+                    messages.sort((a, b) => new Date(a.date) - new Date(b.date));
+                    
+                    // 过滤重复消息
+                    const newMessages = messages.filter(msg => {
+                        if (loadedMessageIds.has(msg.id)) {
+                            return false;
+                        }
+                        loadedMessageIds.add(msg.id);
+                        return true;
+                    });
+                    
+                    if (newMessages.length > 0) {
+                        newMessages.forEach(msg => {
+                            renderMessage(msg);
+                            lastMsgId = Math.max(lastMsgId, msg.id);
+                        });
+                        
+                        // 更新分页信息
+                        lastLoadedOffset = newMessages[newMessages.length - 1].id;
+                        hasMoreHistory = res.data.has_more || false;
+                        
+                        // 显示加载更多提示
+                        if (hasMoreHistory) {
+                            $('#messageList').prepend('<div class="load-more-tip">滚动到顶部加载更多历史消息</div>');
+                        }
+                        
+                        scrollToBottom();
+                    } else {
+                        $('#messageList').html('<div class="no-history">暂无历史消息</div>');
+                        hasMoreHistory = false;
+                    }
+                } else {
+                    $('#messageList').html(`<div class="history-error">${res.msg || '加载失败，点击重试'}</div>`);
+                    $('.history-error').click(loadHistoryMessages);
+                }
+            }).fail(function() {
+                $('#messageList').html('<div class="history-error">网络错误，点击重试</div>');
+                $('.history-error').click(loadHistoryMessages);
+                isLoadingHistory = false;
+            });
+        }
+        
+        // 加载更多历史消息
+        function loadMoreHistory() {
+            if (!currentSession || !hasMoreHistory || isLoadingHistory) return;
+            
+            isLoadingHistory = true;
+            
+            const $loadTip = $('#messageList').find('.load-more-tip').first();
+            if ($loadTip.length) $loadTip.remove();
+            
+            $('#messageList').prepend('<div class="history-loading">加载更多历史消息...</div>');
+            
+            $.post('/kefu/index/loadHistory', {
+                tpid: currentAccount.id,
+                target_id: currentSession.id,
+                limit: 50,
+                offset: lastLoadedOffset
+            }, function(res) {
+                $('.history-loading').first().remove();
+                isLoadingHistory = false;
+                
+                if(res.code === 200) {
+                    let messages = res.data.messages || [];
+                    // 按时间排序
+                    messages.sort((a, b) => new Date(a.date) - new Date(b.date));
+                    
+                    // 过滤重复消息
+                    const newMessages = messages.filter(msg => {
+                        if (loadedMessageIds.has(msg.id)) {
+                            return false;
+                        }
+                        loadedMessageIds.add(msg.id);
+                        return true;
+                    });
+                    
+                    if (newMessages.length > 0) {
+                        // 记录滚动位置
+                        const scrollHeight = $('#messageList')[0].scrollHeight;
+                        
+                        // 插入消息
+                        newMessages.forEach(msg => {
+                            const messageEl = createMessageElement(msg);
+                            $('#messageList').prepend(messageEl);
+                        });
+                        
+                        // 更新分页信息
+                        lastLoadedOffset = newMessages[newMessages.length - 1].id;
+                        hasMoreHistory = res.data.has_more || false;
+                        
+                        // 调整滚动位置
+                        const newScrollHeight = $('#messageList')[0].scrollHeight;
+                        $('#messageList').scrollTop(newScrollHeight - scrollHeight);
+                        
+                        // 显示加载更多提示
+                        if (hasMoreHistory) {
+                            $('#messageList').prepend('<div class="load-more-tip">滚动到顶部加载更多历史消息</div>');
+                        } else {
+                            $('#messageList').prepend('<div class="load-more-tip">已加载全部历史消息</div>');
+                        }
+                    } else {
+                        hasMoreHistory = false;
+                        $('#messageList').prepend('<div class="load-more-tip">已加载全部历史消息</div>');
+                    }
+                } else {
+                    const errorEl = $(`<div class="history-error">${res.msg || '加载失败，点击重试'}</div>`);
+                    errorEl.click(function() {
+                        $(this).remove();
+                        loadMoreHistory();
+                    });
+                    $('#messageList').prepend(errorEl);
+                }
+            }).fail(function() {
+                $('.history-loading').first().remove();
+                isLoadingHistory = false;
+                const errorEl = $('<div class="history-error">网络错误，点击重试</div>');
+                errorEl.click(function() {
+                    $(this).remove();
+                    loadMoreHistory();
+                });
+                $('#messageList').prepend(errorEl);
+            });
+        }
+        
+        // 单独获取并显示共同群组
+        function loadCommonGroups() {
+            if (currentSession?.type !== 'friend' || !currentAccount) return;
+        
+            // 显示加载状态
+            const $commonGroupsContainer = $(`
+                <div class="common-groups-loading">
+                    <div class="history-loading">加载共同群组中...</div>
+                </div>
+            `);
+            $('.chat-container').prepend($commonGroupsContainer);
+        
+            // 请求共同群组数据
+            $.post('/kefu/Index/getCommonGroups', {
+                tpid: currentAccount.id,
+                target_user_id: currentSession.id
+            }, function(res) {
+                $commonGroupsContainer.remove();
+        
+                if (res.code === 200 && res.data.groups?.length > 0) {
+                    const $groupEl = renderCommonGroups(res.data.groups);
+                    $('.chat-container').prepend($groupEl);
+                }
+            }).fail(function() {
+                $commonGroupsContainer.replaceWith(`
+                    <div class="history-error">共同群组加载失败，点击重试</div>
+                `);
+                $('.history-error').click(loadCommonGroups);
+            });
+        }    
+        
+        // 渲染共同群组
+        function renderCommonGroups(groups) {
+            const $groupContainer = $(`
+                <div class="common-groups-container">
+                    <div class="common-groups-title">
+                        <i class="fa fa-users"></i> 共同群组 (${groups.length})
+                    </div>
+                    <div class="common-groups-list"></div>
+                </div>
+            `);
+            const $groupList = $groupContainer.find('.common-groups-list');
+        
+            // 最多显示5个
+            const displayGroups = groups.slice(0, 5);
+            const hasMore = groups.length > 5;
+        
+            displayGroups.forEach(group => {
+                $groupList.append(`
+                    <a href="#" class="common-group-item" 
+                       data-id="${group.id}" 
+                       data-title="${group.title}">
+                        <img src="${group.avatar_url || '/assets/images/group_default.png'}" 
+                             alt="${group.title}" class="group-avatar">
+                        <span class="group-name">${group.title}</span>
+                    </a>
+                `);
+            });
+        
+            if (hasMore) {
+                $groupList.append(`<div class="common-group-more">还有 ${groups.length - 5} 个</div>`);
+            }
+        
+            // 共同群组点击事件
+            $groupList.on('click', '.common-group-item', function(e) {
+                e.preventDefault();
+                const groupId = $(this).data('id');
+                const groupTitle = $(this).data('title');
+                const groupAvatar = $(this).find('.group-avatar').attr('src');
+            
+                // 创建临时会话项并触发点击
+                const $tempSessionItem = $(`
+                    <div class="session-item" 
+                         data-type="group" 
+                         data-id="${groupId}" 
+                         data-title="${groupTitle}"
+                         style="display:none;">
+                        <img class="session-avatar" src="${groupAvatar}">
+                    </div>
+                `);
+            
+                $('#groupsList').append($tempSessionItem);
+                $tempSessionItem.trigger('click');
+                setTimeout(() => $tempSessionItem.remove(), 100);
+            });
+        
+            return $groupContainer;
+        }
+        
+        function createMessageElement(msg) {
+            // 判断是否为当前用户发送的消息
+            const isOutgoing = msg.is_outgoing || msg.sender_id === currentUserId;
+         
+            // 获取发送者信息
+            const senderInfo = isOutgoing ? {
+                name: '我',
+                avatar: userInfoCache[currentUserId]?.avatar || '/assets/images/head.jpg'
+            } : (userInfoCache[msg.sender_id] || {
+                name: `${msg.sender_name}:${msg.sender_id}`,
+                avatar: getSafeAvatar(msg.avatar)
+            });
+            
+            // 格式化时间
+            const date = new Date(msg.date);
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            const timeStr = `${hours}:${minutes}`;
+            
+            // 创建DOM元素
+            const messageEl = document.createElement('div');
+            const replyClasses = replyingToMsgId === msg.id ? 'replying border-primary' : '';
+            messageEl.className = `message ${isOutgoing ? 'outgoing' : 'incoming'} transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800/50 ${replyClasses}`;
+            messageEl.setAttribute('data-msg-id', msg.id);
+            messageEl.setAttribute('data-msg-type', msg.media_type || 'text');
+            
+            // 添加点击事件，用于触发回复
+            messageEl.addEventListener('click', () => startReplyToMessage(msg));
+            
+            // 消息状态
+            const statusIndicator = isOutgoing ? `
+                <span class="message-status ${msg.is_read ? 'text-green-500' : 'text-gray-400'}">
+                    ${msg.is_read ? '<i class="fa fa-check-double"></i>' : '<i class="fa fa-check"></i>'}
+                </span>
+            ` : '';
+            
+            // 处理不同消息类型的内容
+            let messageContent = '';
+            switch(msg.media_type) {
+                case 'image':
+                case 'image_text':     
+                    if (Array.isArray(msg.media_urls) && msg.media_urls.length > 0) {
+                        // 多图消息
+                        messageContent = `
+                            <div class="message-images-container flex flex-wrap gap-2">
+                                ${msg.media_urls.map((imgUrl, index) => `
+                                    <div class="message-image-wrapper">
+                                        <img src="${imgUrl}" 
+                                             alt="图片${index + 1}" 
+                                             class="message-image" 
+                                             onerror="this.src='/assets/images/image-error.png'"
+                                             loading="lazy">
+                                    </div>
+                                `).join('')}
+                            </div>
+                            ${msg.text ? `<div class="image-caption mt-1">${formatMessageContent(msg)}</div>` : ''}
+                        `;
+                    } else if (msg.media_url) {
+                        // 单图消息
+                        messageContent = `
+                            <div class="message-image-container">
+                                <img src="${msg.media_url}" 
+                                     alt="${msg.text || '图片消息'}" 
+                                     class="message-image" 
+                                     onerror="this.src='/assets/images/image-error.png'"
+                                     loading="lazy">
+                            </div>
+                            ${msg.text ? `<div class="image-caption mt-1">${formatMessageContent(msg)}</div>` : ''}
+                        `;
+                    } else {
+                        messageContent = `<div class="text-gray-500 text-sm">图片加载失败</div>`;
+                    }
+                    break;
+                    
+                case 'file':
+                    messageContent = `
+                        <div class="file-attachment">
+                            <i class="fa fa-file-o mr-2"></i>
+                            <div class="file-info">
+                                <div class="file-name">${msg.file_name || '未知文件'}</div>
+                                <div class="file-size">${formatFileSize(msg.file_size)}</div>
+                            </div>
+                            <a href="${msg.file_url}" class="file-download" download>
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </div>
+                    `;
+                    break;
+                default: 
+                    messageContent = `<div class="content">${formatMessageContent(msg)}</div>`;
+            }
+            
+            // 正在回复指示
+            const replyIndicator = replyingToMsgId === msg.id ? `
+                <div class="replying-indicator">
+                    <i class="fa fa-reply"></i> 正在回复 ${senderInfo.name}
+                </div>
+            ` : '';
+            
+            // 回复引用
+            let quotedReply = '';
+            if (msg.reply_to_msg_id) {
+                const repliedSenderName = getSenderNameById(msg.reply_to_sender_id) || '对方';
+                let replyContent = msg.reply_to_text || '[无法获取回复内容]';
+                if (replyContent.length > 50) {
+                    replyContent = replyContent.substring(0, 50) + '...';
+                }
+                
+                quotedReply = `
+                    <div class="quoted-reply">
+                        <span class="quoted-sender">${repliedSenderName}:</span>
+                        <span class="quoted-content">${replyContent}</span>
+                    </div>
+                `;
+            }
+            
+            // 设置消息内容
+            messageEl.innerHTML = `
+                <img class="message-avatar" 
+                     src="${senderInfo.avatar}" 
+                     alt="${senderInfo.name}" 
+                     onerror="this.src='/assets/images/head.jpg'">
+                <div class="message-content">
+                    <span class="message-sender">${senderInfo.name}</span>
+                    ${quotedReply}
+                    ${replyIndicator}
+                    ${messageContent}
+                    <div class="message-meta flex items-center justify-end gap-1">
+                        ${timeStr}
+                        ${statusIndicator}
+                    </div>
+                </div>
+            `;
+            
+            // 加载状态
+            if (msg.is_loading) {
+                const loadingIndicator = document.createElement('div');
+                loadingIndicator.className = 'message-loading';
+                loadingIndicator.innerHTML = '<i class="fa fa-circle-o-notch fa-spin"></i>';
+                messageEl.appendChild(loadingIndicator);
+            }
+            
+            return messageEl;
+        }
+        
+        // 格式化文件大小
+        function formatFileSize(bytes) {
+            if (!bytes) return '0 B';
+            const units = ['B', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(1024));
+            return parseFloat((bytes / Math.pow(1024, i)).toFixed(2)) + ' ' + units[i];
+        }
+
+        // 开始回复消息
+        function startReplyToMessage(msg) {
+            if (replyingToMsgId === msg.id) {
+                cancelReply();
+                return;
+            }
+            
+            replyingToMsgId = msg.id;
+            
+            const senderInfo = msg.sender_id === currentUserId ? {name: '我'} : 
+                          (userInfoCache[msg.sender_id] || {name: `用户${msg.sender_id}`});
+            
+            // 创建回复栏
+            const replyBar = document.createElement('div');
+            replyBar.id = 'reply-bar';
+            replyBar.className = 'reply-bar';
+            replyBar.innerHTML = `
+                <i class="fa fa-reply"></i>
+                <div class="reply-info">
+                    <span class="reply-sender">回复 ${senderInfo.name}</span>
+                    <span class="reply-preview">${getReplyPreview(msg)}</span>
+                </div>
+                <button class="cancel-reply" onclick="cancelReply()"><i class="fa fa-times"></i></button>
+            `;
+            replyingToMsg = getReplyPreview(msg);
+            replyingToMsgName = msg.sender_id;
+            
+            // 添加到DOM
+            const inputContainer = document.getElementById('is_replyinfo');
+            if (document.getElementById('reply-bar')) {
+                document.getElementById('reply-bar').replaceWith(replyBar);
+            } else {
+                inputContainer.parentNode.insertBefore(replyBar, inputContainer);
+            }
+            
+            // 重新渲染消息列表
+            reRenderMessages();
+            
+            // 聚焦输入框
+            document.getElementById('messageInput').focus();
+        }
+        
+        // 取消回复
+        function cancelReply() {
+            replyingToMsgId = null;
+            replyingToMsg = null;
+            replyingToMsgName = null;
+            
+            const replyBar = document.getElementById('reply-bar');
+            if (replyBar) {
+                replyBar.remove();
+            }
+            
+            reRenderMessages();
+        }
+        
+        // 渲染消息
+        function renderMessage(msg) {
+            const messageEl = createMessageElement(msg);
+            $('#messageList').append(messageEl);
+        }
+
+        // 发送消息
+        function sendMessage() {
+            const $input = $('#messageInput');
+            const text = $input.val().trim();
+            
+            const hasText = !!text;
+            const hasImages = uploadedImages.length > 0;
+            
+            // 验证
+            if (!currentSession || !currentAccount) return;
+            if (!hasText && !hasImages) {
+                showToast('请输入文字或选择图片', 'error');
+                return;
+            }
+
+            const $sendBtn = $('#sendBtn');
+            $sendBtn.prop('disabled', true).text('发送中...');
+            const originalText = text;
+            
+            // 创建临时消息
+            const msgId = Date.now();
+            const tempMsg = {
+                id: msgId,
+                text: text,
+                sender_id: currentUserId,
+                is_outgoing: true,
+                date: new Date().toISOString(),
+                reply_to_msg_id: replyingToMsgId || null,
+                reply_to_text: replyingToMsg || null,
+                reply_to_sender_id: replyingToMsgName || null,
+                media_urls: hasImages ? uploadedImages.map(img => img.fileUrl) : [],
+                media_type: hasText && hasImages ? 'image_text' : (hasImages ? 'image' : 'text')
+            };
+            renderMessage(tempMsg);
+            scrollToBottom();
+            $input.val('');
+            
+            // 消息类型
+            let messageType;
+            if (hasText && hasImages) {
+                messageType = 'image_text';
+            } else if (hasImages) {
+                messageType = 'image';
+            } else {
+                messageType = 'text';
+            }
+            
+            // 通过WebSocket发送
+            if (isSocketConnected) {
+                try {
+                    socket.send(JSON.stringify({
+                        action: 'send_message',
+                        account_id: currentAccount.id,
+                        target_id: currentSession.id,
+                        message_type: messageType,
+                        message_text: text,
+                        reply_to_msg_id: replyingToMsgId || null,
+                        images: hasImages ? uploadedImages.map(img => ({
+                            file_url: img.fileUrl, 
+                        })) : []
+                    }));
+                    
+                    // 等待确认
+                    const confirmTimeout = setTimeout(() => {
+                        $sendBtn.prop('disabled', false).text('发送');
+                    }, 3000);
+                    
+                    const handleSendResult = function(event) {
+                        try {
+                            const data = JSON.parse(event.data);
+                            if (data.type === 'send_result') {
+                                clearTimeout(confirmTimeout);
+                                $sendBtn.prop('disabled', false).text('发送');
+                                
+                                if (!data.result.success) {
+                                    $(`[data-msg-id="${msgId}"]`).remove();
+                                    $input.val(originalText);
+                                    showToast('发送失败: ' + (data.result.msg || '未知错误'), 'error');
+                                }
+                                
+                                socket.removeEventListener('message', handleSendResult);
+                            }
+                        } catch (e) {
+                            console.error('处理发送结果失败:', e);
+                        }
+                    };
+                    
+                    socket.addEventListener('message', handleSendResult, { once: true });
+                } catch (e) {
+                    console.error('发送消息失败:', e);
+                    $sendBtn.prop('disabled', false).text('发送');
+                    $(`[data-msg-id="${msgId}"]`).remove();
+                    $input.val(originalText);
+                    showToast('发送失败，请重试', 'error');
+                }
+            } else {
+                // 降级为HTTP发送
+                $.post('/kefu/Index/sendMessage', {
+                    tpid: currentAccount.id,
+                    target_id: currentSession.id,
+                    message_type: messageType,
+                    message_text: text,
+                    reply_to_msg_id: replyingToMsgId || null,
+                    images: hasImages ? uploadedImages.map(img => ({
+                        file_url: img.fileUrl,
+                    })) : []
+                }, function(res) {
+                    $sendBtn.prop('disabled', false).text('发送');
+                    
+                    if (res.code !== 200) {
+                        $(`[data-msg-id="${msgId}"]`).remove();
+                        $input.val(originalText);
+                        showToast('发送失败: ' + (res.msg || '未知错误'), 'error');
+                    }
+                }).fail(function() {
+                    $sendBtn.prop('disabled', false).text('发送');
+                    $(`[data-msg-id="${msgId}"]`).remove();
+                    $input.val(originalText);
+                    showToast('发送失败，请重试', 'error');
+                });
+            }
+            
+            // 发送后清理
+            cancelReply();
+            $('#imagePreviewContainer').empty();
+            $('#imagePreviewContainer').hide();
+            uploadedImages = [];
+            $input.val('');
+        }
+        
+        // 获取回复预览内容
+        function getReplyPreview(msg) {
+            switch(msg.type) {
+                case 'image':
+                    return '[图片]' + (msg.text ? ` ${msg.text.substring(0, 20)}` : '');
+                case 'file':
+                    return `[文件: ${msg.file_name || '未知文件'}]`;
+                default:
+                    return msg.text ? msg.text.substring(0, 20) + (msg.text.length > 20 ? '...' : '') : '';
+            }
+        }
+        
+        // 通过ID获取消息
+        function getMessageById(msgId) {
+            return messages.find(msg => msg.id === msgId) || null;
+        }
+        
+        // 获取发送者名称
+        function getSenderNameById(senderId) {
+            if (!senderId) return '未知用户';
+            if (senderId === currentUserId) return '我';
+            return userInfoCache[senderId]?.name || `用户${senderId}`;
+        }
+        
+        // 更新会话最后一条消息预览
+        function updateLastMessage(msg) {
+            if (!currentSession) return;
+            
+            const cache = currentSession.type === 'group' 
+                ? groupInfoCache[currentSession.id] 
+                : userInfoCache[currentSession.id];
+            
+            if (cache) {
+                cache.last_msg = truncateText(msg.text || '[非文本消息]', 20);
+                
+                if ($('.nav-tabs a.active').data('type') === currentSession.type) {
+                    currentSession.type === 'group' ? renderGroupList() : renderFriendList();
+                    bindSessionClick();
+                    $(`.session-item[data-type="${currentSession.type}"][data-id="${currentSession.id}"]`).addClass('active');
+                }
+            }
+        }
+        
+        // 重新渲染消息列表
+        function reRenderMessages() {
+            const messageList = document.getElementById('messageList');
+            const scrollTop = messageList.scrollTop;
+            
+            const currentMsgs = Array.from(messageList.querySelectorAll('.message'));
+            currentMsgs.forEach(el => {
+                const msgId = el.getAttribute('data-msg-id');
+                const msg = getMessageById(parseInt(msgId));
+                if (msg) {
+                    const newEl = createMessageElement(msg);
+                    el.replaceWith(newEl);
+                }
+            });
+            
+            messageList.scrollTop = scrollTop;
+        }
+        
+        // 处理未读消息更新
+        function handleUnreadUpdate(updates, accountId, total_unread) {
+            // 更新全局未读总数
+            
+            // 处理每个有未读消息的会话
+            updates.unread_chats.forEach(chat => {
+                if (currentSession && currentSession.id === chat.chat_id) {
+                    return;
+                }
+                
+                if (chat.is_private) {
+                    updatePrivateChatUnread(chat.chat_id, chat.unread_count);
+                } else if (chat.is_group) {
+                    updateGroupChatUnread(chat.chat_id, chat.unread_count);
+                }
+            });
+            
+            updateAccountTotalUnread(accountId, updates.total_unread);
+        }
+        
+        // 更新私聊列表的未读计数
+        function updatePrivateChatUnread(chatId, unreadCount) {
+            const $chatItem = $(`#friendsList .session-item[data-id="${chatId}"]`);
+            if (!$chatItem.length) return;
+            
+            const $unreadBadge = $chatItem.find('.unread-badge');
+            
+            if (unreadCount > 0) {
+                const displayCount = unreadCount > 99 ? '99+' : unreadCount;
+                if ($unreadBadge.length) {
+                    $unreadBadge.text(displayCount);
+                } else {
+                    $chatItem.find('.session-title').append(`
+                        <span class="unread-badge badge bg-danger ms-2">${displayCount}</span>
+                    `);
+                }
+                $chatItem.addClass('unread-pulse').delay(2000).queue(function() {
+                    $(this).removeClass('unread-pulse').dequeue();
+                });
+            } else if ($unreadBadge.length) {
+                $unreadBadge.remove();
+            }
+        }
+        
+        // 更新群组列表的未读计数
+        function updateGroupChatUnread(chatId, unreadCount) {
+            const $chatItem = $(`#groupsList .session-item[data-id="${chatId}"]`);
+            if (!$chatItem.length) return;
+            
+            const $unreadBadge = $chatItem.find('.unread-badge');
+            
+            if (unreadCount > 0) {
+                const displayCount = unreadCount > 99 ? '99+' : unreadCount;
+                if ($unreadBadge.length) {
+                    $unreadBadge.text(displayCount);
+                } else {
+                    $chatItem.find('.session-title').append(`
+                        <span class="unread-badge badge bg-danger ms-2">${displayCount}</span>
+                    `);
+                }
+                $chatItem.addClass('unread-pulse').delay(2000).queue(function() {
+                    $(this).removeClass('unread-pulse').dequeue();
+                });
+            } else if ($unreadBadge.length) {
+                $unreadBadge.remove();
+            }
+        }
+        
+        // 更新账号的总未读计数
+        function updateAccountTotalUnread(accountId, total_unread) {
+            const $accountItem = $(`.account-item[data-id="${accountId}"]`);
+            if (!$accountItem.length) {
+                console.warn(`未找到账号ID为${accountId}的元素`);
+                return;
+            }
+            
+            const $accountUnread = $accountItem.find('.account-unread');
+            const newTotal = total_unread;
+            
+            accountDataCache[accountId].unread = newTotal;
+            updateUnreadBadge($accountItem, newTotal);
+        }
+        
+        // 更新未读角标
+        function updateUnreadBadge($accountItem, total) {
+            const $accountUnread = $accountItem.find('.account-unread');
+            const displayTotal = total > 99 ? '99+' : total;
+            
+            if (total > 0) {
+                if ($accountUnread.length) {
+                    $accountUnread.text(displayTotal);
+                } else {
+                    $accountItem.append(`
+                        <span class="account-unread badge bg-danger">${displayTotal}</span>
+                    `);
+                }
+            } else if ($accountUnread.length) {
+                $accountUnread.remove();
+            }
+        }
+
+        // 安全处理头像URL
+        function getSafeAvatar(avatarUrl) {
+            if (!avatarUrl) return '/assets/images/head.jpg';
+            if (avatarUrl.startsWith('http') || avatarUrl.startsWith('data:image/')) {
+                return avatarUrl;
+            }
+            return '/assets/images/head.jpg';
+        }
+
+        // 格式化消息内容
+        function formatMessageContent(msg) {
+            if (!msg.text) return '[无内容]';
+            
+            // 转换链接为可点击的a标签
+            let content = msg.text.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+            // 转换换行符为br标签
+            content = content.replace(/\n/g, '<br>');
+            
+            return content;
+        }
+
+        // 截断长文本
+        function truncateText(text, maxLength) {
+            if (typeof text !== 'string') return '';
+            if (text.length <= maxLength) return text;
+            return text.substring(0, maxLength) + '...';
+        }
+
+        // 滚动消息列表到底部
+        function scrollToBottom() {
+            const $list = $('#messageList');
+            $list.scrollTop($list[0].scrollHeight);
+        }
+    </script>
+</body>
+</html>
