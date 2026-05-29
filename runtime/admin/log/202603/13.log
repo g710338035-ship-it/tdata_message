@@ -1,3 +1,0 @@
-[2026-03-13T23:30:38+08:00][info] 任务开始: ID=68, 名称=美国测试2
-[2026-03-13T23:30:41+08:00][info] 任务开始: ID=67, 名称=美国20测试
-[2026-03-13T23:30:47+08:00][error] [0]think\db\PDOConnection::pdoQuery(): Return value must be of type array, bool returned[/www/wwwroot/tdata.tgbota.top/vendor/topthink/think-orm/src/db/PDOConnection.php:729]

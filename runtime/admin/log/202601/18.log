@@ -1,6 +1,0 @@
-[2026-01-18T00:03:27+08:00][info] 用户归档缓存已强制从数据库更新，共处理 10 个用户
-[2026-01-18T09:14:37+08:00][error] 错误信息:controller not exists:app\admin\controller\Console
-[2026-01-18T09:14:37+08:00][error] 错误信息:controller not exists:app\admin\controller\Config
-[2026-01-18T09:14:41+08:00][error] 错误信息:controller not exists:app\admin\controller\Env
-[2026-01-18T19:05:50+08:00][error] 错误信息:controller not exists:app\admin\controller\Config
-[2026-01-18T22:32:13+08:00][info] [telegram队列] 批次:  耗时=0.01秒
